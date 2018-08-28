@@ -25681,3 +25681,7 @@ ion-navbar.toolbar {
 page-home .btn-right {
   float: right;
 }
+
+page-home .item-md p {
+  margin: 0 0 -31px;
+}
