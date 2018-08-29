@@ -9,12 +9,16 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { KeyListPage } from '../pages/key-list/key-list';
+import { ItemDetailPage } from '../pages/item-detail/item-detail';
+import { LendQrPage } from '../pages/lend-qr/lend-qr';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    KeyListPage
+    KeyListPage,
+    ItemDetailPage,
+    LendQrPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { KeyListPage } from '../pages/key-list/key-list';
   entryComponents: [
     MyApp,
     HomePage,
-    KeyListPage
+    KeyListPage,
+    ItemDetailPage,
+    LendQrPage
   ],
   providers: [
     StatusBar,
