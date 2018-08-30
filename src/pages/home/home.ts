@@ -3,8 +3,9 @@ import { NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
-import { KeyListPage } from '../key-list/key-list';
+
 import { ItemDetailPage } from '../item-detail/item-detail';
+import { ReturnPage } from '../returned/return';
 
 
 @Component({
@@ -13,17 +14,13 @@ import { ItemDetailPage } from '../item-detail/item-detail';
 })
 
 export class HomePage {
-  public base64Image:any;
+  public base64Image: any;
   constructor(
     public navCtrl: NavController,
     private camera: Camera,
     private barcodeScanner: BarcodeScanner) {
 
   }
-  goKeyListPage() {
-    this.navCtrl.push(KeyListPage);
-  }
-<<<<<<< HEAD
 
   QRScan() {
     this.barcodeScanner.scan().then(barcodeData => {
@@ -49,11 +46,13 @@ export class HomePage {
       // Handle error
     });
   }
-=======
-  Showitem_detail(){
+  Showitem_detail() {
     this.navCtrl.push(ItemDetailPage);
+  
   }
 
->>>>>>> 348f133e633971c5a47ff89dfe481cacf2c6b519
+  Returned() {
+    this.navCtrl.push(ReturnPage);
+  }
 }
 
