@@ -13,6 +13,12 @@ import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { LendQrPage } from '../pages/lend-qr/lend-qr';
 import { BorrowPage } from '../pages/borrow/borrow';
 import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
+import { ReturnPage } from '../pages/returned/return';
+import { ReturnlistPage } from '../pages/returnlist/returnlist';
+import { WaitpersonPage } from '../pages/waitperson/waitperson';
+import { ItemListPage } from '../pages/item-list/item-list';
+import { LoginPage } from '../pages/login/login';
+import { ConfirmPage } from '../pages/confirm/confirm';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,13 @@ import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
     ItemDetailPage,
     LendQrPage,
     BorrowPage,
-    BorrowSelectPage
+    BorrowSelectPage,
+    ReturnPage,
+    ReturnlistPage,
+    WaitpersonPage,
+    ItemListPage,
+    LoginPage,
+    ConfirmPage
   ],
   imports: [
     BrowserModule,
@@ -36,13 +48,19 @@ import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
     ItemDetailPage,
     LendQrPage,
     BorrowPage,
-    BorrowSelectPage
+    BorrowSelectPage,
+    ReturnPage,
+    ReturnlistPage,
+    WaitpersonPage,
+    ItemListPage,
+    LoginPage,
+    ConfirmPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
-    BarcodeScanner,
+    BarcodeScanner,    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

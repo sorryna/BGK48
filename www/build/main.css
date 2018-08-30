@@ -25685,3 +25685,7 @@ page-home .btn-right {
 page-home .item-md p {
   margin: 0 0 -31px;
 }
+
+page-home .pointer_card {
+  cursor: pointer;
+}
