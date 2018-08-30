@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { KeyListPage } from '../pages/key-list/key-list';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { LendQrPage } from '../pages/lend-qr/lend-qr';
+import { ItemListPage } from '../pages/item-list/item-list';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LendQrPage } from '../pages/lend-qr/lend-qr';
     HomePage,
     KeyListPage,
     ItemDetailPage,
-    LendQrPage
+    LendQrPage,
+    ItemListPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { LendQrPage } from '../pages/lend-qr/lend-qr';
     HomePage,
     KeyListPage,
     ItemDetailPage,
-    LendQrPage
+    LendQrPage,
+    ItemListPage
   ],
   providers: [
     StatusBar,

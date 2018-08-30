@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ItemListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      Item List A1
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col>
+      <button ion-button color="secondary" style="float: right;">+</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>
+      <h4>รายการของ</h4>
+    </ion-col>
+    <ion-col col-6 class="qty_item">
+      <h4>จำนวน</h4>
+    </ion-col>
+  </ion-row>
+  <ion-item class="pointer_item" (click)="goDetail_list()">
+    <ion-row>
+      <ion-col col-6>
+        Item1
+      </ion-col>
+      <ion-col col-6 class="qty_item">
+        3/3
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item class="pointer_item">
+    <ion-row>
+      <ion-col col-6>
+        Item2
+      </ion-col>
+      <ion-col col-6 class="qty_item">
+        1/2
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item class="pointer_item">
+    <ion-row>
+      <ion-col col-6>
+        Item2
+      </ion-col>
+      <ion-col col-6 class="qty_item">
+        0/1
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+</ion-content>

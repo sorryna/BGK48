@@ -5,6 +5,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { KeyListPage } from '../key-list/key-list';
 import { ItemDetailPage } from '../item-detail/item-detail';
+import { ItemListPage } from '../item-list/item-list';
 
 
 @Component({
@@ -23,7 +24,10 @@ export class HomePage {
   goKeyListPage() {
     this.navCtrl.push(KeyListPage);
   }
-<<<<<<< HEAD
+
+  goItemlist(){
+    this.navCtrl.push(ItemListPage);
+  }
 
   QRScan() {
     this.barcodeScanner.scan().then(barcodeData => {
@@ -49,11 +53,5 @@ export class HomePage {
       // Handle error
     });
   }
-=======
-  Showitem_detail(){
-    this.navCtrl.push(ItemDetailPage);
-  }
-
->>>>>>> 348f133e633971c5a47ff89dfe481cacf2c6b519
 }
 
