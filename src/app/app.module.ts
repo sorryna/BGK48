@@ -11,6 +11,8 @@ import { HomePage } from '../pages/home/home';
 import { KeyListPage } from '../pages/key-list/key-list';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { LendQrPage } from '../pages/lend-qr/lend-qr';
+import { LoginPage } from '../pages/login/login';
+import { ConfirmPage } from '../pages/confirm/confirm';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { LendQrPage } from '../pages/lend-qr/lend-qr';
     HomePage,
     KeyListPage,
     ItemDetailPage,
-    LendQrPage
+    LendQrPage,
+    LoginPage,
+    ConfirmPage
   ],
   imports: [
     BrowserModule,
@@ -30,13 +34,15 @@ import { LendQrPage } from '../pages/lend-qr/lend-qr';
     HomePage,
     KeyListPage,
     ItemDetailPage,
-    LendQrPage
+    LendQrPage,
+    LoginPage,
+    ConfirmPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
-    BarcodeScanner,
+    BarcodeScanner,    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
