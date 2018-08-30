@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the WaitpersonPage page.
@@ -22,4 +23,7 @@ export class WaitpersonPage {
     console.log('ionViewDidLoad WaitpersonPage');
   }
 
+  goHomePage(){
+    this.navCtrl.push(HomePage)
+  }
 }

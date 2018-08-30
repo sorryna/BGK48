@@ -1,51 +1,14 @@
 webpackJsonp([1],{
 
-<<<<<<< HEAD
-/***/ 280:
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-/***/ 278:
-=======
-<<<<<<< HEAD
-/***/ 278:
-=======
-/***/ 277:
->>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
->>>>>>> 49877ec73e388d87dbc10990d01dede6fda82c23
-=======
-/***/ 286:
->>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
->>>>>>> 300a439f1f232f8ea1d47c461c9da818959383bf
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReturnlistPageModule", function() { return ReturnlistPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__key_list__ = __webpack_require__(104);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist__ = __webpack_require__(102);
-=======
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LendQrPageModule", function() { return LendQrPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lend_qr__ = __webpack_require__(104);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lend_qr__ = __webpack_require__(103);
->>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
->>>>>>> 49877ec73e388d87dbc10990d01dede6fda82c23
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist__ = __webpack_require__(105);
->>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
->>>>>>> 300a439f1f232f8ea1d47c461c9da818959383bf
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist__ = __webpack_require__(106);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
