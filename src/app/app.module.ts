@@ -19,6 +19,7 @@ import { WaitpersonPage } from '../pages/waitperson/waitperson';
 import { ItemListPage } from '../pages/item-list/item-list';
 import { LoginPage } from '../pages/login/login';
 import { ConfirmPage } from '../pages/confirm/confirm';
+import { AdditemPage } from '../pages/additem/additem';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     WaitpersonPage,
     ItemListPage,
     LoginPage,
-    ConfirmPage
+    ConfirmPage,
+    AdditemPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     WaitpersonPage,
     ItemListPage,
     LoginPage,
-    ConfirmPage
+    ConfirmPage,
+    AdditemPage
   ],
   providers: [
     StatusBar,

@@ -2,7 +2,6 @@
   <ion-navbar>
     <ion-title text-center>
       <label> List A1</label>
-      <ion-icon ios="ios-add-circle" md="md-add-circle" style="float: right;"></ion-icon>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,12 +10,15 @@
     <ion-title text-center>
       Item List      
     </ion-title>
-    <ion-buttons right>
-        <button><ion-icon ios="ios-add-circle" md="md-add-circle"style="float: right;"></ion-icon></button>
-      </ion-buttons>
+    
   </ion-navbar>
 </ion-header> -->
+
+
 <ion-content padding>
+  <ion-buttons right>
+    <button><ion-icon ios="ios-add-circle" md="md-add-circle" style="float: right;"(click)="additem()"></ion-icon></button>
+  </ion-buttons>
   <ion-row>
     <ion-col col-6>
       <h4>รายการของ</h4>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ItemDetailPage } from '../item-detail/item-detail';
+import { AdditemPage } from '../additem/additem';
 
 /**
  * Generated class for the ItemListPage page.
@@ -23,8 +24,12 @@ export class ItemListPage {
     console.log('ionViewDidLoad ItemListPage');
   }
 
-  goDetail_list(){
+  goDetail_list() {
     this.navCtrl.push(ItemDetailPage);
+  }
+
+  additem() {
+    this.navCtrl.push(AdditemPage);
   }
 
 }
