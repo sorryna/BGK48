@@ -11,15 +11,12 @@ import { HomePage } from '../pages/home/home';
 import { KeyListPage } from '../pages/key-list/key-list';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { LendQrPage } from '../pages/lend-qr/lend-qr';
-<<<<<<< HEAD
 import { ReturnPage } from '../pages/returned/return';
 import { ReturnlistPage } from '../pages/returnlist/returnlist';
 import { WaitpersonPage } from '../pages/waitperson/waitperson';
-=======
 import { ItemListPage } from '../pages/item-list/item-list';
 import { LoginPage } from '../pages/login/login';
 import { ConfirmPage } from '../pages/confirm/confirm';
->>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 
 @NgModule({
   declarations: [
@@ -28,15 +25,12 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     KeyListPage,
     ItemDetailPage,
     LendQrPage,
-<<<<<<< HEAD
     ReturnPage,
     ReturnlistPage,
-    WaitpersonPage
-=======
+    WaitpersonPage,
     ItemListPage,
     LoginPage,
     ConfirmPage
->>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
   ],
   imports: [
     BrowserModule,
@@ -49,15 +43,12 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     KeyListPage,
     ItemDetailPage,
     LendQrPage,
-<<<<<<< HEAD
     ReturnPage,
     ReturnlistPage,
-    WaitpersonPage
-=======
+    WaitpersonPage,
     ItemListPage,
     LoginPage,
     ConfirmPage
->>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
   ],
   providers: [
     StatusBar,
