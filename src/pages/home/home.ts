@@ -5,7 +5,11 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 
 import { ItemDetailPage } from '../item-detail/item-detail';
+<<<<<<< HEAD
 import { ReturnPage } from '../returned/return';
+=======
+import { ItemListPage } from '../item-list/item-list';
+>>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 
 
 @Component({
@@ -14,13 +18,27 @@ import { ReturnPage } from '../returned/return';
 })
 
 export class HomePage {
+<<<<<<< HEAD
   public base64Image: any;
+=======
+>>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
   constructor(
     public navCtrl: NavController,
     private camera: Camera,
     private barcodeScanner: BarcodeScanner) {
 
   }
+<<<<<<< HEAD
+=======
+
+  goKeyListPage() {
+    this.navCtrl.push(KeyListPage);
+  }
+
+  goItemlist(){
+    this.navCtrl.push(ItemListPage);
+  }
+>>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 
   QRScan() {
     this.barcodeScanner.scan().then(barcodeData => {
@@ -39,20 +57,24 @@ export class HomePage {
     }
 
     this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       // Handle error
     });
   }
+<<<<<<< HEAD
   Showitem_detail() {
+=======
+
+  Showitem_detail(){
+>>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
     this.navCtrl.push(ItemDetailPage);
   
   }
 
+<<<<<<< HEAD
   Returned() {
     this.navCtrl.push(ReturnPage);
   }
+=======
+>>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 }
-

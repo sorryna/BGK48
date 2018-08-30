@@ -25685,3 +25685,15 @@ page-home .btn-right {
 page-home .item-md p {
   margin: 0 0 -31px;
 }
+
+page-home .pointer_card {
+  cursor: pointer;
+}
+
+page-item-list .qty_item {
+  text-align: center;
+}
+
+page-item-list .pointer_item {
+  cursor: pointer;
+}
