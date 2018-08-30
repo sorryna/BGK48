@@ -1,12 +1,69 @@
 <ion-header>
   <ion-navbar>
     <ion-title text-center>
-      รายการสิ่งของ
-      <button ion-button color="danger" style="float: right">Logout</button></ion-title>
+      <ion-row>
+        <ion-col col-4>Name</ion-col>
+        <ion-col col-4>รายการสิ่งของ</ion-col>
+        <ion-col col-4>
+          <button ion-button color="danger">Logout</button>
+        </ion-col>
+      </ion-row>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+<<<<<<< HEAD:src/pages/home/home.html
+  <ion-row>
+    <ion-col col-6>
+      <ion-card (click)="goItemlist()" class="pointer_card">
+        <ion-card-header>
+          <img src="../../assets/imgs/it.jpg" alt="">
+        </ion-card-header>
+        <ion-card-content>
+          <h3>A1</h3>
+          <p>ประเภท: IT</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col col-6>
+      <ion-card (click)="goItemlist()" class="pointer_card">
+        <ion-card-header>
+          <img src="../../assets/imgs/ขนม.jpg" alt="">
+        </ion-card-header>
+        <ion-card-content>
+          <h3>A2</h3>
+          <p>ประเภท: IT</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>
+      <ion-card (click)="goItemlist()" class="pointer_card">
+        <ion-card-header>
+          <img src="../../assets/imgs/it.jpg" alt="">
+        </ion-card-header>
+        <ion-card-content>
+          <h3>B1</h3>
+          <p>ประเภท: IT</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col col-6>
+      <ion-card (click)="goItemlist()" class="pointer_card">
+        <ion-card-header>
+          <img src="../../assets/imgs/ขนม.jpg" alt="">
+        </ion-card-header>
+        <ion-card-content>
+          <h3>B2</h3>
+          <p>ประเภท: IT</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+=======
 
   <ion-list>
     <ion-item-sliding>
@@ -94,6 +151,7 @@
       </ion-item>
     </ion-item-sliding>
   </ion-list>
+>>>>>>> 26139098a76c3acf8a3702fc5f8ff6c84dcd7872:BGK48ionic/src/pages/home/home.html
 </ion-content>
 
 <ion-footer ion-row>

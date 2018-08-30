@@ -11,8 +11,12 @@ import { HomePage } from '../pages/home/home';
 import { KeyListPage } from '../pages/key-list/key-list';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { LendQrPage } from '../pages/lend-qr/lend-qr';
+<<<<<<< HEAD:src/app/app.module.ts
+import { ItemListPage } from '../pages/item-list/item-list';
+=======
 import { LoginPage } from '../pages/login/login';
 import { ConfirmPage } from '../pages/confirm/confirm';
+>>>>>>> 26139098a76c3acf8a3702fc5f8ff6c84dcd7872:BGK48ionic/src/app/app.module.ts
 
 @NgModule({
   declarations: [
@@ -21,8 +25,12 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     KeyListPage,
     ItemDetailPage,
     LendQrPage,
+<<<<<<< HEAD:src/app/app.module.ts
+    ItemListPage
+=======
     LoginPage,
     ConfirmPage
+>>>>>>> 26139098a76c3acf8a3702fc5f8ff6c84dcd7872:BGK48ionic/src/app/app.module.ts
   ],
   imports: [
     BrowserModule,
@@ -35,8 +43,12 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     KeyListPage,
     ItemDetailPage,
     LendQrPage,
+<<<<<<< HEAD:src/app/app.module.ts
+    ItemListPage
+=======
     LoginPage,
     ConfirmPage
+>>>>>>> 26139098a76c3acf8a3702fc5f8ff6c84dcd7872:BGK48ionic/src/app/app.module.ts
   ],
   providers: [
     StatusBar,
