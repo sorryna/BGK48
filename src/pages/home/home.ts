@@ -3,10 +3,12 @@ import { NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
-import { KeyListPage } from '../key-list/key-list';
+
 import { ItemDetailPage } from '../item-detail/item-detail';
+import { ReturnPage } from '../returned/return';
 import { ItemListPage } from '../item-list/item-list';
 import { LoginPage } from '../login/login';
+import { KeyListPage } from '../key-list/key-list';
 
 
 @Component({
@@ -29,7 +31,7 @@ export class HomePage {
   goItemlist(){
     this.navCtrl.push(ItemListPage);
   }
-
+  
   QRScan() {
     this.barcodeScanner.scan().then(barcodeData => {
       console.log('Barcode data', barcodeData);
@@ -47,17 +49,22 @@ export class HomePage {
     }
 
     this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64 (DATA_URL):
+    //  let base64Image = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       // Handle error
     });
   }
-
-  Showitem_detail(){
+  Showitem_detail() {
     this.navCtrl.push(ItemDetailPage);
+  
   }
-
   goLoginPage(){
     this.navCtrl.push(LoginPage);
   }
 
+  Returned() {
+    this.navCtrl.push(ReturnPage);
+  }
 }

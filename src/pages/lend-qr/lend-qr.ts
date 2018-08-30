@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BorrowSelectPage } from '../borrow-select/borrow-select';
 
 /**
  * Generated class for the LendQrPage page.
@@ -20,6 +21,10 @@ export class LendQrPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LendQrPage');
+  }
+
+  BorrowSelectPage(){
+    this.navCtrl.push(BorrowSelectPage);
   }
 
 }
