@@ -6,6 +6,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { KeyListPage } from '../key-list/key-list';
 import { ItemDetailPage } from '../item-detail/item-detail';
 import { ItemListPage } from '../item-list/item-list';
+import { LoginPage } from '../login/login';
 
 
 @Component({
@@ -53,6 +54,10 @@ export class HomePage {
 
   Showitem_detail(){
     this.navCtrl.push(ItemDetailPage);
+  }
+
+  goLoginPage(){
+    this.navCtrl.push(LoginPage);
   }
 
 }
