@@ -15,18 +15,22 @@
 
 <ion-content padding>
   <ion-item-group>
-      
+
     <ion-item-divider color="light">A1</ion-item-divider>
 
-    <ion-item><ion-checkbox [(ngModel)]="mushrooms1"></ion-checkbox> <ion-label>Item1</ion-label></ion-item>
-    <ion-item><ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox> <ion-label>Item2</ion-label></ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="mushrooms1"></ion-checkbox>
+      <ion-label>Item1</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>
+      <ion-label>Item2</ion-label>
+    </ion-item>
   </ion-item-group>
 
   <ion-footer>
-  <button ion-button round (click)="waitperson()">ok</button>
+    <button ion-button round (click)="waitperson()">ok</button>
   </ion-footer>
 
 
 </ion-content>
-
-

@@ -5,11 +5,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 
 import { ItemDetailPage } from '../item-detail/item-detail';
-<<<<<<< HEAD
 import { ReturnPage } from '../returned/return';
-=======
 import { ItemListPage } from '../item-list/item-list';
->>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
+import { KeyListPage } from '../key-list/key-list';
 
 
 @Component({
@@ -18,18 +16,12 @@ import { ItemListPage } from '../item-list/item-list';
 })
 
 export class HomePage {
-<<<<<<< HEAD
-  public base64Image: any;
-=======
->>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
   constructor(
     public navCtrl: NavController,
     private camera: Camera,
     private barcodeScanner: BarcodeScanner) {
 
   }
-<<<<<<< HEAD
-=======
 
   goKeyListPage() {
     this.navCtrl.push(KeyListPage);
@@ -40,8 +32,11 @@ export class HomePage {
   goItemlist(){
     this.navCtrl.push(ItemListPage);
   }
+<<<<<<< HEAD
 >>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 >>>>>>> 49877ec73e388d87dbc10990d01dede6fda82c23
+=======
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
 
   QRScan() {
     this.barcodeScanner.scan().then(barcodeData => {
@@ -71,6 +66,7 @@ export class HomePage {
     });
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
   Showitem_detail() {
@@ -79,10 +75,14 @@ export class HomePage {
 >>>>>>> 49877ec73e388d87dbc10990d01dede6fda82c23
   Showitem_detail(){
 >>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
+=======
+  Showitem_detail() {
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
     this.navCtrl.push(ItemDetailPage);
   
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -92,4 +92,9 @@ export class HomePage {
 =======
 >>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 >>>>>>> 49877ec73e388d87dbc10990d01dede6fda82c23
+=======
+  Returned() {
+    this.navCtrl.push(ReturnPage);
+  }
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
 }

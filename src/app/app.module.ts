@@ -11,8 +11,11 @@ import { HomePage } from '../pages/home/home';
 import { KeyListPage } from '../pages/key-list/key-list';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { LendQrPage } from '../pages/lend-qr/lend-qr';
+<<<<<<< HEAD
 import { BorrowPage } from '../pages/borrow/borrow';
 import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
+=======
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
 import { ReturnPage } from '../pages/returned/return';
 import { ReturnlistPage } from '../pages/returnlist/returnlist';
 import { WaitpersonPage } from '../pages/waitperson/waitperson';
@@ -27,8 +30,11 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     KeyListPage,
     ItemDetailPage,
     LendQrPage,
+<<<<<<< HEAD
     BorrowPage,
     BorrowSelectPage,
+=======
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
     ReturnPage,
     ReturnlistPage,
     WaitpersonPage,
@@ -47,8 +53,11 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     KeyListPage,
     ItemDetailPage,
     LendQrPage,
+<<<<<<< HEAD
     BorrowPage,
     BorrowSelectPage,
+=======
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
     ReturnPage,
     ReturnlistPage,
     WaitpersonPage,

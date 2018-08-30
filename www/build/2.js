@@ -1,6 +1,7 @@
 webpackJsonp([2],{
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 277:
 =======
 <<<<<<< HEAD
@@ -9,10 +10,14 @@ webpackJsonp([2],{
 /***/ 276:
 >>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 >>>>>>> 49877ec73e388d87dbc10990d01dede6fda82c23
+=======
+/***/ 285:
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemDetailPageModule", function() { return ItemDetailPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
@@ -36,6 +41,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 >>>>>>> 26139098a76c3acf8a3702fc5f8ff6c84dcd7872:BGK48ionic/www/build/2.js
 >>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 >>>>>>> 49877ec73e388d87dbc10990d01dede6fda82c23
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReturnPageModule", function() { return ReturnPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__return__ = __webpack_require__(104);
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -45,6 +56,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 var ItemDetailPageModule = /** @class */ (function () {
     function ItemDetailPageModule() {
@@ -65,6 +77,8 @@ var ItemDetailPageModule = /** @class */ (function () {
 //# sourceMappingURL=item-detail.module.js.map
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
 var ReturnPageModule = /** @class */ (function () {
     function ReturnPageModule() {
     }
@@ -82,6 +96,7 @@ var ReturnPageModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=return.module.js.map
+<<<<<<< HEAD
 =======
 var KeyListPageModule = /** @class */ (function () {
     function KeyListPageModule() {
@@ -102,6 +117,8 @@ var KeyListPageModule = /** @class */ (function () {
 //# sourceMappingURL=key-list.module.js.map
 >>>>>>> 60c177f7c9e9cc0106a3fefa92b9ce7e95784e00
 >>>>>>> 49877ec73e388d87dbc10990d01dede6fda82c23
+=======
+>>>>>>> 30e81fab8b4d77ede7923bfb7418c95923b580e9
 
 /***/ })
 
