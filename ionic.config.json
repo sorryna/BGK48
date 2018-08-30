@@ -1,7 +1,0 @@
-{
-  "name": "BGK48",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
