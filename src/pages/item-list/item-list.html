@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title text-center>
-
-
       <label> List {{number_locker}}</label>
-      <ion-icon ios="ios-add-circle" md="md-add-circle" style="float:
-        right;" (click)="additem()"></ion-icon>
-
     </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="additem(number_locker)">
+          <ion-icon name="add-circle"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 <!-- <ion-header>

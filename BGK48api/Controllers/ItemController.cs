@@ -34,6 +34,14 @@ namespace BGK48api.Controllers
            return Collection.Find(x => x.Slot == slot).ToList();
         }
 
+        [HttpPost("[action]")]
+        public void create([FromBody]Item request)
+        {
+            request.Id = Guid.NewGuid().ToString();
+            request.Totalamount = request.Amount;
+            
+            Collection.InsertOne(request);
+        }
         // // POST api/values
         // [HttpPost]
         // public void Post([FromBody]string value)

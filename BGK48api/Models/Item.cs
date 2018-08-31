@@ -15,6 +15,5 @@ namespace BGK48api.Models
         public IEnumerable<string> Username { get; set; }
         public string Desc { get; set; } //รายละเอียด
         public string Picture {get; set;} 
-        public bool IsBorrow { get; set; }
     }
 }

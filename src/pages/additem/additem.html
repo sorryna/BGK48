@@ -10,20 +10,20 @@
     <img src="../../assets/imgs/image.png" style="float:center">
   </div>
   <br>
-  <ion-input type="text" placeholder="Item Name"></ion-input>
+  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>
   <br>
-  <ion-input type="number" placeholder="Amount"></ion-input>
+  <ion-input type="number" placeholder="Amount" [(ngModel)]="items.amount"></ion-input>
   <br>
-  <ion-input type="text" placeholder="Description"></ion-input>
+  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>
 </ion-content>
 
   <ion-footer>
     <ion-row>
-      <ion-col col=6>
+      <ion-col col-6>
         <button ion-button block (click)="goItemListPage()">Cancel</button>
       </ion-col>
-      <ion-col col=6>
-        <button ion-button block (click)="AddItemToListPage()">ok</button>
+      <ion-col col-6>
+        <button ion-button block (click)="Create()">ok</button>
       </ion-col>
     </ion-row>
   </ion-footer>

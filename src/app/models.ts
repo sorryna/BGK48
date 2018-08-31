@@ -9,11 +9,10 @@ export class Items {
         Username : string;
         desc : string;
         picture : string;
-        Isborrow : Boolean;
 }
 //property name start with lower case
 export class GlobalVarible {
-    static host: string = "https://localhost:5000";
+    static host: string = "http://localhost:5000";
 
     static httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })

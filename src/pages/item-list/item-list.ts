@@ -43,8 +43,8 @@ export class ItemListPage {
     this.navCtrl.push(ItemDetailPage);
   }
 
-  additem() {
-    this.navCtrl.push(AdditemPage);
+  additem(number_locker) {
+    this.navCtrl.push(AdditemPage, { slot: number_locker });
   }
 
 }
