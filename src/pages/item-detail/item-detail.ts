@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { LendQrPage } from '../lend-qr/lend-qr';
 import { HttpClient } from '@angular/common/http';
 import { Items, GlobalVarible } from '../../app/models';
@@ -21,7 +21,7 @@ export class ItemDetailPage {
   
   items: Items = new Items;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient,public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -48,5 +48,27 @@ export class ItemDetailPage {
 
   edit(data) {
     this.navCtrl.push(EditPage, { id: data })
+  }
+
+  showConfirm(id) {
+    const confirm = this.alertCtrl.create({
+      title: 'Confirm Delete?',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Ok',
+          handler: () => {
+            console.log('Agree clicked');
+            this.delete(id);
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 }
