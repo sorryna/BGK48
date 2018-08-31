@@ -24,12 +24,7 @@ export class ItemListPage {
   items: Items[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
-    this.number_locker = this.navParams.data.numberlocker;
-
-    this.http.get<Items[]>("http://localhost:5000/api/Item/GetItemslot/" + this.number_locker).subscribe(data => {
-      this.items = data;
-    });
-    console.log(this.items);
+    
     // this.http.get<Items[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.number_locker).subscribe( data=> {this.items = data;});  
     // console.log(this.items);
 
@@ -39,12 +34,21 @@ export class ItemListPage {
     console.log('ionViewDidLoad ItemListPage');
   }
 
-  goDetail_list() {
-    this.navCtrl.push(ItemDetailPage);
+  goDetail_list(data) {
+    this.navCtrl.push(ItemDetailPage, { id: data });
   }
 
   additem(number_locker) {
     this.navCtrl.push(AdditemPage, { slot: number_locker });
+  }
+
+  ionViewDidEnter() {
+    this.number_locker = this.navParams.data.numberlocker;
+
+    this.http.get<Items[]>("http://localhost:5000/api/Item/GetItemslot/" + this.number_locker).subscribe(data => {
+      this.items = data;
+    });
+    console.log(this.items);
   }
 
 }

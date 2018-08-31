@@ -25,6 +25,7 @@ import { ConfirmPage } from '../pages/confirm/confirm';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AdditemPage } from '../pages/additem/additem';
+import { EditPage } from '../pages/edit/edit';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AdditemPage } from '../pages/additem/additem';
     ItemListPage,
     LoginPage,
     ConfirmPage,
-    AdditemPage
+    AdditemPage,
+    EditPage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ import { AdditemPage } from '../pages/additem/additem';
     ItemListPage,
     LoginPage,
     ConfirmPage,
-    AdditemPage
+    AdditemPage,
+    EditPage
   ],
   providers: [
     StatusBar,

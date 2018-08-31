@@ -31,8 +31,7 @@ export class AdditemPage {
     this.items.slot = this.navParams.data.slot;
     this.http.post(GlobalVarible.host + "/api/Item/Create", this.items)
       .subscribe(data => {
-        this.navCtrl.push(ItemListPage, { numberlocker: this.items.slot });
-       
+        this.navCtrl.pop();
       });
   }
 

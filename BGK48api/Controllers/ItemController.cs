@@ -34,6 +34,12 @@ namespace BGK48api.Controllers
            return Collection.Find(x => x.Slot == slot).ToList();
         }
 
+        [HttpGet("[action]/{id}")]
+        public Item GetItem(string id)
+        {
+           return Collection.Find(x => x.Id == id).FirstOrDefault();
+        }
+
         [HttpPost("[action]")]
         public void create([FromBody]Item request)
         {
@@ -42,6 +48,20 @@ namespace BGK48api.Controllers
             
             Collection.InsertOne(request);
         }
+
+        [HttpPost("[action]/{id}")]
+        public void delete(string id)
+        {
+            Collection.DeleteOne(x => x.Id == id);
+        }
+
+        [HttpPost("[action]")]
+        public void edit([FromBody]Item request)
+        {
+            request.Totalamount = request.Amount;
+            Collection.ReplaceOne(x => x.Id == request.Id, request);
+        }
+
         // // POST api/values
         // [HttpPost]
         // public void Post([FromBody]string value)

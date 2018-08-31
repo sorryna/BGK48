@@ -13,9 +13,11 @@
         <img src="../../assets/imgs/img1.jpg" alt="">
     </ion-col>
     <ion-col col-12>
-      <p>ชื่อของ: ตุ๊กตาของน้องส้มโอค่ะ</p>
-      <p>จำนวน: 3 ตัว</p>
-      <p>รายละเอียยด: เป็นของที่คุณแม่ให้พกติดตัว นอนกอดสบาย</p>
+      <p>ชื่อของ: {{itemname}}</p>
+      <p>จำนวนทั้วหมด: {{itemtotalamount}}</p>
+      <p>จำนวนที่เหลือ: {{item_amount}}</p>
+
+      <p>รายละเอียยด: {{itemdesc}}</p>
     </ion-col>
 
   </ion-row>
@@ -26,9 +28,9 @@
 
 <ion-footer ion-row>
     <ion-col col-6>
-      <button ion-button block>แก้ไขรายละเอียดของ</button>
+      <button ion-button block (click)="edit(itemID)">EDIT</button>
     </ion-col>
     <ion-col col-6>
-      <button ion-button block>ลบ</button>
+      <button ion-button block (click)="delete(itemID)">DELETE</button>
     </ion-col>
   </ion-footer>
