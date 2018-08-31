@@ -20,6 +20,8 @@ import { ConfirmPage } from '../pages/confirm/confirm';
 import { BorrowPage } from '../pages/borrow/borrow';
 import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -38,6 +40,7 @@ import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -60,7 +63,8 @@ import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
     StatusBar,
     SplashScreen,
     Camera,
-    BarcodeScanner,    
+    BarcodeScanner,  
+    HttpClient,  
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

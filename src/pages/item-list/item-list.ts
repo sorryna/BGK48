@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ItemDetailPage } from '../item-detail/item-detail';
+import { HttpClient } from '@angular/common/http';
+
+import { Items, GlobalVarible } from '../../app/models';
 
 /**
  * Generated class for the ItemListPage page.
@@ -16,14 +19,26 @@ import { ItemDetailPage } from '../item-detail/item-detail';
 })
 export class ItemListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  number_locker: string;
+  items: Items[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
+    this.number_locker = this.navParams.data.numberlocker;
+
+    this.http.get<Items[]>("http://localhost:5000/api/Item/GetItemslot/" + this.number_locker).subscribe(data => {
+      this.items = data;
+    });
+    console.log(this.items);
+    // this.http.get<Items[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.number_locker).subscribe( data=> {this.items = data;});  
+    // console.log(this.items);
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ItemListPage');
   }
 
-  goDetail_list(){
+  goDetail_list() {
     this.navCtrl.push(ItemDetailPage);
   }
 

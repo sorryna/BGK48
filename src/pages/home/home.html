@@ -1,21 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title text-center>
-      <ion-row>
-        <ion-col col-4>Name</ion-col>
-        <ion-col col-4>รายการสิ่งของ</ion-col>
-        <ion-col col-4>
-          <button ion-button color="danger">Logout</button>
-        </ion-col>
-      </ion-row>
+      Store      
     </ion-title>
+    <ion-buttons right>
+        <button ion-button right color="danger" (click)="goLoginPage()" >Logout</button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-row>
     <ion-col col-6>
-      <ion-card (click)="goItemlist()" class="pointer_card">
+      <ion-card (click)="goItemlist('A1')" class="pointer_card">
+        
         <ion-card-header>
           <img src="../../assets/imgs/it.jpg" alt="">
         </ion-card-header>
@@ -26,7 +24,7 @@
       </ion-card>
     </ion-col>
     <ion-col col-6>
-      <ion-card (click)="goItemlist()" class="pointer_card">
+      <ion-card (click)="goItemlist('A2')" class="pointer_card">
         <ion-card-header>
           <img src="../../assets/imgs/ขนม.jpg" alt="">
         </ion-card-header>
@@ -39,7 +37,7 @@
   </ion-row>
   <ion-row>
     <ion-col col-6>
-      <ion-card (click)="goItemlist()" class="pointer_card">
+      <ion-card (click)="goItemlist('B1')" class="pointer_card">
         <ion-card-header>
           <img src="../../assets/imgs/it.jpg" alt="">
         </ion-card-header>
@@ -50,7 +48,7 @@
       </ion-card>
     </ion-col>
     <ion-col col-6>
-      <ion-card (click)="goItemlist()" class="pointer_card">
+      <ion-card (click)="goItemlist('B2')" class="pointer_card">
         <ion-card-header>
           <img src="../../assets/imgs/ขนม.jpg" alt="">
         </ion-card-header>
@@ -72,6 +70,6 @@
     <button ion-button block (click)="QRScan()">QR</button>
   </ion-col>
   <ion-col col-4>
-    <button ion-button block (click)="Camera()">Camera</button>
+    <button ion-button block (click)="Camera()">คืน</button>
   </ion-col>
 </ion-footer>
