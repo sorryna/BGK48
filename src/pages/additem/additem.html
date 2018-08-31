@@ -1,0 +1,29 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Item</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div text-center>
+    <img src="../../assets/imgs/image.png" style="float:center">
+  </div>
+  <br>
+  <ion-input type="text" placeholder="Item Name"></ion-input>
+  <br>
+  <ion-input type="number" placeholder="Amount"></ion-input>
+  <br>
+  <ion-input type="text" placeholder="Description"></ion-input>
+</ion-content>
+
+  <ion-footer>
+    <ion-row>
+      <ion-col col=6>
+        <button ion-button block (click)="goItemListPage()">Cancel</button>
+      </ion-col>
+      <ion-col col=6>
+        <button ion-button block (click)="AddItemToListPage()">ok</button>
+      </ion-col>
+    </ion-row>
+  </ion-footer>

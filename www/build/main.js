@@ -39,7 +39,7 @@ var BorrowSelectPage = /** @class */ (function () {
     };
     BorrowSelectPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-borrow-select',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/'<!--\n\n  Generated template for the BorrowSelectPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>borrow-select</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item>\n\n    <ion-label>ชื่อของที่จะยืม</ion-label>\n\n    <ion-checkbox color="blue" checked="true"></ion-checkbox>\n\n    <ion-select [(ngModel)]="borroamout" interface="popover">\n\n      <ion-option value="1">1</ion-option>\n\n      <ion-option value="2">2</ion-option>\n\n      <ion-option value="3">3</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n    <button ion-button block (click)="BorrowPage()">ยืม</button>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/,
+            selector: 'page-borrow-select',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n\n    <ion-title>Box Name</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item>\n\n    <ion-label>ชื่อของที่จะยืม</ion-label>\n\n    <ion-checkbox color="blue" checked="false"></ion-checkbox>\n\n    <ion-select [(ngModel)]="borroamout1" interface="popover">\n\n      <ion-option value="1">1</ion-option>\n\n      <ion-option value="2">2</ion-option>\n\n      <ion-option value="3">3</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>ชื่อของที่จะยืม</ion-label>\n\n    <ion-checkbox color="blue" checked="false"></ion-checkbox>\n\n    <ion-select [(ngModel)]="borroamout2" interface="popover">\n\n      <ion-option value="1">1</ion-option>\n\n      <ion-option value="2">2</ion-option>\n\n      <ion-option value="3">3</ion-option>\n\n      <ion-option value="4">4</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>ชื่อของที่จะยืม</ion-label>\n\n    <ion-checkbox color="blue" checked="false"></ion-checkbox>\n\n    <ion-select [(ngModel)]="borroamout3" interface="popover">\n\n      <ion-option value="1">1</ion-option>\n\n      <ion-option value="2">2</ion-option>\n\n    </ion-select>\n\n  </ion-item>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n    <button ion-button block (click)="BorrowPage()">ยืม</button>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], BorrowSelectPage);
@@ -84,7 +84,7 @@ var BorrowPage = /** @class */ (function () {
     };
     BorrowPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-borrow',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\borrow\borrow.html"*/'<!--\n\n  Generated template for the BorrowPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>borrow</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item>\n\n    <ion-label>QR SCAN</ion-label>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>Status : </ion-label>\n\n    <ion-label>AAAA</ion-label>\n\n  </ion-item>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <button ion-button block>OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\borrow\borrow.html"*/,
+            selector: 'page-borrow',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\borrow\borrow.html"*/'<!--\n\n  Generated template for the BorrowPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>borrow</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item>\n\n    <img src="../../assets/imgs/sample.png" alt="QRcode">\n\n  </ion-item>\n\n  <ion-item class="pointer_item" (click)="goDetail_list()">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        Item01\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        3\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item>\n\n  <ion-item class="pointer_item" (click)="goDetail_list()">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        Item03\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        1\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <button ion-button block (click)="goHomePage()">OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\borrow\borrow.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], BorrowPage);
@@ -134,7 +134,7 @@ var LendQrPage = /** @class */ (function () {
     };
     LendQrPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-lend-qr',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\lend-qr\lend-qr.html"*/'<!--\n\n  Generated template for the LendQrPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>lend-qr</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n      <img src="../../assets/imgs/sample.png" alt="">\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <button ion-button block (click)="BorrowSelectPage()">OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\lend-qr\lend-qr.html"*/,
+            selector: 'page-lend-qr',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\lend-qr\lend-qr.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>lend-qr</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n      <img src="../../assets/imgs/sample.png" alt="">\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <button ion-button block (click)="BorrowSelectPage()">OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\lend-qr\lend-qr.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], LendQrPage);
@@ -209,7 +209,7 @@ var ReturnPage = /** @class */ (function () {
     };
     ReturnPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-return',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returned\return.html"*/'<!-- \n\n  Generated template for the ReturnPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation. -->\n\n\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-item-group>\n\n    <ion-item-divider color="light">A1</ion-item-divider>\n\n    <ion-item>Item1<p style="text-align:right">จำนวน 1 ชิ้น</p></ion-item>\n\n    <ion-item>Item2<p style="text-align:right">จำนวน 1 ชิ้น</p></ion-item>\n\n  </ion-item-group>\n\n  <ion-item-group>\n\n    <ion-item-divider color="light">A2</ion-item-divider>\n\n    <ion-item>Item1<p style="text-align:right">จำนวน 1 ชิ้น</p></ion-item>\n\n    <ion-item>Item2<p style="text-align:right">จำนวน 1 ชิ้น</p> </ion-item>\n\n  </ion-item-group>\n\n\n\n  <ion-footer>\n\n    <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n    <button ion-button style="color:cyan" (click)="returnlist()">QR Scan</button>\n\n  </ion-footer>\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returned\return.html"*/,
+            selector: 'page-return',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returned\return.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item-group>\n\n    <ion-item-divider color="light">A1</ion-item-divider>\n\n    <ion-item>Item1<p style="text-align:right">จำนวน 1 ชิ้น</p></ion-item>\n\n    <ion-item>Item2<p style="text-align:right">จำนวน 1 ชิ้น</p></ion-item>\n\n  </ion-item-group>\n\n  <ion-item-group>\n\n    <ion-item-divider color="light">A2</ion-item-divider>\n\n    <ion-item>Item1<p style="text-align:right">จำนวน 1 ชิ้น</p></ion-item>\n\n    <ion-item>Item2<p style="text-align:right">จำนวน 1 ชิ้น</p> </ion-item>\n\n  </ion-item-group>\n\n</ion-content>\n\n<ion-footer>\n\n  <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n  <button ion-button block style="color:cyan" (click)="returnlist()">QR Scan</button>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returned\return.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
@@ -261,7 +261,7 @@ var ReturnlistPage = /** @class */ (function () {
     };
     ReturnlistPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-returnlist',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/'<!-- \n\n  Generated template for the ReturnlistPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation. -->\n\n\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-item-group>\n\n\n\n    <ion-item-divider color="light">A1</ion-item-divider>\n\n\n\n    <ion-item>\n\n      <ion-checkbox [(ngModel)]="mushrooms1"></ion-checkbox>\n\n      <ion-label>Item1</ion-label>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>\n\n      <ion-label>Item2</ion-label>\n\n    </ion-item>\n\n  </ion-item-group>\n\n\n\n  <ion-footer>\n\n    <button ion-button round (click)="waitperson()">ok</button>\n\n  </ion-footer>\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/,
+            selector: 'page-returnlist',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item-group>\n\n    <ion-item-divider color="light">A1</ion-item-divider>\n\n    <ion-item>\n\n      <ion-checkbox [(ngModel)]="mushrooms1"></ion-checkbox>\n\n      <ion-label>Item1</ion-label>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>\n\n      <ion-label>Item2</ion-label>\n\n    </ion-item>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <button ion-button block (click)="waitperson()">ok</button>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], ReturnlistPage);
@@ -306,7 +306,7 @@ var WaitpersonPage = /** @class */ (function () {
     };
     WaitpersonPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-waitperson',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\waitperson\waitperson.html"*/'<!--\n\n  Generated template for the WaitpersonPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n\n\n<img src="../../assets/imgs/sample.png" alt="QRcode">\n\n<br><br><br><br><br>\n\n<p style="text-align: center">Status: รอพยานในการคืน</p>\n\n  <ion-footer>\n\n    <button ion-button round>ok</button>\n\n  </ion-footer>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\waitperson\waitperson.html"*/,
+            selector: 'page-waitperson',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\waitperson\waitperson.html"*/'\n\n<ion-header>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <img src="../../assets/imgs/sample.png" alt="QRcode">\n\n  <br><br><br><br><br>\n\n  <p style="text-align: center">Status: รอพยานในการคืน</p>\n\n  <ion-footer>\n\n    <button ion-button block (click)="goHomePage()">ok</button>\n\n  </ion-footer>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\waitperson\waitperson.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], WaitpersonPage);
@@ -326,6 +326,7 @@ var WaitpersonPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_detail_item_detail__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__additem_additem__ = __webpack_require__(299);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -335,6 +336,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -365,13 +367,17 @@ var ItemListPage = /** @class */ (function () {
     ItemListPage.prototype.goDetail_list = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__item_detail_item_detail__["a" /* ItemDetailPage */]);
     };
+    ItemListPage.prototype.additem = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__additem_additem__["a" /* AdditemPage */]);
+    };
     ItemListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-item-list',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      <label> List {{number_locker}}</label>\n\n      <ion-icon class="pointer_item" ios="ios-add-circle" md="md-add-circle" style="float: right;"></ion-icon>\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    <ion-buttons right>\n\n        <button><ion-icon ios="ios-add-circle" md="md-add-circle"style="float: right;"></ion-icon></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list()">\n\n    <ion-row >\n\n      <ion-col col-6>\n\n        {{itemlist.name}}\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        {{itemlist.amount}}/{{itemlist.totalamount}}\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-item>\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/,
+            selector: 'page-item-list',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n\n\n\n\n      <label> List {{number_locker}}</label>\n\n      <ion-icon ios="ios-add-circle" md="md-add-circle" style="float:\n\n        right;" (click)="additem()"></ion-icon>\n\n\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list()">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        {{itemlist.name}}\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        {{itemlist.amount}}/{{itemlist.totalamount}}\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-item>\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object])
     ], ItemListPage);
     return ItemListPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=item-list.js.map
@@ -412,7 +418,7 @@ var KeyListPage = /** @class */ (function () {
     };
     KeyListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-key-list',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\key-list\key-list.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>KeyList</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-list-header>\n\n      <h1>รายชื่อ</h1>\n\n    </ion-list-header>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\key-list\key-list.html"*/,
+            selector: 'page-key-list',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\key-list\key-list.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n\n    <ion-title>รายชื่อคนถือกุญแจ</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\key-list\key-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], KeyListPage);
@@ -444,49 +450,53 @@ webpackEmptyAsyncContext.id = 124;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../pages/additem/additem.module": [
+		298,
+		13
+	],
 	"../pages/borrow-select/borrow-select.module": [
 		287,
-		10
+		24
 	],
 	"../pages/borrow/borrow.module": [
 		288,
-		9
+		23
 	],
 	"../pages/confirm/confirm.module": [
 		289,
-		8
+		22
 	],
 	"../pages/item-detail/item-detail.module": [
 		290,
-		7
+		21
 	],
 	"../pages/item-list/item-list.module": [
 		294,
-		6
+		20
 	],
 	"../pages/key-list/key-list.module": [
 		291,
-		5
+		19
 	],
 	"../pages/lend-qr/lend-qr.module": [
 		292,
-		4
+		18
 	],
 	"../pages/login/login.module": [
 		293,
-		3
+		17
 	],
 	"../pages/returned/return.module": [
 		295,
-		2
+		16
 	],
 	"../pages/returnlist/returnlist.module": [
 		296,
-		1
+		15
 	],
 	"../pages/waitperson/waitperson.module": [
 		297,
-		0
+		14
 	]
 };
 function webpackAsyncContext(req) {
@@ -586,21 +596,23 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_key_list_key_list__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_item_detail_item_detail__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_lend_qr_lend_qr__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_returned_return__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_returnlist_returnlist__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_waitperson_waitperson__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_item_list_item_list__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_login_login__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_confirm_confirm__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_borrow_borrow__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_borrow_select_borrow_select__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_borrow_borrow__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_borrow_select_borrow_select__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_returned_return__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_returnlist_returnlist__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_waitperson_waitperson__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_item_list_item_list__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_login_login__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_confirm_confirm__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_common_http__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_additem_additem__ = __webpack_require__(299);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -633,14 +645,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_key_list_key_list__["a" /* KeyListPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_item_detail_item_detail__["a" /* ItemDetailPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_lend_qr_lend_qr__["a" /* LendQrPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_borrow_borrow__["a" /* BorrowPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_borrow_select_borrow_select__["a" /* BorrowSelectPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_returned_return__["a" /* ReturnPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_returnlist_returnlist__["a" /* ReturnlistPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_waitperson_waitperson__["a" /* WaitpersonPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_item_list_item_list__["a" /* ItemListPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_confirm_confirm__["a" /* ConfirmPage */]
+                __WEBPACK_IMPORTED_MODULE_12__pages_borrow_borrow__["a" /* BorrowPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_borrow_select_borrow_select__["a" /* BorrowSelectPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_returned_return__["a" /* ReturnPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_returnlist_returnlist__["a" /* ReturnlistPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_waitperson_waitperson__["a" /* WaitpersonPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_item_list_item_list__["a" /* ItemListPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_confirm_confirm__["a" /* ConfirmPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_additem_additem__["a" /* AdditemPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -657,7 +670,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/item-list/item-list.module#ItemListPageModule', name: 'ItemListPage', segment: 'item-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/returned/return.module#ReturnPageModule', name: 'ReturnPage', segment: 'return', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/returnlist/returnlist.module#ReturnlistPageModule', name: 'ReturnlistPage', segment: 'returnlist', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/waitperson/waitperson.module#WaitpersonPageModule', name: 'WaitpersonPage', segment: 'waitperson', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/waitperson/waitperson.module#WaitpersonPageModule', name: 'WaitpersonPage', segment: 'waitperson', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/additem/additem.module#AdditemPageModule', name: 'AdditemPage', segment: 'additem', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -668,14 +682,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_key_list_key_list__["a" /* KeyListPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_item_detail_item_detail__["a" /* ItemDetailPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_lend_qr_lend_qr__["a" /* LendQrPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_borrow_borrow__["a" /* BorrowPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_borrow_select_borrow_select__["a" /* BorrowSelectPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_returned_return__["a" /* ReturnPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_returnlist_returnlist__["a" /* ReturnlistPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_waitperson_waitperson__["a" /* WaitpersonPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_item_list_item_list__["a" /* ItemListPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_confirm_confirm__["a" /* ConfirmPage */]
+                __WEBPACK_IMPORTED_MODULE_12__pages_borrow_borrow__["a" /* BorrowPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_borrow_select_borrow_select__["a" /* BorrowSelectPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_returned_return__["a" /* ReturnPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_returnlist_returnlist__["a" /* ReturnlistPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_waitperson_waitperson__["a" /* WaitpersonPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_item_list_item_list__["a" /* ItemListPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_confirm_confirm__["a" /* ConfirmPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_additem_additem__["a" /* AdditemPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -737,6 +752,79 @@ var MyApp = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 299:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdditemPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_list_item_list__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(167);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the AdditemPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AdditemPage = /** @class */ (function () {
+    function AdditemPage(navCtrl, navParams, camera) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.camera = camera;
+    }
+    AdditemPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AdditemPage');
+    };
+    AdditemPage.prototype.goItemListPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__item_list_item_list__["a" /* ItemListPage */]);
+    };
+    AdditemPage.prototype.AddItemToListPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__item_list_item_list__["a" /* ItemListPage */]);
+    };
+    AdditemPage.prototype.Camera = function () {
+        var options = {
+            quality: 100,
+            destinationType: this.camera.DestinationType.FILE_URI,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE
+        };
+        this.camera.getPicture(options).then(function (imageData) {
+            // imageData is either a base64 encoded string or a file URI
+            // If it's base64 (DATA_URL):
+            var base64Image = 'data:image/jpeg;base64,' + imageData;
+        }, function (err) {
+            // Handle error
+        });
+    };
+    AdditemPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-additem',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\additem\additem.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Add Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="../../assets/imgs/image.png" style="float:center">\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Amount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col=6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col=6>\n\n        <button ion-button block (click)="AddItemToListPage()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\additem\additem.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]])
+    ], AdditemPage);
+    return AdditemPage;
+}());
+
+//# sourceMappingURL=additem.js.map
 
 /***/ }),
 
@@ -846,11 +934,13 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__item_detail_item_detail__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__returned_return__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__item_list_item_list__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__key_list_key_list__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__returned_return__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__item_list_item_list__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__key_list_key_list__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__confirm_confirm__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__item_detail_item_detail__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -869,21 +959,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, camera, barcodeScanner) {
+    // items: Item[];
+    function HomePage(navCtrl, camera, barcodeScanner, navParams) {
         this.navCtrl = navCtrl;
         this.camera = camera;
         this.barcodeScanner = barcodeScanner;
+        this.navParams = navParams;
+        this.selectedItem = navParams.get('item');
     }
+    HomePage.prototype.itemTapped = function (event, item) {
+        // That's right, we're pushing to ourselves!
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__["a" /* BorrowSelectPage */], {
+            item: item
+        });
+    };
     HomePage.prototype.goKeyListPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__key_list_key_list__["a" /* KeyListPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__key_list_key_list__["a" /* KeyListPage */]);
     };
     HomePage.prototype.goItemlist = function (data) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__item_list_item_list__["a" /* ItemListPage */], { numberlocker: data });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__item_list_item_list__["a" /* ItemListPage */], { numberlocker: data });
     };
     HomePage.prototype.QRScan = function () {
+        var _this = this;
         this.barcodeScanner.scan().then(function (barcodeData) {
             console.log('Barcode data', barcodeData);
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__["a" /* BorrowSelectPage */]);
+            if (barcodeData.text != undefined)
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__confirm_confirm__["a" /* ConfirmPage */], barcodeData.text);
         }).catch(function (err) {
             console.log('Error', err);
         });
@@ -904,23 +1009,22 @@ var HomePage = /** @class */ (function () {
         });
     };
     HomePage.prototype.Showitem_detail = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__item_detail_item_detail__["a" /* ItemDetailPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_10__item_detail_item_detail__["a" /* ItemDetailPage */]);
     };
     HomePage.prototype.goLoginPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__login_login__["a" /* LoginPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__login_login__["a" /* LoginPage */]);
     };
     HomePage.prototype.Returned = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__returned_return__["a" /* ReturnPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__returned_return__["a" /* ReturnPage */]);
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Store      \n\n    </ion-title>\n\n    <ion-buttons right>\n\n        <button ion-button right color="danger" (click)="goLoginPage()" >Logout</button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="Camera()">คืน</button>\n\n  </ion-col>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Store\n\n    </ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button right color="danger" (click)="goLoginPage()">Logout</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n<<<<<<< HEAD\n\n\n\n=======\n\n>>>>>>> ea92318d266ba26452cdbd0bbc5d22fdd44f6876\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="goKeyListPage()">Key</button>\n\n  </ion-col>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _d || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home.js.map

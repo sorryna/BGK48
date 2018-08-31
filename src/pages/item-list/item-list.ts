@@ -4,6 +4,7 @@ import { ItemDetailPage } from '../item-detail/item-detail';
 import { HttpClient } from '@angular/common/http';
 
 import { Items, GlobalVarible } from '../../app/models';
+import { AdditemPage } from '../additem/additem';
 
 /**
  * Generated class for the ItemListPage page.
@@ -40,6 +41,10 @@ export class ItemListPage {
 
   goDetail_list() {
     this.navCtrl.push(ItemDetailPage);
+  }
+
+  additem() {
+    this.navCtrl.push(AdditemPage);
   }
 
 }

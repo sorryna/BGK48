@@ -1,8 +1,12 @@
 <ion-header>
   <ion-navbar>
     <ion-title text-center>
+
+
       <label> List {{number_locker}}</label>
-      <ion-icon class="pointer_item" ios="ios-add-circle" md="md-add-circle" style="float: right;"></ion-icon>
+      <ion-icon ios="ios-add-circle" md="md-add-circle" style="float:
+        right;" (click)="additem()"></ion-icon>
+
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,9 +15,7 @@
     <ion-title text-center>
       Item List      
     </ion-title>
-    <ion-buttons right>
-        <button><ion-icon ios="ios-add-circle" md="md-add-circle"style="float: right;"></ion-icon></button>
-      </ion-buttons>
+    
   </ion-navbar>
 </ion-header> -->
 <ion-content padding>
@@ -26,7 +28,7 @@
     </ion-col>
   </ion-row>
   <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list()">
-    <ion-row >
+    <ion-row>
       <ion-col col-6>
         {{itemlist.name}}
       </ion-col>
