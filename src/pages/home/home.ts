@@ -17,9 +17,7 @@ import { ItemDetailPage } from '../item-detail/item-detail';
 })
 
 export class HomePage {
-
- 
-
+  
     selectedItem: any;
     // items: Item[];
     constructor(
@@ -44,8 +42,6 @@ export class HomePage {
 
 
     goItemlist(data) {
-
-
       this.navCtrl.push(ItemListPage, { numberlocker: data });
     }
 

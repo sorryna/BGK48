@@ -27,7 +27,7 @@ export class EditPage {
   }
 
   ionViewDidEnter() {
-    this.http.get<Items>("http://localhost:5000/api/Item/GetItem/" + this.navParams.data.id)
+    this.http.get<Items>(GlobalVarible.host + "/api/Item/GetItem/" + this.navParams.data.id)
       .subscribe(data => {
         this.items = data;
       });

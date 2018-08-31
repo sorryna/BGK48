@@ -45,7 +45,7 @@ export class ItemListPage {
   ionViewDidEnter() {
     this.number_locker = this.navParams.data.numberlocker;
 
-    this.http.get<Items[]>("http://localhost:5000/api/Item/GetItemslot/" + this.number_locker).subscribe(data => {
+    this.http.get<Items[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.number_locker).subscribe(data => {
       this.items = data;
     });
     console.log(this.items);

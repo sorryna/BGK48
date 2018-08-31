@@ -18,16 +18,10 @@ import { EditPage } from '../edit/edit';
   templateUrl: 'item-detail.html',
 })
 export class ItemDetailPage {
-  items: Items;
-  itemname: string;
-  item_amount: number;
-  itemtotalamount: number;
-  itemdesc: string;
-  itemID: string;
+  
+  items: Items = new Items;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
-
-
   }
 
   ionViewDidLoad() {
@@ -38,26 +32,18 @@ export class ItemDetailPage {
     this.navCtrl.push(LendQrPage);
   }
 
-  showitemDetail(data) {
-    // console.log(data);
-    this.itemname = data.name;
-    this.item_amount = data.amount;
-    this.itemtotalamount = data.totalamount;
-    this.itemdesc = data.desc;
-    this.itemID = data.id;
-  }
-
   delete(id) {
-    this.http.post("http://localhost:5000/api/Item/delete/" + id, {})
+    this.http.post(GlobalVarible.host + "/api/Item/delete/" + id, {})
       .subscribe(data => {
         this.navCtrl.pop();
       });
   }
 
   ionViewDidEnter() {
-    this.http.get<Items>("http://localhost:5000/api/Item/GetItem/" + this.navParams.data.id).subscribe(data => {
-      this.showitemDetail(data)
-    });
+    this.http.get<Items>(GlobalVarible.host + "/api/Item/GetItem/" + this.navParams.data.id)
+      .subscribe(data => {
+        this.items = data;
+      });
   }
 
   edit(data) {
