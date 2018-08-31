@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { CameraOptions } from '@ionic-native/camera';
+//import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+//import { CameraOptions } from '@ionic-native/camera';
 import { ReturnlistPage } from '../returnlist/returnlist';
 /**
  * Generated class for the ReturnPage page.
@@ -21,7 +21,8 @@ export class ReturnPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private barcodeScanner: BarcodeScanner) {
+//  private barcodeScanner: BarcodeScanner
+  ) {
   }
 
   ionViewDidLoad() {

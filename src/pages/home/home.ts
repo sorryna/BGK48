@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
-
 import { ItemDetailPage } from '../item-detail/item-detail';
 import { ReturnPage } from '../returned/return';
 import { ItemListPage } from '../item-list/item-list';
