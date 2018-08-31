@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Items, GlobalVarible } from '../../app/models';
 import { HttpClient } from '@angular/common/http';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the EditPage page.
@@ -19,7 +20,7 @@ export class EditPage {
 
   items: Items = new Items;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient,public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -27,7 +28,7 @@ export class EditPage {
   }
 
   ionViewDidEnter() {
-    this.http.get<Items>("http://localhost:5000/api/Item/GetItem/" + this.navParams.data.id)
+    this.http.get<Items>(GlobalVarible.host + "/api/Item/GetItem/" + this.navParams.data.id)
       .subscribe(data => {
         this.items = data;
       });
@@ -38,6 +39,28 @@ export class EditPage {
       .subscribe(data => {
         this.navCtrl.pop();
       });
+  }
+
+  showConfirm() {
+    const confirm = this.alertCtrl.create({
+      title: 'Confirm edit?',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Ok',
+          handler: () => {
+            console.log('Agree clicked');
+            this.edit();
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }

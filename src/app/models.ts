@@ -12,7 +12,7 @@ export class Items {
 }
 //property name start with lower case
 export class GlobalVarible {
-    static host: string = "http://localhost:5000";
+    static host: string = "http://demoionic.azurewebsites.net";
 
     static httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
