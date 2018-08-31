@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the BorrowPage page.
@@ -22,4 +23,7 @@ export class BorrowPage {
     console.log('ionViewDidLoad BorrowPage');
   }
 
+  goHomePage(){
+    this.navCtrl.push(HomePage)
+  }
 }

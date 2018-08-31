@@ -1,9 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title text-center>
-      <label> List A1</label>
-      <ion-icon ios="ios-add-circle" md="md-add-circle" style="float: right;"></ion-icon>
+      <label> List {{number_locker}}</label>
     </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="additem(number_locker)">
+          <ion-icon name="add-circle"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 <!-- <ion-header>
@@ -11,9 +15,7 @@
     <ion-title text-center>
       Item List      
     </ion-title>
-    <ion-buttons right>
-        <button><ion-icon ios="ios-add-circle" md="md-add-circle"style="float: right;"></ion-icon></button>
-      </ion-buttons>
+    
   </ion-navbar>
 </ion-header> -->
 <ion-content padding>
@@ -25,34 +27,15 @@
       <h4>จำนวน</h4>
     </ion-col>
   </ion-row>
-  <ion-item class="pointer_item" (click)="goDetail_list()">
+  <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list(itemlist.id)">
     <ion-row>
       <ion-col col-6>
-        Item1
+        {{itemlist.name}}
       </ion-col>
       <ion-col col-6 class="qty_item">
-        3/3
+        {{itemlist.amount}}/{{itemlist.totalamount}}
       </ion-col>
     </ion-row>
-  </ion-item>
-  <ion-item class="pointer_item">
-    <ion-row>
-      <ion-col col-6>
-        Item2
-      </ion-col>
-      <ion-col col-6 class="qty_item">
-        1/2
-      </ion-col>
-    </ion-row>
-  </ion-item>
-  <ion-item class="pointer_item">
-    <ion-row>
-      <ion-col col-6>
-        Item2
-      </ion-col>
-      <ion-col col-6 class="qty_item">
-        0/1
-      </ion-col>
-    </ion-row>
+
   </ion-item>
 </ion-content>

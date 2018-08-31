@@ -12,14 +12,30 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label>QR SCAN</ion-label>
+    <img src="../../assets/imgs/sample.png" alt="QRcode">
   </ion-item>
-  <ion-item>
-    <ion-label>Status : </ion-label>
-    <ion-label>AAAA</ion-label>
+  <ion-item class="pointer_item" (click)="goDetail_list()">
+    <ion-row>
+      <ion-col col-6>
+        Item01
+      </ion-col>
+      <ion-col col-6 class="qty_item">
+        3
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item class="pointer_item" (click)="goDetail_list()">
+    <ion-row>
+      <ion-col col-6>
+        Item03
+      </ion-col>
+      <ion-col col-6 class="qty_item">
+        1
+      </ion-col>
+    </ion-row>
   </ion-item>
 </ion-content>
 
 <ion-footer>
-  <button ion-button block>OK</button>
+  <button ion-button block (click)="goHomePage()">OK</button>
 </ion-footer>

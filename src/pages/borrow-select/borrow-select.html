@@ -1,25 +1,35 @@
-<!--
-  Generated template for the BorrowSelectPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>borrow-select</ion-title>
+  <ion-navbar text-center>
+    <ion-title>Box Name</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
   <ion-item>
     <ion-label>ชื่อของที่จะยืม</ion-label>
-    <ion-checkbox color="blue" checked="true"></ion-checkbox>
-    <ion-select [(ngModel)]="borroamout" interface="popover">
+    <ion-checkbox color="blue" checked="false"></ion-checkbox>
+    <ion-select [(ngModel)]="borroamout1" interface="popover">
       <ion-option value="1">1</ion-option>
       <ion-option value="2">2</ion-option>
       <ion-option value="3">3</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>ชื่อของที่จะยืม</ion-label>
+    <ion-checkbox color="blue" checked="false"></ion-checkbox>
+    <ion-select [(ngModel)]="borroamout2" interface="popover">
+      <ion-option value="1">1</ion-option>
+      <ion-option value="2">2</ion-option>
+      <ion-option value="3">3</ion-option>
+      <ion-option value="4">4</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>ชื่อของที่จะยืม</ion-label>
+    <ion-checkbox color="blue" checked="false"></ion-checkbox>
+    <ion-select [(ngModel)]="borroamout3" interface="popover">
+      <ion-option value="1">1</ion-option>
+      <ion-option value="2">2</ion-option>
     </ion-select>
   </ion-item>
 </ion-content>

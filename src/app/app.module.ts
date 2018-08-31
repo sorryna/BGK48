@@ -20,6 +20,14 @@ import { ItemListPage } from '../pages/item-list/item-list';
 import { LoginPage } from '../pages/login/login';
 import { ConfirmPage } from '../pages/confirm/confirm';
 
+
+
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+import { AdditemPage } from '../pages/additem/additem';
+import { EditPage } from '../pages/edit/edit';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,10 +42,13 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     WaitpersonPage,
     ItemListPage,
     LoginPage,
-    ConfirmPage
+    ConfirmPage,
+    AdditemPage,
+    EditPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -54,13 +65,16 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     WaitpersonPage,
     ItemListPage,
     LoginPage,
-    ConfirmPage
+    ConfirmPage,
+    AdditemPage,
+    EditPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
-    BarcodeScanner,    
+    BarcodeScanner,  
+    HttpClient,  
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
