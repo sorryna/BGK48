@@ -10,6 +10,7 @@ import { KeyListPage } from '../key-list/key-list';
 import { BorrowSelectPage } from '../borrow-select/borrow-select';
 import { ConfirmPage } from '../confirm/confirm';
 import { ItemDetailPage } from '../item-detail/item-detail';
+import { Userlogin } from '../../app/models';
 
 @Component({
   selector: 'page-home',
@@ -26,6 +27,9 @@ export class HomePage {
       private barcodeScanner: BarcodeScanner,
       public navParams: NavParams) {
       this.selectedItem = navParams.get('item');
+    
+      // console.log(navParams.data.Username);
+      console.log("logingname>>"+Userlogin.loginname);
     }
 
     itemTapped(event, item) {
@@ -42,19 +46,20 @@ export class HomePage {
 
 
     goItemlist(data) {
-      this.navCtrl.push(ItemListPage, { numberlocker: data });
+      this.navCtrl.push(ItemListPage, { numberlocker: data , Username : this.navParams.data.Username});
     }
 
 
 
     QRScan() {
-      this.barcodeScanner.scan().then(barcodeData => {
-        console.log('Barcode data', barcodeData);
-        this.navCtrl.push(BorrowSelectPage)
-        if (barcodeData.text != undefined) this.navCtrl.push(ConfirmPage, barcodeData.text);
-      }).catch(err => {
-        console.log('Error', err);
-      });
+      // this.barcodeScanner.scan().then(barcodeData => {
+      //   console.log('Barcode data', barcodeData);
+      //   // this.navCtrl.push(BorrowSelectPage)
+      //   if (barcodeData.text != undefined) this.navCtrl.push(BorrowSelectPage,{text :"A1"});
+      // }).catch(err => {
+      //   console.log('Error', err);
+      // });
+      this.navCtrl.push(BorrowSelectPage,{text :"A1"});
     }
 
 
@@ -84,7 +89,6 @@ export class HomePage {
 
 
     goLoginPage() {
-
       this.navCtrl.push(LoginPage);
     }
 

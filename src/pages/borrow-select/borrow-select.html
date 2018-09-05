@@ -1,39 +1,42 @@
 <ion-header>
   <ion-navbar text-center>
-    <ion-title>Box Name</ion-title>
+    <ion-title>{{boxName}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>ชื่อของที่จะยืม</ion-label>
-    <ion-checkbox color="blue" checked="false"></ion-checkbox>
-    <ion-select [(ngModel)]="borroamout1" interface="popover">
-      <ion-option value="1">1</ion-option>
-      <ion-option value="2">2</ion-option>
-      <ion-option value="3">3</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label>ชื่อของที่จะยืม</ion-label>
-    <ion-checkbox color="blue" checked="false"></ion-checkbox>
-    <ion-select [(ngModel)]="borroamout2" interface="popover">
-      <ion-option value="1">1</ion-option>
-      <ion-option value="2">2</ion-option>
-      <ion-option value="3">3</ion-option>
-      <ion-option value="4">4</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label>ชื่อของที่จะยืม</ion-label>
-    <ion-checkbox color="blue" checked="false"></ion-checkbox>
-    <ion-select [(ngModel)]="borroamout3" interface="popover">
-      <ion-option value="1">1</ion-option>
-      <ion-option value="2">2</ion-option>
-    </ion-select>
-  </ion-item>
+  <div *ngFor="let itemlist of items">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-1>
+          <ion-checkbox color="blue" (ionChange)="checkeditem(itemlist,$event)"></ion-checkbox>
+        </ion-col>
+        <ion-col col-3>
+          <p> {{itemlist.name}}</p><br>
+        </ion-col>
+        <ion-col col-2>
+          <p>{{itemlist.totalamount}}</p>
+        </ion-col>
+        <ion-col col-2>
+          <p>{{itemlist.amount}}</p>
+        </ion-col>
+        <ion-col col-4>
+          <ion-input type="number" min="0" max="{{itemlist.amount}}" [(ngModel)]="itemlist.borrowqty" placeholder="จำนวนที่ยืม"></ion-input>
+        </ion-col>
+      </ion-row>
+
+
+
+      <!-- <ion-label>Employee</ion-label>
+        <ion-select [(ngModel)]="employee" [compareWith]="compareFn">
+          <ion-option *ngFor="let itemlist.totalamount of num" [value]="num"></ion-option>
+        </ion-select> -->
+    </ion-grid>
+
+
+  </div>
 </ion-content>
 
 <ion-footer ion-row>
-    <button ion-button block (click)="BorrowPage()">ยืม</button>
+  <button ion-button block (click)="BorrowPage()">ยืม</button>
 </ion-footer>

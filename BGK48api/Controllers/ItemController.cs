@@ -15,6 +15,7 @@ namespace BGK48api.Controllers
     public class ItemController : Controller
     {
         IMongoCollection<Item> Collection { get; set; }
+        IMongoCollection<Borrow> BowCollection { get; set; }
 
         public ItemController()
         {
@@ -26,6 +27,7 @@ namespace BGK48api.Controllers
             var mongoClient = new MongoClient(settings);
             var database = mongoClient.GetDatabase("borrowdb");
             Collection = database.GetCollection<Item>("Items");
+            BowCollection = database.GetCollection<Borrow>("borrow");
         }
 
         [HttpGet("[action]/{slot}")]
@@ -58,10 +60,15 @@ namespace BGK48api.Controllers
         [HttpPost("[action]")]
         public void edit([FromBody]Item request)
         {
-            request.Totalamount = request.Amount;
+            // request.Totalamount = request.Amount;
             Collection.ReplaceOne(x => x.Id == request.Id, request);
         }
 
+        [HttpPost("[action]")]
+        public void addBorrow([FromBody]Borrow request){
+            request.Id = Guid.NewGuid().ToString();
+            BowCollection.InsertOne(request);
+        }
         // // POST api/values
         // [HttpPost]
         // public void Post([FromBody]string value)
@@ -80,4 +87,5 @@ namespace BGK48api.Controllers
         // {
         // }
     }
+   
 }
