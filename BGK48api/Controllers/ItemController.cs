@@ -42,6 +42,12 @@ namespace BGK48api.Controllers
            return Collection.Find(x => x.Id == id).FirstOrDefault();
         }
 
+        [HttpGet("[action]")]
+        public IEnumerable<Item> List()
+        {
+            return Collection.Find(x => true).ToList();
+        }
+
         [HttpPost("[action]")]
         public void create([FromBody]Item request)
         {
