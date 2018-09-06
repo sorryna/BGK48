@@ -12,7 +12,7 @@ namespace BGK48api.Models
         public string Slot { get; set; }
         public int Amount {get; set;}
         public int Totalamount {get; set;}
-        public IEnumerable<string> Username { get; set; }
+        public string Username { get; set; }
         public string Desc { get; set; } //รายละเอียด
         public string Picture {get; set;} 
     }

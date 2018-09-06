@@ -21,13 +21,16 @@ export class BorrowSelectPage {
   boxName: string;
   numborrowItem: number;
   borrowItem = [];
+
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
     this.boxName = navParams.data.text;
+    console.log(navParams.data.text);
   }
 
   ionViewDidLoad() {
     this.http.get<BorrowItem[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.navParams.data.text).subscribe(data => {
+      console.log(data);
       var borrowItems = data.map(item => {
         var borrowItem = new BorrowItem()
         borrowItem.id = item.id;
@@ -48,9 +51,11 @@ export class BorrowSelectPage {
       var borrowingItem = new BorrowingItem();
       borrowingItem.items = seletedItem;
       borrowingItem.borrower = Userlogin.loginname;
-      let option = { "headers": { "Content-Type": "application/json" } };
-      this.http.post(GlobalVarible.host + "/api/Item/addBorrow", borrowingItem,option).subscribe((data:BorrowingItem) => {
-          console.log(data.id);
+          console.log(borrowingItem.items);
+        
+      
+      this.http.post(GlobalVarible.host + "/api/Item/addBorrow", borrowingItem,GlobalVarible.httpOptions).subscribe((data:BorrowingItem) => {
+         this.navCtrl.push(BorrowPage,{BorrowId:data.id,dataBorrowList:borrowingItem.items});
       });
      
   }

@@ -11,29 +11,55 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <img src="../../assets/imgs/sample.png" alt="QRcode">
-  </ion-item>
-  <ion-item class="pointer_item" (click)="goDetail_list()">
+
+   <ion-grid>
+  <ion-row>
+    <ion-col text-center>
+      <img src="{{genQrCode}}" alt="QRcode">
+  
+    </ion-col>
+  </ion-row>
+      
+
+   </ion-grid>
+
+  <ion-grid>
+    <ion-list-header>
+      <ion-row>
+        <ion-col col-2 text-left>
+          #
+        </ion-col>
+        <ion-col col-6 text-center>
+          ชื่อของที่ยืม
+        </ion-col>
+        <ion-col col-4 text-center>
+          จำนวนที่ยืม
+        </ion-col>
+      </ion-row>
+    </ion-list-header>
+  </ion-grid>
+  <ion-grid>
+    <ion-item style="margin-top: -23px;">
+      <ion-row *ngFor="let borrowList of databorrowList;index as i">
+        <ion-col col-2>{{i+1}}</ion-col>
+        <ion-col col-6 text-center>{{borrowList.name}}</ion-col>
+        <ion-col col-4 text-center>{{borrowList.borrowqty}}</ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-grid>
+  <!-- <ion-item (click)="goDetail_list()">
     <ion-row>
       <ion-col col-6>
-        Item01
+
       </ion-col>
       <ion-col col-6 class="qty_item">
         3
       </ion-col>
     </ion-row>
-  </ion-item>
-  <ion-item class="pointer_item" (click)="goDetail_list()">
-    <ion-row>
-      <ion-col col-6>
-        Item03
-      </ion-col>
-      <ion-col col-6 class="qty_item">
-        1
-      </ion-col>
-    </ion-row>
-  </ion-item>
+  </ion-item> -->
+
+
 </ion-content>
 
 <ion-footer>

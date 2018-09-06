@@ -21,7 +21,7 @@ import { Items, GlobalVarible } from '../../app/models';
 export class ConfirmPage {
  
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
-  
+  console.log(navParams.data.BorrowingIdRe);
   }
 
   ionViewDidLoad() {

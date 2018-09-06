@@ -76,7 +76,13 @@ namespace BGK48api.Controllers
             return resulte;
 
 
-    }
+        }
+
+        [HttpPost("[action]/{id}")]
+        public void deleteBorrow(string id)
+        {
+          BowCollection.DeleteOne(x => x.Id == id);
+        }
     // // POST api/values
     // [HttpPost]
     // public void Post([FromBody]string value)
@@ -94,9 +100,9 @@ namespace BGK48api.Controllers
     // public void Delete(int id)
     // {
     // }
-    
 
 
-    }
+
+  }
    
 }

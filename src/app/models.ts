@@ -33,7 +33,7 @@ export class BorrowingItem {
 
 //property name start with lower case
 export class GlobalVarible {
-    static host: string = "https://localhost:44328";
+    static host: string = "http://demoionic.azurewebsites.net";
 
     static httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -42,4 +42,8 @@ export class GlobalVarible {
 
 export class Userlogin {
     static loginname: string;
+}
+
+export class BorrowingId{
+    static borrowingId: string;
 }
