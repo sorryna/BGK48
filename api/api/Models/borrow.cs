@@ -16,9 +16,9 @@ namespace BGK48api.Models
 
     }
 
-    public class BorrowItem
-    {
-        public string Id { get; set; }
-        public int BorrowQty { get; set; }
-    }
+  public class BorrowItem
+  {
+    public string Id { get; set; }
+    public int BorrowQty { get; set; }
+  }
 }

@@ -29,8 +29,27 @@ namespace BGK48api.Controllers
             Collection = database.GetCollection<Item>("Items");
             BowCollection = database.GetCollection<Borrow>("borrow");
         }
+    //แสดงรายการยืนของ
+    [HttpGet("{id}")]
+    public IEnumerable<Item> GetMyBorrow(string id)
+    {
+      //ใช้ id ที่รับมา ดึงข้อมูลจากตาราง borrow มาเข้าobject myBorrow
+      var myBorrow = BowCollection.Find(it => it.Id == id).FirstOrDefault();
+      
+      //select จะเป็นการวน loop ของ item ที่มีทั้งหมด ในmyBorrow 
+      var items = myBorrow.Items.Select(it => {
+        //นำข้อมูล id list items ที่อยู่ในobject myBorrow มาดึงข้อมูลตาราง items
+        var item = Collection.Find(x => x.Id == it.Id).FirstOrDefault();
+        return new Item
+        {
+          Id = it.Id,
+          Name = item.Name
+        };
+      });
+      return items.ToList();
+    }
 
-        [HttpGet("[action]/{slot}")]
+    [HttpGet("[action]/{slot}")]
         public IEnumerable<Item> GetItemslot(string slot)
         {
            return Collection.Find(x => x.Slot == slot).ToList();
