@@ -27,7 +27,7 @@ namespace BGK48api.Controllers
             var database = mongoClient.GetDatabase("borrowdb");
             Collection = database.GetCollection<Item>("Items");
         }
-
+        
         [HttpGet("[action]/{slot}")]
         public IEnumerable<Item> GetItemslot(string slot)
         {
