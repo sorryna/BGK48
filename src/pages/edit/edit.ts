@@ -41,6 +41,8 @@ export class EditPage {
       });
   }
 
+
+  
   showConfirm() {
     const confirm = this.alertCtrl.create({
       title: 'Confirm edit?',
