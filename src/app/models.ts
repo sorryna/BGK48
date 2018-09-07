@@ -44,6 +44,7 @@ export class Userlogin {
     static loginname: string;
 }
 
+
 export class BorrowingId{
     static borrowingId: string;
 }

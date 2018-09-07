@@ -10,8 +10,8 @@ namespace BGK48api.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public string Slot { get; set; }
-        public int Amount {get; set;}
-        public int Totalamount {get; set;}
+        public int Amount {get; set;} //จำนวนที่เหลือ
+        public int Totalamount {get; set;} //จำนวนทั้งหมด
         public string Username { get; set; }
         public string Desc { get; set; } //รายละเอียด
         public string Picture {get; set;} 
