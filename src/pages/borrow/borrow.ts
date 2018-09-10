@@ -27,7 +27,7 @@ export class BorrowPage {
     BorrowingId.borrowingId = navParams.data.BorrowId;
     // console.log(this.databorrowList[0]);
         
-    this.genQrCode = "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl="+navParams.data.BorrowId;
+    this.genQrCode = "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=Borrow"+navParams.data.BorrowId;
   }
 
 

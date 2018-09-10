@@ -30,7 +30,6 @@ export class BorrowSelectPage {
 
   ionViewDidLoad() {
     this.http.get<BorrowItem[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.navParams.data.text).subscribe(data => {
-      console.log(data);
       var borrowItems = data.map(item => {
         var borrowItem = new BorrowItem()
         borrowItem.id = item.id;

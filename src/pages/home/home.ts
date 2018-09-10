@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
@@ -10,7 +10,8 @@ import { KeyListPage } from '../key-list/key-list';
 import { BorrowSelectPage } from '../borrow-select/borrow-select';
 import { ConfirmPage } from '../confirm/confirm';
 import { ItemDetailPage } from '../item-detail/item-detail';
-import { Userlogin, BorrowingId } from '../../app/models';
+import { Userlogin, BorrowingId, GlobalVarible, BorrowingItem } from '../../app/models';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
@@ -20,13 +21,17 @@ import { Userlogin, BorrowingId } from '../../app/models';
 export class HomePage {
 
   selectedItem: any;
-  showQRtext:string;
+  showQRtext: string;
+ 
+
   // items: Item[];
   constructor(
     public navCtrl: NavController,
     private camera: Camera,
     private barcodeScanner: BarcodeScanner,
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    private alertCtrl: AlertController,
+    private http: HttpClient) {
     this.selectedItem = navParams.get('item');
 
     // console.log(navParams.data.Username);
@@ -54,21 +59,66 @@ export class HomePage {
 
   QRScan() {
     // BorrowingId.borrowingId
-    // this.barcodeScanner.scan().then(barcodeData => {
-    //   console.log('Barcode data', barcodeData.text);
-    //   this.showQRtext = barcodeData.text;
-    //   // this.navCtrl.push(BorrowSelectPage)
-    //   // barcodeData.text != undefined
-    //   if (barcodeData.text.length == 36) {
-    //     this.navCtrl.push(ConfirmPage, { BorrowingIdRe: barcodeData.text });
-    //   }
-    //   else {
-    //     this.navCtrl.push(BorrowSelectPage, { text: barcodeData.text});
-    //   }
-    // }).catch(err => {
-    //   console.log('Error', err);
-    // });
-    this.navCtrl.push(BorrowSelectPage,{text :"A1"});
+    this.barcodeScanner.scan().then(barcodeData => {
+      console.log('Barcode data', barcodeData.text);
+      this.showQRtext = barcodeData.text;
+      // this.navCtrl.push(BorrowSelectPage)
+      // barcodeData.text != undefined
+      var strQr = barcodeData.text;
+      var stwTextQr = null;
+
+      var subStr = strQr.substring(6);
+
+
+
+      if (stwTextQr = strQr.startsWith("Borrow") == true) {
+        // this.http.get<BorrowingItem>(GlobalVarible.host + "/api/Item/GetBorrowitemList/" + subStr).subscribe((data) => {
+        //   this.updatewitness = data;
+        //   console.log(this.updatewitness)
+        // });
+        let alert = this.alertCtrl.create({
+          title: 'พยานยืนยันการยืม',
+          message: 'คุณแน่ใจนะว่าต้องการเป็นพยานการยืมของ',
+          buttons: [
+            {
+              text: 'ยกเลิก',
+              role: 'cancel',
+              handler: () => {
+
+              }
+            },
+            {
+              text: 'ยืนยัน',
+              handler: () => {
+               let data = {
+                 'id':subStr,
+                 'witness':Userlogin.loginname
+               }
+                this.http.post(GlobalVarible.host + "/api/Item/updateWitness",data)
+                .subscribe(data => {
+                  this.navCtrl.pop();
+                });
+
+
+
+              }
+            }
+          ]
+        });
+        alert.present();
+
+        // this.navCtrl.push(ConfirmPage, { BorrowingIdRe: subStr });
+      }
+      else if (stwTextQr = strQr.startsWith("Return") == true) {
+
+      }
+      else {
+        this.navCtrl.push(BorrowSelectPage, { text: barcodeData.text });
+      }
+    }).catch(err => {
+      console.log('Error', err);
+    });
+    // this.navCtrl.push(BorrowSelectPage,{text :"A1"});
   }
 
 

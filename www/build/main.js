@@ -13,8 +13,12 @@ webpackJsonp([13],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_list_item_list__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(27);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(21);
 >>>>>>> de0d60cc57841992e80e1409020d2af034663c36
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(19);
+>>>>>>> a48c7909123a3408bc8465880b97cd5798bb542e
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -230,7 +234,7 @@ var ReturnlistPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -265,7 +269,7 @@ var BorrowPage = /** @class */ (function () {
         this.databorrowList = navParams.data.dataBorrowList;
         __WEBPACK_IMPORTED_MODULE_3__app_models__["b" /* BorrowingId */].borrowingId = navParams.data.BorrowId;
         // console.log(this.databorrowList[0]);
-        this.genQrCode = "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=" + navParams.data.BorrowId;
+        this.genQrCode = "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=Borrow" + navParams.data.BorrowId;
     }
 <<<<<<< HEAD
     WaitpersonPage.prototype.ionViewDidLoad = function () {
@@ -647,8 +651,12 @@ var KeyListPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models__ = __webpack_require__(27);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(21);
 >>>>>>> de0d60cc57841992e80e1409020d2af034663c36
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(19);
+>>>>>>> a48c7909123a3408bc8465880b97cd5798bb542e
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -875,7 +883,7 @@ module.exports = webpackAsyncContext;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfirmPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -979,7 +987,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_item_list_item_list__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_login_login__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_confirm_confirm__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_common_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_additem_additem__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_edit_edit__ = __webpack_require__(115);
 >>>>>>> de0d60cc57841992e80e1409020d2af034663c36
@@ -1106,7 +1114,7 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return GlobalVarible; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Userlogin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return BorrowingId; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(19);
 
 var Items = /** @class */ (function () {
     function Items() {
@@ -1229,7 +1237,11 @@ var MyApp = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__item_detail_item_detail__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_models__ = __webpack_require__(27);
+<<<<<<< HEAD
 >>>>>>> de0d60cc57841992e80e1409020d2af034663c36
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_common_http__ = __webpack_require__(19);
+>>>>>>> a48c7909123a3408bc8465880b97cd5798bb542e
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1250,13 +1262,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = /** @class */ (function () {
     // items: Item[];
-    function HomePage(navCtrl, camera, barcodeScanner, navParams) {
+    function HomePage(navCtrl, camera, barcodeScanner, navParams, alertCtrl, http) {
         this.navCtrl = navCtrl;
         this.camera = camera;
         this.barcodeScanner = barcodeScanner;
         this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.http = http;
         this.selectedItem = navParams.get('item');
         // console.log(navParams.data.Username);
         console.log("logingname>>" + __WEBPACK_IMPORTED_MODULE_10__app_models__["f" /* Userlogin */].loginname);
@@ -1274,22 +1289,58 @@ var HomePage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__item_list_item_list__["a" /* ItemListPage */], { numberlocker: data, Username: this.navParams.data.Username });
     };
     HomePage.prototype.QRScan = function () {
+        var _this = this;
         // BorrowingId.borrowingId
-        // this.barcodeScanner.scan().then(barcodeData => {
-        //   console.log('Barcode data', barcodeData.text);
-        //   this.showQRtext = barcodeData.text;
-        //   // this.navCtrl.push(BorrowSelectPage)
-        //   // barcodeData.text != undefined
-        //   if (barcodeData.text.length == 36) {
-        //     this.navCtrl.push(ConfirmPage, { BorrowingIdRe: barcodeData.text });
-        //   }
-        //   else {
-        //     this.navCtrl.push(BorrowSelectPage, { text: barcodeData.text});
-        //   }
-        // }).catch(err => {
-        //   console.log('Error', err);
-        // });
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__["a" /* BorrowSelectPage */], { text: "A1" });
+        this.barcodeScanner.scan().then(function (barcodeData) {
+            console.log('Barcode data', barcodeData.text);
+            _this.showQRtext = barcodeData.text;
+            // this.navCtrl.push(BorrowSelectPage)
+            // barcodeData.text != undefined
+            var strQr = barcodeData.text;
+            var stwTextQr = null;
+            var subStr = strQr.substring(6);
+            if (stwTextQr = strQr.startsWith("Borrow") == true) {
+                // this.http.get<BorrowingItem>(GlobalVarible.host + "/api/Item/GetBorrowitemList/" + subStr).subscribe((data) => {
+                //   this.updatewitness = data;
+                //   console.log(this.updatewitness)
+                // });
+                var alert_1 = _this.alertCtrl.create({
+                    title: 'พยานยืนยันการยืม',
+                    message: 'คุณแน่ใจนะว่าต้องการเป็นพยานการยืมของ',
+                    buttons: [
+                        {
+                            text: 'ยกเลิก',
+                            role: 'cancel',
+                            handler: function () {
+                            }
+                        },
+                        {
+                            text: 'ยืนยัน',
+                            handler: function () {
+                                var data = {
+                                    'id': subStr,
+                                    'witness': __WEBPACK_IMPORTED_MODULE_10__app_models__["f" /* Userlogin */].loginname
+                                };
+                                _this.http.post(__WEBPACK_IMPORTED_MODULE_10__app_models__["d" /* GlobalVarible */].host + "/api/Item/updateWitness", data)
+                                    .subscribe(function (data) {
+                                    _this.navCtrl.pop();
+                                });
+                            }
+                        }
+                    ]
+                });
+                alert_1.present();
+                // this.navCtrl.push(ConfirmPage, { BorrowingIdRe: subStr });
+            }
+            else if (stwTextQr = strQr.startsWith("Return") == true) {
+            }
+            else {
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__["a" /* BorrowSelectPage */], { text: barcodeData.text });
+            }
+        }).catch(function (err) {
+            console.log('Error', err);
+        });
+        // this.navCtrl.push(BorrowSelectPage,{text :"A1"});
     };
     HomePage.prototype.Camera = function () {
         var options = {
@@ -1326,7 +1377,9 @@ var HomePage = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_common_http__["a" /* HttpClient */]])
     ], HomePage);
     return HomePage;
 }());
@@ -1399,7 +1452,7 @@ var BorrowSelectPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__additem_additem__ = __webpack_require__(114);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_detail_item_detail__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__additem_additem__ = __webpack_require__(108);
 >>>>>>> de0d60cc57841992e80e1409020d2af034663c36
@@ -1478,7 +1531,7 @@ var ItemListPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_edit__ = __webpack_require__(113);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lend_qr_lend_qr__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_edit__ = __webpack_require__(115);
 >>>>>>> de0d60cc57841992e80e1409020d2af034663c36
@@ -1591,7 +1644,7 @@ var ItemDetailPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_borrow__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(27);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1625,7 +1678,6 @@ var BorrowSelectPage = /** @class */ (function () {
     BorrowSelectPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_models__["d" /* GlobalVarible */].host + "/api/Item/GetItemslot/" + this.navParams.data.text).subscribe(function (data) {
-            console.log(data);
             var borrowItems = data.map(function (item) {
                 var borrowItem = new __WEBPACK_IMPORTED_MODULE_4__app_models__["a" /* BorrowItem */]();
                 borrowItem.id = item.id;
