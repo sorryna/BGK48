@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BGK48api.Models
+namespace api.Models
 {
     public class Borrow
     {
@@ -19,6 +19,7 @@ namespace BGK48api.Models
   public class BorrowItem
   {
     public string Id { get; set; }
+    public string slot { get; set; }
     public int BorrowQty { get; set; }
   }
 }
