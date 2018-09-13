@@ -36,6 +36,7 @@ export class BorrowSelectPage {
         borrowItem.name = item.name;
         borrowItem.amount = item.amount;
         borrowItem.totalamount = item.totalamount;
+        borrowItem.slot = this.navParams.data.text;
         borrowItem.ischecked = false
         return borrowItem;
       });
@@ -50,7 +51,7 @@ export class BorrowSelectPage {
       var borrowingItem = new BorrowingItem();
       borrowingItem.items = seletedItem;
       borrowingItem.borrower = Userlogin.loginname;
-          console.log(borrowingItem.items);
+          console.log(borrowingItem);
         
       
       this.http.post(GlobalVarible.host + "/api/Item/addBorrow", borrowingItem,GlobalVarible.httpOptions).subscribe((data:BorrowingItem) => {

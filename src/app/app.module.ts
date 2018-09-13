@@ -9,6 +9,8 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 
+
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { KeyListPage } from '../pages/key-list/key-list';
@@ -29,6 +31,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AdditemPage } from '../pages/additem/additem';
 import { EditPage } from '../pages/edit/edit';
+import { GroupByPipe } from '../group-by.pipe';
 
 
 @NgModule({
@@ -47,7 +50,8 @@ import { EditPage } from '../pages/edit/edit';
     LoginPage,
     ConfirmPage,
     AdditemPage,
-    EditPage
+    EditPage,
+    GroupByPipe
   ],
   imports: [
     BrowserModule,
@@ -85,3 +89,4 @@ import { EditPage } from '../pages/edit/edit';
   ]
 })
 export class AppModule {}
+

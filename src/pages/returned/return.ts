@@ -3,39 +3,67 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 //import { CameraOptions } from '@ionic-native/camera';
 import { ReturnlistPage } from '../returnlist/returnlist';
-/**
- * Generated class for the ReturnPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { HttpClient } from '@angular/common/http';
+import { ReturnItemRequest, GlobalVarible, Userlogin, ReturnListItemRequest } from '../../app/models';
+import { GroupByPipe } from '../../group-by.pipe';
+ 
+
+
+
 
 @IonicPage()
 @Component({
+  
   selector: 'page-return',
   templateUrl: 'return.html',
+  providers : [GroupByPipe]
+ 
+  
+  
 })
 export class ReturnPage {
   [x: string]: any;
-
+  ReturnItems: Array<ReturnItemRequest>;
+  ReItems:any;
+  GroupReturnItem:any;
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams,
-//  private barcodeScanner: BarcodeScanner
-  ) {
+    public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner, private http: HttpClient,private groupByPipe: GroupByPipe) {
+   
   }
 
+  ionViewDidEnter(){
+    this.http.get<ReturnItemRequest[]>(GlobalVarible.host + "/api/Item/GetItemreturn/" + Userlogin.loginname).subscribe(data => {
+      this.ReturnItems = data;
+      // this.ReItems = data.grou
+      console.log(this.ReturnItems);
+    });
+  }
+  // var borrowItems = data.map(item => {
+  //   var borrowItem = new BorrowItem()
+  //   borrowItem.id = item.id;
+  //   borrowItem.name = item.name;
+  //   borrowItem.amount = item.amount;
+  //   borrowItem.totalamount = item.totalamount;
+  //   borrowItem.slot = this.navParams.data.text;
+  //   borrowItem.ischecked = false
+  //   return borrowItem;
+  // });
+  // this.items = borrowItems;
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReturnPage');
   }
 
-  // QRcode(){
-  //   this.barcodeScanner.scan().then(barcodeData => {
-  //     console.log('Barcode data', barcodeData);
-  //    }).catch(err => {
-  //        console.log('Error', err);
-  //    });
-  // }
+  QRcode(){
+    // this.barcodeScanner.scan().then(barcodeData => {
+    //   if(barcodeData.text != undefined){
+    //     this.navCtrl.push(ReturnlistPage,{text:barcodeData.text});
+    //   }
+    //  }).catch(err => {
+    //      console.log('Error', err);
+    //  });
+     this.navCtrl.push(ReturnlistPage,{text:"A1"});
+  }
 
   // Camera(){
   //   const options: CameraOptions = {
@@ -44,7 +72,7 @@ export class ReturnPage {
   //     encodingType: this.camera.EncodingType.JPEG,
   //     mediaType: this.camera.MediaType.PICTURE
   //   }
-    
+
   //   this.camera.getPicture(options).then((imageData) => {
   //    // imageData is either a base64 encoded string or a file URI
   //    // If it's base64 (DATA_URL):
@@ -54,7 +82,7 @@ export class ReturnPage {
   //   });
   // }
 
-  returnlist(){
-    this.navCtrl.push(ReturnlistPage)
-  }
+  // returnlist() {
+  //   this.navCtrl.push(ReturnlistPage)
+  // }
 }

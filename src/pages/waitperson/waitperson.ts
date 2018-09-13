@@ -15,8 +15,10 @@ import { HomePage } from '../home/home';
   templateUrl: 'waitperson.html',
 })
 export class WaitpersonPage {
-
+  genQrCode:string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.genQrCode = "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl="+navParams.data.textQR;
   }
 
   ionViewDidLoad() {
