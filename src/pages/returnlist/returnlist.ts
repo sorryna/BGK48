@@ -50,7 +50,7 @@ export class ReturnlistPage {
     var ReisCheck = this.ReturnItemslot[this.indexofdata].items.filter(item => item.ischecked == true);
     var Reitemupdate = new ReturnItemRequest();
     Reitemupdate.items = ReisCheck;
-    Reitemupdate.returnuser = Userlogin.loginname;
+    
 
 
 

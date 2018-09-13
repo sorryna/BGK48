@@ -61,6 +61,7 @@ namespace BGK48api.Controllers
     [HttpGet("[action]/{id}")]
     public Item GetItem(string id)
     {
+
       return Collection.Find(x => x.Id == id).FirstOrDefault();
     }
 
