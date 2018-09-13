@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { LendQrPage } from '../lend-qr/lend-qr';
 import { HttpClient } from '@angular/common/http';
-import { Items} from '../../app/models';
+import { Items, GlobalVarible } from '../../app/models';
 import { EditPage } from '../edit/edit';
 
 /**
@@ -33,14 +33,6 @@ export class ItemDetailPage {
   }
 
   delete(id) {
-<<<<<<< HEAD
-    this.http.post("http://localhost:54194/api/Item/delete/" + id, {})
-  }
-
-  ionViewDi
-  dEnter() {
-    this.http.get<Items>("http://localhost:54194/api/Item/GetItem/" + this.navParams.data.id)
-=======
     this.http.post(GlobalVarible.host + "/api/Item/delete/" + id, {})
       .subscribe(data => {
         this.navCtrl.pop();
@@ -49,7 +41,6 @@ export class ItemDetailPage {
 
   ionViewDidEnter() {
     this.http.get<Items>(GlobalVarible.host + "/api/Item/GetItem/" + this.navParams.data.id)
->>>>>>> a48c7909123a3408bc8465880b97cd5798bb542e
       .subscribe(data => {
         this.items = data;
       });
