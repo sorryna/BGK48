@@ -21,5 +21,6 @@ namespace api.Models
     public string Id { get; set; }
     public string slot { get; set; }
     public int BorrowQty { get; set; }
+    public int ReturnQty { get; set; }
   }
 }
