@@ -7,7 +7,7 @@
 
 <ion-content padding>
   <div text-center>
-    <img src="../../assets/imgs/img1.jpg" style="float:center">
+    <img src="../../assets/imgs/img1.jpg" style="float:center" (click)="presentActionSheet()">
   </div>
   <br>
   <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>
