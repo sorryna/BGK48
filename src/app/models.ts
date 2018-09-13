@@ -31,6 +31,24 @@ export class BorrowingItem {
     witness: string;
 }
 
+export class ReturnItemRequest {
+    id: string;
+    borrower: string;
+    witness: string;
+    returnuser:string;
+    items: ReturnListItemRequest[];
+
+}
+export class ReturnListItemRequest{
+     id:string;
+     slot:string;
+     name:string;
+     qty:number;
+     
+     idreturnitem: string;
+     ischecked: boolean
+}
+
 //property name start with lower case
 export class GlobalVarible {
     static host: string = "http://demoionic.azurewebsites.net";
@@ -45,6 +63,6 @@ export class Userlogin {
 }
 
 
-export class BorrowingId{
+export class BorrowingId {
     static borrowingId: string;
 }

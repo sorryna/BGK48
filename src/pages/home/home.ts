@@ -97,10 +97,7 @@ export class HomePage {
                 this.http.post(GlobalVarible.host + "/api/Item/updateWitness",data)
                 .subscribe(data => {
                   this.navCtrl.pop();
-                });
-
-
-
+                })
               }
             }
           ]
