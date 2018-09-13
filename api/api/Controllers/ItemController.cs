@@ -61,6 +61,7 @@ namespace BGK48api.Controllers
     [HttpGet("[action]/{id}")]
     public Item GetItem(string id)
     {
+
       return Collection.Find(x => x.Id == id).FirstOrDefault();
     }
 
@@ -159,19 +160,13 @@ namespace BGK48api.Controllers
     public void updateWitness([FromBody]Borrow request)
     {
       var builderItemamount = Builders<Item>.Update;
-<<<<<<< HEAD
 
-=======
->>>>>>> 81cf93c36adca31512e38ff7d3103329803f4300
       var getBorrow = BowCollection.Find(bId => bId.Id == request.Id).ToList();
       foreach (var borrow in getBorrow)
       {
         foreach (var borrowItem in borrow.Items)
         { // ได้ Id ของ Items มาแล้ว
-<<<<<<< HEAD
           //var getBorrowItemId = BowItemollection.Find(bId => bId.Id == borrowItem.Id).FirstOrDefault();
-=======
->>>>>>> 81cf93c36adca31512e38ff7d3103329803f4300
           var findItem = Collection.Find(idItem => idItem.Id == borrowItem.Id).FirstOrDefault();
           findItem.Amount = findItem.Amount - borrowItem.BorrowQty;
           var updateAmount = builderItemamount.Set(x => x.Amount, findItem.Amount);
@@ -179,7 +174,6 @@ namespace BGK48api.Controllers
         }
       }
 
-<<<<<<< HEAD
 
 
 
@@ -192,8 +186,6 @@ namespace BGK48api.Controllers
       //}
 
 
-=======
->>>>>>> 81cf93c36adca31512e38ff7d3103329803f4300
       var builder = Builders<Borrow>.Update;
       var update = builder
         .Set(x => x.witness, request.witness);
@@ -221,10 +213,7 @@ namespace BGK48api.Controllers
       BowCollection.DeleteOne(x => x.Id == id);
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 81cf93c36adca31512e38ff7d3103329803f4300
   }
 }
    

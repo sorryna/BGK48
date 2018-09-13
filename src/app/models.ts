@@ -18,6 +18,7 @@ export class BorrowItem {
     amount: number;
     totalamount: number;
     borrowqty: Number;
+    returnqty: Number;
     Username: string;
     desc: string;
     picture: string;
