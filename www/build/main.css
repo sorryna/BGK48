@@ -25697,3 +25697,23 @@ page-item-list .qty_item {
 page-item-list .pointer_item {
   cursor: pointer;
 }
+
+page-login .error {
+  color: #df3e3e;
+  font-size: 11px;
+}
+
+page-login .error1 {
+  color: #4b4b4b;
+  border-bottom: 1px solid #ff0000;
+}
+
+page-returnlist .error {
+  color: #df3e3e;
+  font-size: 11px;
+}
+
+page-returnlist .error1 {
+  color: #4b4b4b;
+  border-bottom: 1px solid #ff0000;
+}

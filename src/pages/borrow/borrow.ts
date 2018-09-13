@@ -30,7 +30,6 @@ export class BorrowPage {
     this.genQrCode = "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=Borrow"+navParams.data.BorrowId;
   }
 
-
   ionViewDidLoad() {
    
     this.navBar.backButtonClick = (e:UIEvent)=>{
