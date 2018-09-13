@@ -7,7 +7,7 @@
 
 <ion-content padding>
   <div text-center>
-    <img src="../../assets/imgs/image.png" style="float:center">
+    <img src="{{pathForImage(lastImage)}}" style="float:center" (click)="presentActionSheet()" [hidden]="lastImage === null">
   </div>
   <br>
   <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>
