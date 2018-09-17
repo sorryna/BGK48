@@ -8,9 +8,12 @@ import { ItemListPage } from '../item-list/item-list';
 import { LoginPage } from '../login/login';
 import { KeyListPage } from '../key-list/key-list';
 import { BorrowSelectPage } from '../borrow-select/borrow-select';
-import { ConfirmPage } from '../confirm/confirm';
 import { ItemDetailPage } from '../item-detail/item-detail';
+<<<<<<< HEAD
 import { Userlogin, BorrowingId, GlobalVarible, BorrowingItem, ReturnItemRequest } from '../../app/models';
+=======
+import { Userlogin, GlobalVarible, BorrowingItem } from '../../app/models';
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 import { HttpClient } from '@angular/common/http';
 import { ReturnsuccessPage } from '../returnsuccess/returnsuccess';
 
@@ -32,11 +35,12 @@ export class HomePage {
     private barcodeScanner: BarcodeScanner,
     public navParams: NavParams,
     private alertCtrl: AlertController,
-    private http: HttpClient) {
-    this.selectedItem = navParams.get('item');
+    private http: HttpClient) 
+    {
+      this.selectedItem = navParams.get('item');
 
-    // console.log(navParams.data.Username);
-    console.log("logingname>>" + Userlogin.loginname);
+      // console.log(navParams.data.Username);
+      console.log("logingname>>" + Userlogin.loginname);
   }
 
   itemTapped(event, item) {

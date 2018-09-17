@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BorrowPage } from '../borrow/borrow';
 import { HttpClient } from '@angular/common/http';
-import { Items, GlobalVarible, BorrowItem, Userlogin, BorrowingItem } from '../../app/models';
+import { GlobalVarible, BorrowItem, Userlogin, BorrowingItem } from '../../app/models';
 
 /**
  * Generated class for the BorrowSelectPage page.
@@ -29,7 +29,8 @@ export class BorrowSelectPage {
   }
 
   ionViewDidLoad() {
-    this.http.get<BorrowItem[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.navParams.data.text).subscribe(data => {
+//    this.http.get<BorrowItem[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.navParams.data.text).subscribe(data => {
+      this.http.get<BorrowItem[]>(GlobalVarible.host + "/api/Item/GetItemslot/A1").subscribe(data => {
       var borrowItems = data.map(item => {
         var borrowItem = new BorrowItem()
         borrowItem.id = item.id;
