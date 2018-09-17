@@ -152,7 +152,7 @@ namespace BGK48api.Controllers
     [HttpPost("[action]")]
     public void edit([FromBody]Item request)
     {
-      request.Totalamount += request.Totalamount;
+      // request.Totalamount += request.Totalamount;
       Collection.ReplaceOne(x => x.Id == request.Id, request);
     }
 

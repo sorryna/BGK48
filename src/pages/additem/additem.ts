@@ -93,7 +93,7 @@ export class AdditemPage {
     var options = {
       quality: 100,
       sourceType: sourceType,
-      saveToPhotoAlbum: false,
+      saveToPhotoAlbum: true,
       correctOrientation: true
     };
 
