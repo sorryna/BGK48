@@ -21,6 +21,15 @@ webpackJsonp([14],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(90);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_list_item_list__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(90);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_list_item_list__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
@@ -113,7 +122,11 @@ var AdditemPage = /** @class */ (function () {
         var options = {
             quality: 100,
             sourceType: sourceType,
+<<<<<<< HEAD
+            saveToPhotoAlbum: true,
+=======
             saveToPhotoAlbum: false,
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
             correctOrientation: true
         };
         // Get the data of an image
@@ -264,7 +277,13 @@ var AdditemPage = /** @class */ (function () {
     AdditemPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
 <<<<<<< HEAD
+<<<<<<< HEAD
             selector: 'page-additem',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\additem\additem.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Add Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <div text-center>\n\n    <div *ngIf="items.img != undefined">\n\n      <img src="{{this.items.img}}">\n\n    </div>\n\n\n\n    <div *ngIf="items.img == undefined">\n\n      <img src="../../assets/icon/picture.png" width="200px" height="200px">\n\n    </div>\n\n  </div>\n\n  <hr>\n\n\n\n\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-12>\n\n        <ion-label stacked style="margin: 0;">ชื่อของ</ion-label>\n\n        <ion-input class="border-input" type="text" placeholder="ชื่อ" [(ngModel)]="items.name" outline></ion-input>\n\n      </ion-col>\n\n      <ion-col col-12 >\n\n        <ion-label stacked style="margin: 0;">จำนวนของ</ion-label>\n\n        <ion-input class="border-input" type="number" placeholder="จำนวน" [(ngModel)]="items.amount"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-12>\n\n        <ion-label stacked style="margin: 0;">รายละเอียดของ</ion-label>\n\n        <ion-input class="border-input" type="text" placeholder="รายละเอียด" [(ngModel)]="items.desc"></ion-input>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer" no-border>\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="Create()">ok</button>\n\n    </ion-col>\n\n  </ion-row> -->\n\n\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="getImg()">\n\n      <ion-icon ios="ios-images" md="md-images">\n\n        <ion-segment-button>\n\n          แกลลอลี่\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnCamera" ion-button round ion-button outline (click)="Camera()">\n\n      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="Create()">\n\n      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">\n\n        <ion-segment-button>\n\n          ยืนยัน\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n\n\n    </button>\n\n\n\n  </div>\n\n\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\additem\additem.html"*/,
+=======
+            selector: 'page-additem',template:/*ion-inline-start:"E:\BGK48\src\pages\additem\additem.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Add Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="../../assets/imgs/image.png" style="float:center" (click)="presentActionSheet()" >\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Amount" [(ngModel)]="items.amount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="Create()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\additem\additem.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__["a" /* Transfer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__["a" /* Transfer */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__["a" /* File */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__["a" /* File */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__["a" /* FilePath */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__["a" /* FilePath */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]) === "function" && _l || Object])
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 =======
             selector: 'page-additem',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\additem\additem.html"*/'\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Add Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="{{pathForImage(lastImage)}}" style="float:center" (click)="presentActionSheet()" [hidden]="lastImage === null">\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Amount" [(ngModel)]="items.amount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="Create()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\additem\additem.html"*/,
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
@@ -280,8 +299,10 @@ var AdditemPage = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
     ], AdditemPage);
     return AdditemPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 }());
 
 //# sourceMappingURL=additem.js.map
@@ -303,6 +324,9 @@ var AdditemPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_select_borrow_select__ = __webpack_require__(58);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_select_borrow_select__ = __webpack_require__(57);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_select_borrow_select__ = __webpack_require__(44);
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -336,7 +360,11 @@ var LendQrPage = /** @class */ (function () {
     };
     LendQrPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
+            selector: 'page-lend-qr',template:/*ion-inline-start:"E:\BGK48\src\pages\lend-qr\lend-qr.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>lend-qr</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n      <img src="../../assets/imgs/sample.png" alt="">\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <button ion-button block (click)="BorrowSelectPage()">OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"E:\BGK48\src\pages\lend-qr\lend-qr.html"*/,
+=======
             selector: 'page-lend-qr',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\lend-qr\lend-qr.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>lend-qr</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n      <img src="../../assets/imgs/sample.png" alt="">\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <button ion-button block (click)="BorrowSelectPage()">OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"E:\Project\BGK48\src\pages\lend-qr\lend-qr.html"*/,
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], LendQrPage);
@@ -361,8 +389,15 @@ var LendQrPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+=======
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(49);
+=======
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -414,7 +449,11 @@ var BorrowPage = /** @class */ (function () {
     ], BorrowPage.prototype, "navBar", void 0);
     BorrowPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
+            selector: 'page-borrow',template:/*ion-inline-start:"E:\BGK48\src\pages\borrow\borrow.html"*/'<!--\n\n  Generated template for the BorrowPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>borrow</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n   <ion-grid>\n\n  <ion-row>\n\n    <ion-col text-center>\n\n      <img src="{{genQrCode}}" alt="QRcode">\n\n  \n\n    </ion-col>\n\n  </ion-row>\n\n      \n\n\n\n   </ion-grid>\n\n\n\n  <ion-grid>\n\n    <ion-list-header>\n\n      <ion-row>\n\n        <ion-col col-2 text-left>\n\n          #\n\n        </ion-col>\n\n        <ion-col col-6 text-center>\n\n          ชื่อของที่ยืม\n\n        </ion-col>\n\n        <ion-col col-4 text-center>\n\n          จำนวนที่ยืม\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list-header>\n\n  </ion-grid>\n\n  <ion-grid>\n\n    <ion-item style="margin-top: -23px;">\n\n      <ion-row *ngFor="let borrowList of databorrowList;index as i">\n\n        <ion-col col-2>{{i+1}}</ion-col>\n\n        <ion-col col-6 text-center>{{borrowList.name}}</ion-col>\n\n        <ion-col col-4 text-center>{{borrowList.borrowqty}}</ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n\n\n  </ion-grid>\n\n  <!-- <ion-item (click)="goDetail_list()">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        3\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item> -->\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <button ion-button block (click)="goHomePage()">OK</button>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\borrow\borrow.html"*/,
+=======
             selector: 'page-borrow',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\borrow\borrow.html"*/'<!--\n\n  Generated template for the BorrowPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>borrow</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n   <ion-grid>\n\n  <ion-row>\n\n    <ion-col text-center>\n\n      <img src="{{genQrCode}}" alt="QRcode">\n\n  \n\n    </ion-col>\n\n  </ion-row>\n\n      \n\n\n\n   </ion-grid>\n\n\n\n  <ion-grid>\n\n    <ion-list-header>\n\n      <ion-row>\n\n        <ion-col col-2 text-left>\n\n          #\n\n        </ion-col>\n\n        <ion-col col-6 text-center>\n\n          ชื่อของที่ยืม\n\n        </ion-col>\n\n        <ion-col col-4 text-center>\n\n          จำนวนที่ยืม\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list-header>\n\n  </ion-grid>\n\n  <ion-grid>\n\n    <ion-item style="margin-top: -23px;">\n\n      <ion-row *ngFor="let borrowList of databorrowList;index as i">\n\n        <ion-col col-2>{{i+1}}</ion-col>\n\n        <ion-col col-6 text-center>{{borrowList.name}}</ion-col>\n\n        <ion-col col-4 text-center>{{borrowList.borrowqty}}</ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n\n\n  </ion-grid>\n\n  <!-- <ion-item (click)="goDetail_list()">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        3\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item> -->\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <button ion-button block (click)="goHomePage()">OK</button>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\borrow\borrow.html"*/,
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]])
     ], BorrowPage);
@@ -441,6 +480,10 @@ var BorrowPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(51);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist_returnlist__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(87);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist_returnlist__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(86);
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
@@ -509,12 +552,17 @@ var ReturnPage = /** @class */ (function () {
     ReturnPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
 <<<<<<< HEAD
+<<<<<<< HEAD
             selector: 'page-return',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returned\return.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content [ngClass]="{\'background\': checkitems == true }" padding>\n\n  <!-- <ion-item-group>\n\n    <ion-grid>\n\n      <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: \'slot\'">\n\n          {{Redatalist.key}} \n\n      </ion-row>\n\n    </ion-grid>\n\n    lgkrl\n\n  </ion-item-group> -->\n\n  <ion-item-group>\n\n    <ion-grid *ngFor="let Redata of ReturnItems">\n\n     \n\n      <ion-row *ngFor="let Redatalist of Redata.items | groupBy: \'slot\'">\n\n        <ion-item-divider color="light" (click)="goReturnListpage(Redata.id)">{{Redatalist.key}}</ion-item-divider>\n\n\n\n        <ion-item *ngFor="let dataValue of Redatalist.value">\n\n          <p>{{dataValue.name}}</p>\n\n          <p text-right>{{dataValue.borrowQty}}</p>\n\n        </ion-item>\n\n      </ion-row>\n\n\n\n   \n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returned\return.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]) === "function" && _e || Object])
 =======
+            selector: 'page-return',template:/*ion-inline-start:"E:\BGK48\src\pages\returned\return.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <!-- <ion-item-group>\n\n    <ion-grid>\n\n      <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: \'slot\'">\n\n          {{Redatalist.key}} \n\n      </ion-row>\n\n    </ion-grid>\n\n    lgkrl\n\n  </ion-item-group> -->\n\n  <ion-item-group>\n\n    <ion-grid *ngFor="let Redata of ReturnItems">\n\n      <ion-row *ngFor="let Redatalist of Redata.items | groupBy: \'slot\'">\n\n        <ion-item-divider color="light">{{Redatalist.key}}</ion-item-divider>\n\n\n\n        <ion-item *ngFor="let dataValue of Redatalist.value">\n\n          <p>{{dataValue.name}}</p>\n\n          <p text-right>{{dataValue.qty}}</p>\n\n        </ion-item>\n\n      </ion-row>\n\n\n\n   \n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n  <button ion-button block style="color:cyan" (click)="QRcode()">QR Scan</button>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\returned\return.html"*/,
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
+=======
             selector: 'page-return',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\returned\return.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <!-- <ion-item-group>\n\n    <ion-grid>\n\n      <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: \'slot\'">\n\n          {{Redatalist.key}} \n\n      </ion-row>\n\n    </ion-grid>\n\n    lgkrl\n\n  </ion-item-group> -->\n\n  <ion-item-group>\n\n    <ion-grid *ngFor="let Redata of ReturnItems">\n\n      <ion-row *ngFor="let Redatalist of Redata.items | groupBy: \'slot\'">\n\n        <ion-item-divider color="light">{{Redatalist.key}}</ion-item-divider>\n\n\n\n        <ion-item *ngFor="let dataValue of Redatalist.value">\n\n          <p>{{dataValue.name}}</p>\n\n          <p text-right>{{dataValue.qty}}</p>\n\n        </ion-item>\n\n      </ion-row>\n\n\n\n   \n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n  <button ion-button block style="color:cyan" (click)="QRcode()">QR Scan</button>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\returned\return.html"*/,
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
             providers: [__WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]])
@@ -543,6 +591,9 @@ var ReturnPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__waitperson_waitperson__ = __webpack_require__(118);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__waitperson_waitperson__ = __webpack_require__(118);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__waitperson_waitperson__ = __webpack_require__(117);
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
@@ -675,13 +726,18 @@ var ReturnlistPage = /** @class */ (function () {
     ReturnlistPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
 <<<<<<< HEAD
+<<<<<<< HEAD
             selector: 'page-returnlist',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  \n\n  <ion-grid *ngFor="let Redata of ReturnItemslot; let i = index">\n\n    <div *ngFor="let Reitems of Redata.items | groupBy:\'slot\'">\n\n\n\n      <ion-item-divider color="light">{{Reitems.key}}</ion-item-divider>\n\n\n\n      <ion-row *ngFor="let dataValue of Reitems.value">\n\n\n\n  \n\n        <ion-col col-6>\n\n          <p>{{dataValue.name}}</p>\n\n        </ion-col>\n\n        <ion-col col-6>\n\n          <form [formGroup]="checkform">\n\n              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty,Redata.id)"  \n\n              [class.error1]="!checkform.controls.Returnqty.valid"></ion-input>\n\n              <ion-item no-lines *ngIf="( checkform.get(\'Returnqty\').hasError(\'minlength\') || checkform.get(\'Returnqty\').hasError(\'maxlength\') ||checkform.get(\'Returnqty\').hasError(\'pattern\') ||checkform.get(\'Returnqty\').hasError(\'required\') ) && checkform.get(\'Returnqty\').touched">\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'required\') && checkform.get(\'Returnqty\').touched">\n\n                    Please input your Returnqty\n\n                  </div>\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'maxlength\') && checkform.get(\'Returnqty\').touched">\n\n                    Maximum 10 \n\n                  </div>\n\n                </ion-item>\n\n          </form>\n\n          \n\n        </ion-col>\n\n\n\n      </ion-row>\n\n\n\n    </div>\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n  <button ion-button block style="color:cyan" (click)="QRScan()">QR Scan</button>\n\n</ion-footer>\n\n<!-- <ion-footer>\n\n  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>\n\n</ion-footer> -->'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__group_by_pipe__["a" /* GroupByPipe */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_5__group_by_pipe__["a" /* GroupByPipe */], __WEBPACK_IMPORTED_MODULE_7__ionic_native_camera__["a" /* Camera */],
             __WEBPACK_IMPORTED_MODULE_8__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
 =======
+            selector: 'page-returnlist',template:/*ion-inline-start:"E:\BGK48\src\pages\returnlist\returnlist.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-grid *ngFor="let Redata of ReturnItemslot; let i = index">\n\n    <div *ngFor="let Reitems of Redata.items | groupBy:\'slot\'">\n\n\n\n      <ion-item-divider color="light">{{Reitems.key}}</ion-item-divider>\n\n\n\n      <ion-row *ngFor="let dataValue of Reitems.value">\n\n\n\n        <ion-col col-4>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(dataValue,$event,Redata.id,i,dataValue.Returnqty)"></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <p>{{dataValue.name}}</p>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <form [formGroup]="checkform">\n\n              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty)"  \n\n              [class.error1]="!checkform.controls.Returnqty.valid"></ion-input>\n\n              <ion-item no-lines *ngIf="( checkform.get(\'Returnqty\').hasError(\'minlength\') || checkform.get(\'Returnqty\').hasError(\'maxlength\') ||checkform.get(\'Returnqty\').hasError(\'pattern\') ||checkform.get(\'Returnqty\').hasError(\'required\') ) && checkform.get(\'Returnqty\').touched">\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'required\') && checkform.get(\'Returnqty\').touched">\n\n                    Please input your Returnqty\n\n                  </div>\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'maxlength\') && checkform.get(\'Returnqty\').touched">\n\n                    Maximum 10 \n\n                  </div>\n\n                </ion-item>\n\n          </form>\n\n          \n\n        </ion-col>\n\n\n\n      </ion-row>\n\n\n\n    </div>\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\returnlist\returnlist.html"*/,
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
+=======
             selector: 'page-returnlist',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\returnlist\returnlist.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-grid *ngFor="let Redata of ReturnItemslot; let i = index">\n\n    <div *ngFor="let Reitems of Redata.items | groupBy:\'slot\'">\n\n\n\n      <ion-item-divider color="light">{{Reitems.key}}</ion-item-divider>\n\n\n\n      <ion-row *ngFor="let dataValue of Reitems.value">\n\n\n\n        <ion-col col-4>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(dataValue,$event,Redata.id,i,dataValue.Returnqty)"></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <p>{{dataValue.name}}</p>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <form [formGroup]="checkform">\n\n              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty)"  \n\n              [class.error1]="!checkform.controls.Returnqty.valid"></ion-input>\n\n              <ion-item no-lines *ngIf="( checkform.get(\'Returnqty\').hasError(\'minlength\') || checkform.get(\'Returnqty\').hasError(\'maxlength\') ||checkform.get(\'Returnqty\').hasError(\'pattern\') ||checkform.get(\'Returnqty\').hasError(\'required\') ) && checkform.get(\'Returnqty\').touched">\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'required\') && checkform.get(\'Returnqty\').touched">\n\n                    Please input your Returnqty\n\n                  </div>\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'maxlength\') && checkform.get(\'Returnqty\').touched">\n\n                    Maximum 10 \n\n                  </div>\n\n                </ion-item>\n\n          </form>\n\n          \n\n        </ion-col>\n\n\n\n      </ion-row>\n\n\n\n    </div>\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\returnlist\returnlist.html"*/,
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
             providers: [__WEBPACK_IMPORTED_MODULE_5__group_by_pipe__["a" /* GroupByPipe */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_5__group_by_pipe__["a" /* GroupByPipe */]])
@@ -708,8 +764,15 @@ var ReturnlistPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+=======
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(49);
+=======
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -743,7 +806,11 @@ var WaitpersonPage = /** @class */ (function () {
     };
     WaitpersonPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
+            selector: 'page-waitperson',template:/*ion-inline-start:"E:\BGK48\src\pages\waitperson\waitperson.html"*/'\n\n<ion-header>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <img src="{{genQrCode}}" alt="QRcode">\n\n  <br><br><br><br><br>\n\n  <p style="text-align: center">Status: รอพยานในการคืน</p>\n\n  <ion-footer>\n\n    <button ion-button block (click)="goHomePage()">ok</button>\n\n  </ion-footer>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\BGK48\src\pages\waitperson\waitperson.html"*/,
+=======
             selector: 'page-waitperson',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\waitperson\waitperson.html"*/'\n\n<ion-header>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <img src="{{genQrCode}}" alt="QRcode">\n\n  <br><br><br><br><br>\n\n  <p style="text-align: center">Status: รอพยานในการคืน</p>\n\n  <ion-footer>\n\n    <button ion-button block (click)="goHomePage()">ok</button>\n\n  </ion-footer>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Project\BGK48\src\pages\waitperson\waitperson.html"*/,
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], WaitpersonPage);
@@ -840,7 +907,11 @@ var KeyListPage = /** @class */ (function () {
     };
     KeyListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
+            selector: 'page-key-list',template:/*ion-inline-start:"E:\BGK48\src\pages\key-list\key-list.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n\n    <ion-title>รายชื่อคนถือกุญแจ</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"E:\BGK48\src\pages\key-list\key-list.html"*/,
+=======
             selector: 'page-key-list',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\key-list\key-list.html"*/'<ion-header>\n\n  <ion-navbar text-center color="primary">\n\n    <ion-title>รายชื่อคนถือกุญแจ</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"E:\Project\BGK48\src\pages\key-list\key-list.html"*/,
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], KeyListPage);
@@ -864,11 +935,18 @@ var KeyListPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_path__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_transfer__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(91);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_path__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_transfer__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(90);
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+<<<<<<< HEAD
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -926,6 +1004,8 @@ var ReturnsuccessPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_transfer__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(91);
+=======
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1090,7 +1170,11 @@ var EditPage = /** @class */ (function () {
     EditPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
 <<<<<<< HEAD
+<<<<<<< HEAD
             selector: 'page-edit',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\edit\edit.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Edit Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div text-center style="background-color: #eeeeee;padding:30px;">\n\n    <div *ngIf="items.img != undefined">\n\n      <img src="{{this.items.img}}">\n\n    </div>\n\n\n\n    <div *ngIf="items.img == undefined">\n\n      <img src="../../assets/icon/picture.png" width="200px" height="200px">\n\n    </div>\n\n    <p>Edit</p>\n\n  </div>\n\n\n\n  <div style="padding: 30px;">\n\n    <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n    <br>\n\n    <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>\n\n    <br>\n\n    <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-row>\n\n   \n\n    <ion-col col-12>\n\n      <button ion-button block (click)="showConfirm()">ok</button>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\edit\edit.html"*/,
+=======
+            selector: 'page-edit',template:/*ion-inline-start:"E:\BGK48\src\pages\edit\edit.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Edit Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="../../assets/imgs/img1.jpg" style="float:center" (click)="presentActionSheet()">\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="showConfirm()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\edit\edit.html"*/,
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 =======
             selector: 'page-edit',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\edit\edit.html"*/'\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Edit Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="../../assets/imgs/img1.jpg" style="float:center" (click)="presentActionSheet()">\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="showConfirm()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\edit\edit.html"*/,
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
@@ -1208,6 +1292,53 @@ var map = {
 		12
 	],
 	"../pages/borrow-select/borrow-select.module": [
+<<<<<<< HEAD
+		295,
+		11
+	],
+	"../pages/borrow/borrow.module": [
+		296,
+		10
+	],
+	"../pages/confirm/confirm.module": [
+		297,
+		9
+	],
+	"../pages/edit/edit.module": [
+		298,
+		8
+	],
+	"../pages/item-detail/item-detail.module": [
+		299,
+		7
+	],
+	"../pages/item-list/item-list.module": [
+		300,
+		6
+	],
+	"../pages/key-list/key-list.module": [
+		301,
+		5
+	],
+	"../pages/lend-qr/lend-qr.module": [
+		302,
+		4
+	],
+	"../pages/login/login.module": [
+		303,
+		3
+	],
+	"../pages/returned/return.module": [
+		304,
+		2
+	],
+	"../pages/returnlist/returnlist.module": [
+		305,
+		1
+	],
+	"../pages/waitperson/waitperson.module": [
+		306,
+=======
 		303,
 		11
 	],
@@ -1392,7 +1523,11 @@ var ConfirmPage = /** @class */ (function () {
     ConfirmPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
 <<<<<<< HEAD
+<<<<<<< HEAD
             selector: 'page-confirm',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\confirm\confirm.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>ยืมสำเร็จ</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="background">\n\n  <div class="btnPosition">\n\n    <button ion-button color="light" block outline (click)="goHomePage()">ตกลง</button>\n\n  </div>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\confirm\confirm.html"*/,
+=======
+            selector: 'page-confirm',template:/*ion-inline-start:"E:\BGK48\src\pages\confirm\confirm.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Confirm</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <h3>Username</h3>\n\n  <ion-list>\n\n    <ion-item-sliding>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="../../assets/imgs/logo.png">\n\n        </ion-avatar>\n\n        <h2>Item01</h2>\n\n        <p>2 ea</p>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="../../assets/imgs/logo.png">\n\n        </ion-avatar>\n\n        <h2>Item03</h2>\n\n        <p>3 ea</p>\n\n      </ion-item>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n\n\n<ion-footer padding>\n\n  <ion-col >\n\n    <button ion-button block (click)="goHomePage()">Confirm</button>\n\n  </ion-col>\n\n\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\confirm\confirm.html"*/,
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 =======
             selector: 'page-confirm',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\confirm\confirm.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Confirm</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <h3>Username</h3>\n\n  <ion-list>\n\n    <ion-item-sliding>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="../../assets/imgs/logo.png">\n\n        </ion-avatar>\n\n        <h2>Item01</h2>\n\n        <p>2 ea</p>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="../../assets/imgs/logo.png">\n\n        </ion-avatar>\n\n        <h2>Item03</h2>\n\n        <p>3 ea</p>\n\n      </ion-item>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n\n\n<ion-footer padding>\n\n  <ion-col >\n\n    <button ion-button block (click)="goHomePage()">Confirm</button>\n\n  </ion-col>\n\n\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\confirm\confirm.html"*/,
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
@@ -1471,6 +1606,30 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(216);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_barcode_scanner__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file_path__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_key_list_key_list__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_item_detail_item_detail__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_lend_qr_lend_qr__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_borrow_borrow__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_borrow_select_borrow_select__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_returned_return__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_returnlist_returnlist__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_waitperson_waitperson__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_item_list_item_list__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_login_login__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_confirm_confirm__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common_http__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_additem_additem__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_edit__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__group_by_pipe__ = __webpack_require__(88);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_barcode_scanner__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(90);
@@ -1647,6 +1806,9 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(215);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(58);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(118);
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1676,6 +1838,11 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
+<<<<<<< HEAD
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\BGK48\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"E:\BGK48\src\app\app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+=======
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\Project\BGK48\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"E:\Project\BGK48\src\app\app.html"*/
         }),
 <<<<<<< HEAD
@@ -1693,6 +1860,10 @@ var MyApp = /** @class */ (function () {
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/***/ 49:
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 =======
 /***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1779,6 +1950,7 @@ var BorrowSelectPage = /** @class */ (function () {
 
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ 50:
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1795,6 +1967,16 @@ var BorrowSelectPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__ = __webpack_require__(58);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__returned_return__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__item_list_item_list__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__key_list_key_list__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__item_detail_item_detail__ = __webpack_require__(56);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__returned_return__ = __webpack_require__(115);
@@ -1804,6 +1986,7 @@ var BorrowSelectPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__ = __webpack_require__(44);
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__item_detail_item_detail__ = __webpack_require__(57);
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__returnsuccess_returnsuccess__ = __webpack_require__(120);
@@ -1854,6 +2037,13 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.goItemlist = function (data) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__item_list_item_list__["a" /* ItemListPage */], { numberlocker: data, Username: this.navParams.data.Username });
     };
+    // data() {
+    //   this.barcodeScanner.scan().then(barcodeData => {
+    //     console.log('Barcode data', barcodeData);
+    //   }).catch(err => {
+    //     console.log('Error', err);
+    //   });
+    // }
     HomePage.prototype.QRScan = function () {
         var _this = this;
         // BorrowingId.borrowingId
@@ -1937,7 +2127,11 @@ var HomePage = /** @class */ (function () {
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
 <<<<<<< HEAD
+<<<<<<< HEAD
             selector: 'page-home',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Store\n\n    </ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button right color="danger" (click)="goLoginPage()">Logout</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="bg-home">\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card">\n\n       \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n\n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row> -->\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6 class="bgCard_1" text-center>\n\n        <ion-card-header style="padding: 0;">\n\n          <p class="setPtext_head">Slot A1</p>\n\n          <p class="setPtext">Hardware</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/devices.png" (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n      <ion-col col-6 class="bgCard_2" text-center>\n\n        <ion-card-header class="slotfont_">\n\n          <p class="setPtext_head">Slot A2</p>\n\n          <p class="setPtext">Stationary</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/pencil.png" (click)="goItemlist(\'A2\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-6 class="bgCard_3" text-center>\n\n\n\n        <ion-card-header style="padding: 0;">\n\n          <p class="setPtext_head">Slot B1</p>\n\n          <p class="setPtext">Books</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/notebook.png" (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        </ion-card-content>\n\n\n\n      </ion-col>\n\n      <ion-col col-6 class="bgCard_4" text-center>\n\n        <ion-card-header class="slotfont_">\n\n          <p class="setPtext_head">Slot B2</p>\n\n          <p class="setPtext">Tools</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/swiss-army-knife.png" (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer" no-border>\n\n  <!-- <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="goKeyListPage()">Key</button>\n\n  </ion-col> -->\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="Returned()">\n\n      <ion-icon ios="ios-repeat" md="md-repeat">\n\n        <ion-segment-button>\n\n          คืนของ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnQr" ion-button round ion-button outline (click)="QRScan()">\n\n      <ion-icon ios="md-qr-scanner" md="md-qr-scanner"></ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="goKeyListPage()">\n\n      <ion-icon ios="ios-key" md="md-key">\n\n        <ion-segment-button>\n\n          กุญแจ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n\n\n    </button>\n\n\n\n  </div>\n\n\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/
+=======
+            selector: 'page-home',template:/*ion-inline-start:"E:\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Store\n\n    </ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button right color="danger" (click)="goLoginPage()">Logout</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card"> \n\n          <!--  -->\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n            \n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="goKeyListPage()">Key</button>\n\n  </ion-col>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\home\home.html"*/
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 =======
             selector: 'page-home',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title text-center>\n\n      Store\n\n    </ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button right color="danger" (click)="goLoginPage()">Logout</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card"> \n\n          <!--  -->\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n            \n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="goKeyListPage()">Key</button>\n\n  </ion-col>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\home\home.html"*/
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
@@ -1956,7 +2150,11 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
+/***/ 55:
+=======
 /***/ 56:
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1970,6 +2168,12 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__additem_additem__ = __webpack_require__(113);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_detail_item_detail__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__additem_additem__ = __webpack_require__(113);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_detail_item_detail__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
@@ -2022,7 +2226,11 @@ var ItemListPage = /** @class */ (function () {
     ItemListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
 <<<<<<< HEAD
+<<<<<<< HEAD
             selector: 'page-item-list',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      <label> Slot{{number_locker}}</label>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button style="color: #4ecca3" icon-only (click)="additem(number_locker)">\n\n        <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding [ngClass]="{ \'background-bg\': checkitems == true , \'background\': checkitems == false }">\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row> -->\n\n  <div *ngIf="items">\n\n    <ion-card *ngFor="let itemlist of items">\n\n      <!-- \n\n      <ion-card-header>\n\n         <ion-grid>\n\n           <ion-row>\n\n             <ion-col col-9>\n\n             <ion-col col-3 text-right></ion-col>\n\n           </ion-row>\n\n         </ion-grid>\n\n        </ion-card-header>\n\n    <ion-card-content> -->\n\n\n\n      <ion-item class="pointer_item">\n\n        <ion-row>\n\n          <ion-col col-3 *ngIf="itemlist.img == undefined || itemlist.img == null">\n\n            <img src="../../assets/icon/picture.png" class="img-item">\n\n          </ion-col>\n\n          <ion-col col-3 *ngIf="itemlist.img">\n\n            <img src="{{itemlist.img}}" class="img-item">\n\n          </ion-col>\n\n          <ion-col col-9>\n\n            <p class="textTitle">{{itemlist.name}}</p>\n\n            <p class="bord_amount" text-center>จำนวนของ: {{itemlist.amount}}/{{itemlist.totalamount}}</p>\n\n            <p>\n\n              <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon> : {{itemlist.createDate | date:\'d MMMM yyyy\' : \'Utc\'}}\n\n            </p>\n\n            <p>\n\n              <ion-icon ios="ios-time" md="md-time"></ion-icon> : {{itemlist.createDate | date:\'HH:mm\' : \'+7\'}}\n\n            </p>\n\n            <p *ngIf="itemlist.username == null">\n\n              <ion-icon ios="ios-person" md="md-person"></ion-icon>\n\n              : ไม่รู้จัก\n\n\n\n              <p *ngIf="itemlist.username">\n\n                <ion-icon ios="ios-person" md="md-person"></ion-icon>\n\n\n\n                : {{itemlist.username}}\n\n              </p>\n\n              <!-- <div id="desText">{{itemlist.desc}}</div> -->\n\n          </ion-col>\n\n          <!-- <ion-col col-3 >\n\n              \n\n            </ion-col> -->\n\n        </ion-row>\n\n\n\n      </ion-item>\n\n      <!--       \n\n    </ion-card-content> -->\n\n\n\n      <hr>\n\n      <ion-card-header style="padding: 0px 5px 10px 5px;">\n\n        <div (click)="goDetail_list(itemlist.id)" class="detailText">ดูรายละเอียด</div>\n\n      </ion-card-header>\n\n    </ion-card>\n\n  </div>\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/,
+=======
+            selector: 'page-item-list',template:/*ion-inline-start:"E:\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      <label> List {{number_locker}}</label>\n\n    </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button color="secondary" icon-only (click)="additem(number_locker)">\n\n          <ion-icon name="add-circle"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row>\n\n  <div *ngIf="items">\n\n    <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list(itemlist.id)">\n\n      <ion-row>\n\n        <ion-col col-6>\n\n          {{itemlist.name}}\n\n        </ion-col>\n\n        <ion-col col-6 class="qty_item">\n\n          {{itemlist.amount}}/{{itemlist.totalamount}}\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-item>\n\n  </div>\n\n  \n\n  \n\n</ion-content>'/*ion-inline-end:"E:\BGK48\src\pages\item-list\item-list.html"*/,
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 =======
             selector: 'page-item-list',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title text-center>\n\n      <label> List {{number_locker}}</label>\n\n    </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button color="secondary" icon-only (click)="additem(number_locker)">\n\n          <ion-icon name="add-circle"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row>\n\n  <div *ngIf="items">\n\n    <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list(itemlist.id)">\n\n      <ion-row>\n\n        <ion-col col-6>\n\n          {{itemlist.name}}\n\n        </ion-col>\n\n        <ion-col col-6 class="qty_item">\n\n          {{itemlist.amount}}/{{itemlist.totalamount}}\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-item>\n\n  </div>\n\n  \n\n  \n\n</ion-content>'/*ion-inline-end:"E:\Project\BGK48\src\pages\item-list\item-list.html"*/,
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
@@ -2036,7 +2244,11 @@ var ItemListPage = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
+/***/ 56:
+=======
 /***/ 57:
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2050,7 +2262,11 @@ var ItemListPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_edit__ = __webpack_require__(121);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lend_qr_lend_qr__ = __webpack_require__(114);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lend_qr_lend_qr__ = __webpack_require__(113);
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_edit__ = __webpack_require__(120);
@@ -2132,7 +2348,11 @@ var ItemDetailPage = /** @class */ (function () {
     ItemDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
 <<<<<<< HEAD
+<<<<<<< HEAD
             selector: 'page-item-detail',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\item-detail\item-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar text-center>\n\n    <ion-title>Item Detail</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content style="background-color: #eeeeee">\n\n  <ion-row>\n\n    <ion-col col-12 text-center>\n\n    \n\n          <p style="font-size: 25px;margin: 0;">{{items.name}}</p>\n\n          <div *ngIf="items.img != undefined">\n\n            <img src="{{items.img}}">\n\n          </div>\n\n\n\n          <div *ngIf="items.img == null">\n\n            <img src="../../assets/icon/picture.png" max-width="250px" height="250px">\n\n          </div>\n\n       \n\n\n\n       \n\n          <p style="font-size: 20px;">รายละเอียด</p>\n\n          <p>{{items.desc}}</p>\n\n          <ion-col col-12 text-center>\n\n\n\n            <ion-row text-center>\n\n              <ion-col col-6 text-right>\n\n                <div class="item_border" text-center> จำนวนทั้งหมด : {{items.totalamount}} </div>\n\n\n\n              </ion-col>\n\n\n\n              <ion-col col-6 text-left>\n\n                <div class="item_border" text-center> จำนวนที่เหลือ : {{items.amount}}</div>\n\n              </ion-col>\n\n\n\n            </ion-row>\n\n          </ion-col>\n\n\n\n      \n\n\n\n     \n\n\n\n\n\n\n\n    </ion-col>\n\n\n\n\n\n  </ion-row>\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer">\n\n  <!-- <ion-col col-6>\n\n    <button ion-button block >EDIT</button>\n\n  </ion-col>\n\n  <ion-col col-6>\n\n    <button ion-button block >DELETE</button>\n\n  </ion-col> -->\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="edit(items.id)">\n\n        <ion-icon ios="ios-color-wand" md="md-color-wand">\n\n        <ion-segment-button>\n\n          แก้ไข\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="showConfirm(items.id)">\n\n        <ion-icon ios="ios-trash" md="md-trash">\n\n        <ion-segment-button>\n\n          กุญแจ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n  </div>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\item-detail\item-detail.html"*/,
+=======
+            selector: 'page-item-detail',template:/*ion-inline-start:"E:\BGK48\src\pages\item-detail\item-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar text-center>\n\n    <ion-title>Item Detail</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n        <img src="../../assets/imgs/img1.jpg" alt="">\n\n    </ion-col>\n\n    <ion-col col-12>\n\n      <p>ชื่อของ: {{items.name}}</p>\n\n      <p>จำนวนทั้วหมด: {{items.totalamount}}</p>\n\n      <p>จำนวนที่เหลือ: {{items.amount}}</p>\n\n\n\n      <p>รายละเอียยด: {{items.desc}}</p>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n   \n\n \n\n\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="edit(items.id)">EDIT</button>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="showConfirm(items.id)">DELETE</button>\n\n    </ion-col>\n\n  </ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\item-detail\item-detail.html"*/,
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 =======
             selector: 'page-item-detail',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\item-detail\item-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar text-center color="primary">\n\n    <ion-title>Item Detail</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n        <img src="../../assets/imgs/img1.jpg" alt="">\n\n    </ion-col>\n\n    <ion-col col-12>\n\n      <p>ชื่อของ: {{items.name}}</p>\n\n      <p>จำนวนทั้งหมด: {{items.totalamount}}</p>\n\n      <p>จำนวนที่เหลือ: {{items.amount}}</p>\n\n\n\n      <p>รายละเอียด: {{items.desc}}</p>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n   \n\n \n\n\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="edit(items.id)">EDIT</button>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="showConfirm(items.id)">DELETE</button>\n\n    </ion-col>\n\n  </ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\item-detail\item-detail.html"*/,
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
@@ -2147,13 +2367,21 @@ var ItemDetailPage = /** @class */ (function () {
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 58:
+=======
+/***/ 57:
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BorrowSelectPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_borrow__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
@@ -2218,7 +2446,11 @@ var BorrowSelectPage = /** @class */ (function () {
     };
     BorrowSelectPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-borrow-select',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n\n    <ion-title>{{boxName}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngFor="let itemlist of items">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-1>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(itemlist,$event)"></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-3>\n\n          <p> {{itemlist.name}}</p><br>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <p>{{itemlist.totalamount}}</p>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <p>{{itemlist.amount}}</p>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <ion-input type="number" min="0" max="{{itemlist.amount}}" [(ngModel)]="itemlist.borrowqty" placeholder="จำนวนที่ยืม"></ion-input>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n\n\n\n\n      <!-- <ion-label>Employee</ion-label>\n\n        <ion-select [(ngModel)]="employee" [compareWith]="compareFn">\n\n          <ion-option *ngFor="let itemlist.totalamount of num" [value]="num"></ion-option>\n\n        </ion-select> -->\n\n    </ion-grid>\n\n\n\n\n\n  </div>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <button ion-button block (click)="BorrowPage()">ยืม</button>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/,
+=======
+            selector: 'page-borrow-select',template:/*ion-inline-start:"E:\BGK48\src\pages\borrow-select\borrow-select.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n\n    <ion-title>{{boxName}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngFor="let itemlist of items">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-1>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(itemlist,$event)"></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-3>\n\n          <p> {{itemlist.name}}</p><br>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <p>{{itemlist.totalamount}}</p>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <p>{{itemlist.amount}}</p>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <ion-input type="number" min="0" max="{{itemlist.amount}}" [(ngModel)]="itemlist.borrowqty" placeholder="จำนวนที่ยืม"></ion-input>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n\n\n\n\n      <!-- <ion-label>Employee</ion-label>\n\n        <ion-select [(ngModel)]="employee" [compareWith]="compareFn">\n\n          <ion-option *ngFor="let itemlist.totalamount of num" [value]="num"></ion-option>\n\n        </ion-select> -->\n\n    </ion-grid>\n\n\n\n\n\n  </div>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <button ion-button block (click)="BorrowPage()">ยืม</button>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\borrow-select\borrow-select.html"*/,
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
     ], BorrowSelectPage);
@@ -2229,14 +2461,23 @@ var BorrowSelectPage = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 59:
+=======
+/***/ 58:
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(49);
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2267,7 +2508,11 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-login',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\login\login.html"*/'<ion-header>\n\n\n\n</ion-header>\n\n\n\n<ion-content class="background" padding>\n\n\n\n  <div class="Card_" text-center>\n\n    <ion-item>\n\n      <ion-input type="text" [(ngModel)]="userLogin" placeholder="Username"></ion-input>\n\n    </ion-item>\n\n    \n\n    <button ion-button (click)="goHomePage()" color="light" block outline>LOGIN</button>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\login\login.html"*/,
+=======
+            selector: 'page-login',template:/*ion-inline-start:"E:\BGK48\src\pages\login\login.html"*/'<ion-content padding text-center>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <h1>Login</h1>\n\n  <br><br>\n\n  \n\n  <ion-item>\n\n    \n\n    <ion-input type="text" [(ngModel)]="userLogin" placeholder="Username"></ion-input>\n\n  </ion-item><br><br>\n\n  <button ion-button (click)="goHomePage()">Login</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\BGK48\src\pages\login\login.html"*/,
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], LoginPage);

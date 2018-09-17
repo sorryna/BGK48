@@ -26,7 +26,7 @@ export class HomePage {
 
   selectedItem: any;
   showQRtext: string;
- 
+
 
   // items: Item[];
   constructor(
@@ -60,7 +60,13 @@ export class HomePage {
     this.navCtrl.push(ItemListPage, { numberlocker: data, Username: this.navParams.data.Username });
   }
 
-
+  // data() {
+  //   this.barcodeScanner.scan().then(barcodeData => {
+  //     console.log('Barcode data', barcodeData);
+  //   }).catch(err => {
+  //     console.log('Error', err);
+  //   });
+  // }
 
   QRScan() {
     // BorrowingId.borrowingId
@@ -86,6 +92,7 @@ export class HomePage {
             {
               text: 'ยืนยัน',
               handler: () => {
+<<<<<<< HEAD
                let data = {
                  'id':subStr,
                  'witness':Userlogin.loginname
@@ -94,6 +101,19 @@ export class HomePage {
                 .subscribe(data => {
                   this.navCtrl.push(ConfirmPage)
                 });
+=======
+                let data = {
+                  'id': subStr,
+                  'witness': Userlogin.loginname
+                }
+                this.http.post(GlobalVarible.host + "/api/Item/updateWitness", data)
+                  .subscribe(data => {
+                    this.navCtrl.pop();
+                  });
+
+
+
+>>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
               }
             }
           ]

@@ -1,6 +1,10 @@
 webpackJsonp([2],{
 
+<<<<<<< HEAD
+/***/ 304:
+=======
 /***/ 306:
+>>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,6 +16,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist__ = __webpack_require__(117);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__return__ = __webpack_require__(116);
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__return__ = __webpack_require__(115);
 >>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
