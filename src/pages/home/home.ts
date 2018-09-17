@@ -8,9 +8,8 @@ import { ItemListPage } from '../item-list/item-list';
 import { LoginPage } from '../login/login';
 import { KeyListPage } from '../key-list/key-list';
 import { BorrowSelectPage } from '../borrow-select/borrow-select';
-import { ConfirmPage } from '../confirm/confirm';
 import { ItemDetailPage } from '../item-detail/item-detail';
-import { Userlogin, BorrowingId, GlobalVarible, BorrowingItem } from '../../app/models';
+import { Userlogin, GlobalVarible, BorrowingItem } from '../../app/models';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -31,11 +30,12 @@ export class HomePage {
     private barcodeScanner: BarcodeScanner,
     public navParams: NavParams,
     private alertCtrl: AlertController,
-    private http: HttpClient) {
-    this.selectedItem = navParams.get('item');
+    private http: HttpClient) 
+    {
+      this.selectedItem = navParams.get('item');
 
-    // console.log(navParams.data.Username);
-    console.log("logingname>>" + Userlogin.loginname);
+      // console.log(navParams.data.Username);
+      console.log("logingname>>" + Userlogin.loginname);
   }
 
   itemTapped(event, item) {

@@ -32,7 +32,7 @@ namespace BGK48api.Controllers
     }
     
     //แสดงรายการยืนของ
-    [HttpGet("{id}")]
+    [HttpGet("[action]{id}")]
     public IEnumerable<Item> GetMyBorrow(string id)
     {
       //ใช้ id ที่รับมา ดึงข้อมูลจากตาราง borrow มาเข้าobject myBorrow
@@ -160,17 +160,31 @@ namespace BGK48api.Controllers
     public void updateWitness([FromBody]Borrow request)
     {
       var builderItemamount = Builders<Item>.Update;
+
       var getBorrow = BowCollection.Find(bId => bId.Id == request.Id).ToList();
       foreach (var borrow in getBorrow)
       {
         foreach (var borrowItem in borrow.Items)
         { // ได้ Id ของ Items มาแล้ว
+          //var getBorrowItemId = BowItemollection.Find(bId => bId.Id == borrowItem.Id).FirstOrDefault();
           var findItem = Collection.Find(idItem => idItem.Id == borrowItem.Id).FirstOrDefault();
           findItem.Amount = findItem.Amount - borrowItem.BorrowQty;
           var updateAmount = builderItemamount.Set(x => x.Amount, findItem.Amount);
           Collection.UpdateOne(x => x.Id == borrowItem.Id, updateAmount);
         }
       }
+
+
+
+
+
+      //foreach (var getItem in getItemBorrow)
+      // {
+      // var findItem = Collection.Find(idItem => idItem.Id == getItem.Id).FirstOrDefault();
+      //findItem.Amount = findItem.Amount - getItem.BorrowQty;
+      //var updateAmount = builderItemamount.Set(x => x.Amount, findItem.Amount);
+      //}
+
 
       var builder = Builders<Borrow>.Update;
       var update = builder
@@ -187,7 +201,6 @@ namespace BGK48api.Controllers
       request.CreateDate = DateTime.UtcNow;
       request.DeleteDate = null;
       BowCollection.InsertOne(request);
-
 
       var resulte = BowCollection.Find(id => id.Id == request.Id).FirstOrDefault();
 

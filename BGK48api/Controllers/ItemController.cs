@@ -29,7 +29,7 @@ namespace BGK48api.Controllers
             Collection = database.GetCollection<Item>("Items");
             BowCollection = database.GetCollection<Borrow>("borrow");
         }
-
+        
         [HttpGet("[action]/{slot}")]
         public IEnumerable<Item> GetItemslot(string slot)
         {
