@@ -9,11 +9,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-row>
+<ion-content class="bg-home">
+  <!-- <ion-row>
     <ion-col col-6>
       <ion-card (click)="goItemlist('A1')" class="pointer_card">
-        
+
         <ion-card-header>
           <img src="../../assets/imgs/it.jpg" alt="">
         </ion-card-header>
@@ -24,13 +24,13 @@
       </ion-card>
     </ion-col>
     <ion-col col-6>
-      <ion-card (click)="goItemlist('A2')" class="pointer_card"> 
-          <!--  -->
+      <ion-card (click)="goItemlist('A2')" class="pointer_card">
+       
         <ion-card-header>
           <img src="../../assets/imgs/ขนม.jpg" alt="">
         </ion-card-header>
         <ion-card-content>
-            
+
           <h3>A2</h3>
           <p>ประเภท: IT</p>
         </ion-card-content>
@@ -60,11 +60,60 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-  </ion-row>
+  </ion-row> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 class="bgCard_1" text-center>
+        <ion-card-header style="padding: 0;">
+          <p class="setPtext_head">Slot A1</p>
+          <p class="setPtext">Hardware</p>
+        </ion-card-header>
+        <hr>
+        <ion-card-content>
+          <img class="imgSlot" src="../../assets/imgs/devices.png" (click)="goItemlist('A1')" class="pointer_card">
+        </ion-card-content>
+      </ion-col>
+      <ion-col col-6 class="bgCard_2" text-center>
+        <ion-card-header class="slotfont_">
+          <p class="setPtext_head">Slot A2</p>
+          <p class="setPtext">Stationary</p>
+        </ion-card-header>
+        <hr>
+        <ion-card-content>
+          <img class="imgSlot" src="../../assets/imgs/pencil.png" (click)="goItemlist('A2')" class="pointer_card">
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="bgCard_3" text-center>
+
+        <ion-card-header style="padding: 0;">
+          <p class="setPtext_head">Slot B1</p>
+          <p class="setPtext">Books</p>
+        </ion-card-header>
+        <hr>
+        <ion-card-content>
+          <img class="imgSlot" src="../../assets/imgs/notebook.png" (click)="goItemlist('B1')" class="pointer_card">
+        </ion-card-content>
+
+      </ion-col>
+      <ion-col col-6 class="bgCard_4" text-center>
+        <ion-card-header class="slotfont_">
+          <p class="setPtext_head">Slot B2</p>
+          <p class="setPtext">Tools</p>
+        </ion-card-header>
+        <hr>
+        <ion-card-content>
+          <img class="imgSlot" src="../../assets/imgs/swiss-army-knife.png" (click)="goItemlist('B2')" class="pointer_card">
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
 
-<ion-footer ion-row>
-  <ion-col col-4>
+<ion-footer class="ion-footer" no-border>
+  <!-- <ion-col col-4>
     <button ion-button block (click)="Returned()">Returned</button>
   </ion-col>
   <ion-col col-4>
@@ -72,5 +121,27 @@
   </ion-col>
   <ion-col col-4>
     <button ion-button block (click)="goKeyListPage()">Key</button>
-  </ion-col>
+  </ion-col> -->
+  <div text-center>
+    <button class="btnMenu" ion-button outline (click)="Returned()">
+      <ion-icon ios="ios-repeat" md="md-repeat">
+        <ion-segment-button>
+          คืนของ
+        </ion-segment-button>
+      </ion-icon>
+    </button>
+    <button class="btnQr" ion-button round ion-button outline (click)="QRScan()">
+      <ion-icon ios="md-qr-scanner" md="md-qr-scanner"></ion-icon>
+    </button>
+    <button class="btnMenu" ion-button outline (click)="goKeyListPage()">
+      <ion-icon ios="ios-key" md="md-key">
+        <ion-segment-button>
+          กุญแจ
+        </ion-segment-button>
+      </ion-icon>
+
+    </button>
+
+  </div>
+
 </ion-footer>

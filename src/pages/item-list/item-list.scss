@@ -1,8 +1,59 @@
 page-item-list {
-    .qty_item{
-        text-align: center;
+    .background{
+        background-color: #4ecca3;
     }
+    .background-bg{
+        background: url('../../assets/imgs/empty.png') no-repeat center fixed; 
+        background-size: cover;
+       
+    }
+   
     .pointer_item{
         cursor: pointer;
     }
+    .img-item{
+        
+        max-width: 100%;
+        position: relative;
+        right: 5px;
+    }
+    .textTitle{
+        position: relative;
+        top: 0px;
+        text-decoration: none;
+        text-overflow: ellipsis; /* เพิ่ม ... จุดจุดจุดท้ายสุด */
+        display: block; overflow: hidden;
+        white-space: nowrap;
+        width: 150px; /* กำหนดความกว้าง */
+    }
+    .textAmount{
+        position: relative;
+        top: 10px;
+        
+    }
+    .detailText{
+        color: #4ecca3;
+        position: relative;
+        left: 4px;
+    }
+   div#desText{
+        display:block;
+        width:100px;
+        border:1px solid #09C;  
+        background-color:#CFC;
+        word-wrap:break-word;
+    }
+    .bord_amount{
+        border-radius: 2px;
+        width: 121px;
+        color: #eeeeee;
+        background-color: #393e46;
+    }
+    p {
+        padding: 1px;
+    }
+ 
+        
+
+    
 }

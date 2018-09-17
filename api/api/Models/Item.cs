@@ -14,6 +14,8 @@ namespace api.Models
         public int Totalamount {get; set;} //จำนวนทั้งหมด
         public string Username { get; set; }
         public string Desc { get; set; } //รายละเอียด
-        public string Picture {get; set;} 
-    }
+        public string img {get; set;}
+        public DateTime? CreateDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
+  }
 }

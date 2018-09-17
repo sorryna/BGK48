@@ -9,6 +9,8 @@ export class Items {
     Username: string;
     desc: string;
     picture: string;
+    img:string;
+    createDate:string;
 }
 
 export class BorrowItem {
@@ -34,9 +36,10 @@ export class BorrowingItem {
 
 export class ReturnItemRequest {
     id: string;
+    bowId:string
     borrower: string;
     witness: string;
-    returnuser:string;
+    returnner:string;
     items: ReturnListItemRequest[];
 
 }
@@ -45,8 +48,8 @@ export class ReturnListItemRequest{
      slot:string;
      name:string;
      qty:number;
+     returnqty:Number;
      
-     idreturnitem: string;
      ischecked: boolean
 }
 

@@ -27,6 +27,7 @@ export class ReturnPage {
   ReturnItems: Array<ReturnItemRequest>;
   ReItems:any;
   GroupReturnItem:any;
+  checkitems:Boolean;
   constructor(
     public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner, private http: HttpClient,private groupByPipe: GroupByPipe) {
    
@@ -35,8 +36,11 @@ export class ReturnPage {
   ionViewDidEnter(){
     this.http.get<ReturnItemRequest[]>(GlobalVarible.host + "/api/Item/GetItemreturn/" + Userlogin.loginname).subscribe(data => {
       this.ReturnItems = data;
-      // this.ReItems = data.grou
-      console.log(this.ReturnItems);
+      console.log( this.ReturnItems)
+      this.checkitems = false;
+      if (this.ReturnItems == undefined || this.ReturnItems == null || this.ReturnItems.length == 0) {
+        this.checkitems = true;
+      }
     });
   }
   // var borrowItems = data.map(item => {
@@ -50,11 +54,8 @@ export class ReturnPage {
   //   return borrowItem;
   // });
   // this.items = borrowItems;
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ReturnPage');
-  }
-
-  QRcode(){
+ 
+  goReturnListpage(id){
     // this.barcodeScanner.scan().then(barcodeData => {
     //   if(barcodeData.text != undefined){
     //     this.navCtrl.push(ReturnlistPage,{text:barcodeData.text});
@@ -62,7 +63,8 @@ export class ReturnPage {
     //  }).catch(err => {
     //      console.log('Error', err);
     //  });
-     this.navCtrl.push(ReturnlistPage,{text:"A1"});
+    console.log(id)
+     this.navCtrl.push(ReturnlistPage,{idReitem : id});
   }
 
   // Camera(){

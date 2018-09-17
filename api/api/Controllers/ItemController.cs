@@ -18,6 +18,7 @@ namespace BGK48api.Controllers
     IMongoCollection<Borrow> BowCollection { get; set; }
     IMongoCollection<BorrowItem> BowItemCollection { get; set; }
     IMongoCollection<Returnitem> ReCollection { get; set; }
+
     public ItemController()
     {
       var settings = MongoClientSettings.FromUrl(new MongoUrl("mongodb://noodle:abc123@ds129780.mlab.com:29780/borrowdb"));
@@ -29,6 +30,8 @@ namespace BGK48api.Controllers
       var database = mongoClient.GetDatabase("borrowdb");
       Collection = database.GetCollection<Item>("Items");
       BowCollection = database.GetCollection<Borrow>("borrow");
+      ReCollection = database.GetCollection<Returnitem>("Return");
+      BowItemCollection = database.GetCollection<BorrowItem>("borrow");
     }
     
     //แสดงรายการยืนของ
@@ -55,7 +58,7 @@ namespace BGK48api.Controllers
     [HttpGet("[action]/{slot}")]
     public IEnumerable<Item> GetItemslot(string slot)
     {
-      return Collection.Find(x => x.Slot == slot).ToList();
+      return Collection.Find(x => (x.Slot == slot) && (x.Amount != 0)).ToList();
     }
 
     [HttpGet("[action]/{id}")]
@@ -82,16 +85,18 @@ namespace BGK48api.Controllers
       returnitems = myBorrow.Select(it => {
      
         return new Returnitem {
-          Id = Guid.NewGuid().ToString(),
+          Id = it.Id,
           borrower = it.borrower,
           witness = it.witness,
-          Items = it.Items.Select(x => {
+          Items = it.Items.Where(i => i.BorrowQty != i.ReturnQty).Select(x => {
             return new Reitem
             {
               Id = x.Id,
               slot = x.slot,
               Name = Items.FirstOrDefault(iditem=>iditem.Id == x.Id).Name,
-              Qty = x.BorrowQty
+              BorrowQty = x.BorrowQty,
+              ReturnQty = x.ReturnQty
+
             };
           })
         };
@@ -124,7 +129,7 @@ namespace BGK48api.Controllers
               Id = x.Id,
               slot = x.slot,
               Name = Items.FirstOrDefault(iditem => iditem.Id == x.Id).Name,
-              Qty = x.BorrowQty
+              BorrowQty = x.BorrowQty
             };
           })
         };
@@ -134,11 +139,41 @@ namespace BGK48api.Controllers
 
     }
 
+    [HttpGet("[action]/{user}/{id}")]
+    public IEnumerable<Returnitem> GetItemsReturnList(string user, string id) {
+      var GetReitembyUser = BowCollection.Find(x => (x.witness == user || x.borrower == user) && x.borrower != null && x.witness != null).ToList();
+     var items = Collection.Find(it => true).ToList();
+      IEnumerable<Returnitem> returnitems = new List<Returnitem>();
+
+      returnitems = GetReitembyUser.Where(x => x.Id == id).Select(it =>
+      {
+        return new Returnitem
+        {
+          Id = it.Id,
+          borrower = it.borrower,
+          witness = it.witness,
+          Items = it.Items.Where(i => i.BorrowQty != i.ReturnQty).Select(x =>
+          {
+            return new Reitem
+            {
+              Id = x.Id,
+              slot = x.slot,
+              Name = items.FirstOrDefault(iditem => iditem.Id == x.Id).Name,
+              BorrowQty = x.BorrowQty
+            };
+          })
+        };
+      });
+      return returnitems;
+    }
+
     [HttpPost("[action]")]
     public void create([FromBody]Item request)
     {
+
       request.Id = Guid.NewGuid().ToString();
       request.Totalamount = request.Amount;
+      request.CreateDate = DateTime.UtcNow;
 
       Collection.InsertOne(request);
     }
@@ -152,7 +187,22 @@ namespace BGK48api.Controllers
     [HttpPost("[action]")]
     public void edit([FromBody]Item request)
     {
-      request.Totalamount += request.Totalamount;
+      var getItem = Collection.Find(x => x.Id == request.Id).FirstOrDefault();
+
+      if (request.Totalamount > getItem.Totalamount ) {
+        var newValueAmount = request.Totalamount - getItem.Totalamount;
+        request.Totalamount = request.Totalamount;
+        request.Amount = request.Amount + newValueAmount;
+      }
+      else {
+        var newValuseAmount = (getItem.Totalamount - request.Totalamount);
+        if (newValuseAmount<0) {
+          newValuseAmount = newValuseAmount * -1;
+        }
+        request.Totalamount = request.Totalamount;
+        request.Amount = request.Amount - newValuseAmount;
+      }
+     
       Collection.ReplaceOne(x => x.Id == request.Id, request);
     }
 
@@ -168,6 +218,7 @@ namespace BGK48api.Controllers
           var findItem = Collection.Find(idItem => idItem.Id == borrowItem.Id).FirstOrDefault();
           findItem.Amount = findItem.Amount - borrowItem.BorrowQty;
           var updateAmount = builderItemamount.Set(x => x.Amount, findItem.Amount);
+          //updateAmount.Set(x => x.Name,"");
           Collection.UpdateOne(x => x.Id == borrowItem.Id, updateAmount);
         }
       }
@@ -201,6 +252,60 @@ namespace BGK48api.Controllers
     }
 
 
+    [HttpPost("[action]")]
+    public void ReturnItemupdate([FromBody]Returnitem redata) {
+      var findReitem = ReCollection.Find(r=>r.Id == redata.Id).FirstOrDefault();
+      var itemBow = BowCollection.Find(x => x.Id == findReitem.bowId).ToList();
+
+      var builder = Builders<Borrow>.Update;
+      var builderRe = Builders<Returnitem>.Update;
+      var updateRe = builderRe
+        .Set(x => x.returnner, redata.returnner);
+      ReCollection.UpdateOne(x => x.Id == findReitem.Id, updateRe);
+
+      var builderBowItem = Builders<BorrowItem>.Update;
+      
+
+      foreach (var BowItem in itemBow.Where(x => x.DeleteDate == null)) {
+        var updatedItems = BowItem.Items;
+        foreach (var item in BowItem.Items)
+        {
+
+
+          var itemRe = findReitem.Items.FirstOrDefault(ir => ir.Id == item.Id);
+          var updateitem = updatedItems.FirstOrDefault(x => x.Id == itemRe.Id);
+          updateitem.ReturnQty = itemRe.ReturnQty;
+
+          var builderItem = Builders<Item>.Update;
+          var getItemUpdate = Collection.Find(x => x.Id == item.Id).FirstOrDefault();
+          getItemUpdate.Amount = getItemUpdate.Amount + item.ReturnQty;
+          var updateItemAmout = builderItem.Set(x => x.Amount, getItemUpdate.Amount);
+          Collection.UpdateOne(x => x.Id == item.Id, updateItemAmout);
+
+
+
+        }
+        var brrowupdate = builder.Set(x => x.Items, updatedItems);
+        if (!updatedItems.Any(x => x.ReturnQty != x.BorrowQty))
+        {
+          var a = builder.Set(x => x.DeleteDate, DateTime.UtcNow);
+          BowCollection.UpdateOne(x => x.Id == BowItem.Id, a);
+        }
+        BowCollection.UpdateOne(x => x.Id == BowItem.Id, brrowupdate);
+      }
+    }
+
+    [HttpPost("[action]")]
+    public Returnitem addRetrunItems([FromBody]Returnitem data) {
+      data.Id = Guid.NewGuid().ToString();
+      data.bowId = data.bowId;
+      data.CreateDate = DateTime.UtcNow;
+      data.DeleteDate = null;
+      ReCollection.InsertOne(data);
+   
+
+      return ReCollection.Find(id => id.Id == data.Id).FirstOrDefault(); ;
+    }
   }
 }
    

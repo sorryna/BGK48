@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-
+  
   <ion-grid *ngFor="let Redata of ReturnItemslot; let i = index">
     <div *ngFor="let Reitems of Redata.items | groupBy:'slot'">
 
@@ -13,15 +13,13 @@
 
       <ion-row *ngFor="let dataValue of Reitems.value">
 
-        <ion-col col-4>
-          <ion-checkbox color="blue" (ionChange)="checkeditem(dataValue,$event,Redata.id,i,dataValue.Returnqty)"></ion-checkbox>
-        </ion-col>
-        <ion-col col-4>
+  
+        <ion-col col-6>
           <p>{{dataValue.name}}</p>
         </ion-col>
-        <ion-col col-4>
+        <ion-col col-6>
           <form [formGroup]="checkform">
-              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty)"  
+              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty,Redata.id)"  
               [class.error1]="!checkform.controls.Returnqty.valid"></ion-input>
               <ion-item no-lines *ngIf="( checkform.get('Returnqty').hasError('minlength') || checkform.get('Returnqty').hasError('maxlength') ||checkform.get('Returnqty').hasError('pattern') ||checkform.get('Returnqty').hasError('required') ) && checkform.get('Returnqty').touched">
                   <div class="error" *ngIf="checkform.get('Returnqty').hasError('required') && checkform.get('Returnqty').touched">
@@ -43,5 +41,9 @@
 
 </ion-content>
 <ion-footer>
-  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>
+  <!-- <button ion-button style="color:cyan">QR Scan</button> -->
+  <button ion-button block style="color:cyan" (click)="QRScan()">QR Scan</button>
 </ion-footer>
+<!-- <ion-footer>
+  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>
+</ion-footer> -->

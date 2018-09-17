@@ -11,6 +11,7 @@ namespace api.Models
         public IEnumerable<BorrowItem> Items { get; set; }
         public string borrower {get;set;}
         public string witness {get;set;}
+        public string returnner { get; set; }
         public DateTime? CreateDate { get; set; }
         public DateTime? DeleteDate { get; set; }
 

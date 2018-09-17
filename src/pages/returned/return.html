@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content [ngClass]="{'background': checkitems == true }" padding>
   <!-- <ion-item-group>
     <ion-grid>
       <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: 'slot'">
@@ -15,12 +15,13 @@
   </ion-item-group> -->
   <ion-item-group>
     <ion-grid *ngFor="let Redata of ReturnItems">
+     
       <ion-row *ngFor="let Redatalist of Redata.items | groupBy: 'slot'">
-        <ion-item-divider color="light">{{Redatalist.key}}</ion-item-divider>
+        <ion-item-divider color="light" (click)="goReturnListpage(Redata.id)">{{Redatalist.key}}</ion-item-divider>
 
         <ion-item *ngFor="let dataValue of Redatalist.value">
           <p>{{dataValue.name}}</p>
-          <p text-right>{{dataValue.qty}}</p>
+          <p text-right>{{dataValue.borrowQty}}</p>
         </ion-item>
       </ion-row>
 
@@ -29,7 +30,3 @@
   </ion-item-group>
 
 </ion-content>
-<ion-footer>
-  <!-- <button ion-button style="color:cyan">QR Scan</button> -->
-  <button ion-button block style="color:cyan" (click)="QRcode()">QR Scan</button>
-</ion-footer>

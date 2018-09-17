@@ -1,3 +1,17 @@
 page-item-detail {
-
+    .item_border{
+        border: 1px solid;
+        border-radius: 6px;
+        color: #eeeeee;
+        background-color: #393e46;
+        padding: 5px 5px 5px 5px;
+    }
+    .ion-footer{
+        background-color: #4ecca3;
+    }
+    .btnMenu.button-outline{
+        height: 65px;
+        border-color: #4ecca3;
+        color: #eeeeee;
+    }
 }

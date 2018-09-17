@@ -1,3 +1,11 @@
 page-confirm {
-
+    .background{
+        background: url('../../assets/imgs/return.png') no-repeat center fixed; 
+        background-size: cover;
+    }
+    .btnPosition{
+        position: relative;
+        left: 5px;
+        top: 275px;
+    }
 }

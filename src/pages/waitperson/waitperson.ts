@@ -17,8 +17,8 @@ import { HomePage } from '../home/home';
 export class WaitpersonPage {
   genQrCode:string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    this.genQrCode = "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl="+navParams.data.textQR;
+    console.log("QRText>>"+navParams.data.textQR)
+    this.genQrCode = "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=Return"+navParams.data.textQR;
   }
 
   ionViewDidLoad() {

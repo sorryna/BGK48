@@ -53,6 +53,7 @@ export class EditPage {
   }
 
   edit() {
+    console.log(this.items)
     this.http.post(GlobalVarible.host + "/api/Item/edit", this.items)
       .subscribe(data => {
         this.navCtrl.pop();

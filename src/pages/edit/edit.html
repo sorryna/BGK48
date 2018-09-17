@@ -1,29 +1,36 @@
-
 <ion-header>
   <ion-navbar>
     <ion-title>Edit Item</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <div text-center>
-    <img src="../../assets/imgs/img1.jpg" style="float:center" (click)="presentActionSheet()">
+<ion-content>
+  <div text-center style="background-color: #eeeeee;padding:30px;">
+    <div *ngIf="items.img != undefined">
+      <img src="{{this.items.img}}">
+    </div>
+
+    <div *ngIf="items.img == undefined">
+      <img src="../../assets/icon/picture.png" width="200px" height="200px">
+    </div>
+    <p>Edit</p>
   </div>
-  <br>
-  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>
-  <br>
-  <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>
-  <br>
-  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>
+
+  <div style="padding: 30px;">
+    <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>
+    <br>
+    <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>
+    <br>
+    <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>
+  </div>
+
 </ion-content>
 
-  <ion-footer>
-    <ion-row>
-      <ion-col col-6>
-        <button ion-button block (click)="goItemListPage()">Cancel</button>
-      </ion-col>
-      <ion-col col-6>
-        <button ion-button block (click)="showConfirm()">ok</button>
-      </ion-col>
-    </ion-row>
-  </ion-footer>
+<ion-footer>
+  <ion-row>
+   
+    <ion-col col-12>
+      <button ion-button block (click)="showConfirm()">ok</button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -32,6 +32,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AdditemPage } from '../pages/additem/additem';
 import { EditPage } from '../pages/edit/edit';
 import { GroupByPipe } from '../group-by.pipe';
+import { ReturnsuccessPage } from '../pages/returnsuccess/returnsuccess';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { GroupByPipe } from '../group-by.pipe';
     ConfirmPage,
     AdditemPage,
     EditPage,
-    GroupByPipe
+    GroupByPipe,
+    ReturnsuccessPage
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ import { GroupByPipe } from '../group-by.pipe';
     LoginPage,
     ConfirmPage,
     AdditemPage,
-    EditPage
+    EditPage,
+    ReturnsuccessPage
   ],
   providers: [
     StatusBar,

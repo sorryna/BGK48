@@ -28,6 +28,6 @@ export class ConfirmPage {
    
   }
   goHomePage(){
-    
+    this.navCtrl.push(HomePage)
   }
 }

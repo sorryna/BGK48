@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
     <ion-title>Add Item</ion-title>
@@ -6,24 +5,72 @@
 </ion-header>
 
 <ion-content padding>
-  <div text-center>
-    <img src="{{pathForImage(lastImage)}}" style="float:center" (click)="presentActionSheet()" [hidden]="lastImage === null">
-  </div>
-  <br>
-  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>
-  <br>
-  <ion-input type="number" placeholder="Amount" [(ngModel)]="items.amount"></ion-input>
-  <br>
-  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>
-</ion-content>
 
-  <ion-footer>
+  <div text-center>
+    <div *ngIf="items.img != undefined">
+      <img src="{{this.items.img}}">
+    </div>
+
+    <div *ngIf="items.img == undefined">
+      <img src="../../assets/icon/picture.png" width="200px" height="200px">
+    </div>
+  </div>
+  <hr>
+
+
+
+  <ion-grid>
     <ion-row>
-      <ion-col col-6>
-        <button ion-button block (click)="goItemListPage()">Cancel</button>
+      <ion-col col-12>
+        <ion-label stacked style="margin: 0;">ชื่อของ</ion-label>
+        <ion-input class="border-input" type="text" placeholder="ชื่อ" [(ngModel)]="items.name" outline></ion-input>
       </ion-col>
-      <ion-col col-6>
-        <button ion-button block (click)="Create()">ok</button>
+      <ion-col col-12 >
+        <ion-label stacked style="margin: 0;">จำนวนของ</ion-label>
+        <ion-input class="border-input" type="number" placeholder="จำนวน" [(ngModel)]="items.amount"></ion-input>
+      </ion-col>
+      <ion-col col-12>
+        <ion-label stacked style="margin: 0;">รายละเอียดของ</ion-label>
+        <ion-input class="border-input" type="text" placeholder="รายละเอียด" [(ngModel)]="items.desc"></ion-input>
       </ion-col>
     </ion-row>
-  </ion-footer>
+  </ion-grid>
+
+
+
+
+</ion-content>
+
+<ion-footer class="ion-footer" no-border>
+  <!-- <ion-row>
+    <ion-col col-6>
+      <button ion-button block (click)="goItemListPage()">Cancel</button>
+    </ion-col>
+    <ion-col col-6>
+      <button ion-button block (click)="Create()">ok</button>
+    </ion-col>
+  </ion-row> -->
+
+  <div text-center>
+    <button class="btnMenu" ion-button outline (click)="getImg()">
+      <ion-icon ios="ios-images" md="md-images">
+        <ion-segment-button>
+          แกลลอลี่
+        </ion-segment-button>
+      </ion-icon>
+    </button>
+    <button class="btnCamera" ion-button round ion-button outline (click)="Camera()">
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    </button>
+    <button class="btnMenu" ion-button outline (click)="Create()">
+      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">
+        <ion-segment-button>
+          ยืนยัน
+        </ion-segment-button>
+      </ion-icon>
+
+    </button>
+
+  </div>
+
+</ion-footer>

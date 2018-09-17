@@ -1,3 +1,24 @@
 page-additem {
-
+    .btnMenu.button-outline{
+        height: 65px;
+        
+        border-color: #4ecca3;
+        color: #eeeeee;
+    }
+    .btnCamera.button-outline {
+        height: 65px;
+        background-color: #ffffff;
+        border-color: #4ecca3;
+        color: #393e46;
+        padding: 25px 25px;
+    }
+    .ion-footer{
+        background-color: #4ecca3;
+    }
+    .border-input{
+        border: 1px solid #4ecca3;
+        margin:10px auto;
+        border-radius: 10px !important;
+    }
+    
 }

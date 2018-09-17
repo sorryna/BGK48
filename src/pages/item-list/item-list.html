@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title text-center>
-      <label> List {{number_locker}}</label>
+      <label> Slot{{number_locker}}</label>
     </ion-title>
-      <ion-buttons end>
-        <button ion-button color="secondary" icon-only (click)="additem(number_locker)">
-          <ion-icon name="add-circle"></ion-icon>
-        </button>
-      </ion-buttons>
+    <ion-buttons end>
+      <button ion-button style="color: #4ecca3" icon-only (click)="additem(number_locker)">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 <!-- <ion-header>
@@ -18,28 +18,71 @@
     
   </ion-navbar>
 </ion-header> -->
-<ion-content padding>
-  <ion-row>
+<ion-content padding [ngClass]="{ 'background-bg': checkitems == true , 'background': checkitems == false }">
+  <!-- <ion-row>
     <ion-col col-6>
       <h4>รายการของ</h4>
     </ion-col>
     <ion-col col-6 class="qty_item">
       <h4>จำนวน</h4>
     </ion-col>
-  </ion-row>
+  </ion-row> -->
   <div *ngIf="items">
-    <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list(itemlist.id)">
-      <ion-row>
-        <ion-col col-6>
-          {{itemlist.name}}
-        </ion-col>
-        <ion-col col-6 class="qty_item">
-          {{itemlist.amount}}/{{itemlist.totalamount}}
-        </ion-col>
-      </ion-row>
-  
-    </ion-item>
+    <ion-card *ngFor="let itemlist of items">
+      <!-- 
+      <ion-card-header>
+         <ion-grid>
+           <ion-row>
+             <ion-col col-9>
+             <ion-col col-3 text-right></ion-col>
+           </ion-row>
+         </ion-grid>
+        </ion-card-header>
+    <ion-card-content> -->
+
+      <ion-item class="pointer_item">
+        <ion-row>
+          <ion-col col-3 *ngIf="itemlist.img == undefined || itemlist.img == null">
+            <img src="../../assets/icon/picture.png" class="img-item">
+          </ion-col>
+          <ion-col col-3 *ngIf="itemlist.img">
+            <img src="{{itemlist.img}}" class="img-item">
+          </ion-col>
+          <ion-col col-9>
+            <p class="textTitle">{{itemlist.name}}</p>
+            <p class="bord_amount" text-center>จำนวนของ: {{itemlist.amount}}/{{itemlist.totalamount}}</p>
+            <p>
+              <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon> : {{itemlist.createDate | date:'d MMMM yyyy' : 'Utc'}}
+            </p>
+            <p>
+              <ion-icon ios="ios-time" md="md-time"></ion-icon> : {{itemlist.createDate | date:'HH:mm' : '+7'}}
+            </p>
+            <p *ngIf="itemlist.username == null">
+              <ion-icon ios="ios-person" md="md-person"></ion-icon>
+              : ไม่รู้จัก
+
+              <p *ngIf="itemlist.username">
+                <ion-icon ios="ios-person" md="md-person"></ion-icon>
+
+                : {{itemlist.username}}
+              </p>
+              <!-- <div id="desText">{{itemlist.desc}}</div> -->
+          </ion-col>
+          <!-- <ion-col col-3 >
+              
+            </ion-col> -->
+        </ion-row>
+
+      </ion-item>
+      <!--       
+    </ion-card-content> -->
+
+      <hr>
+      <ion-card-header style="padding: 0px 5px 10px 5px;">
+        <div (click)="goDetail_list(itemlist.id)" class="detailText">ดูรายละเอียด</div>
+      </ion-card-header>
+    </ion-card>
   </div>
-  
-  
+
+
 </ion-content>

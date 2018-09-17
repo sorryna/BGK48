@@ -1,38 +1,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Confirm</ion-title>
+    <ion-title>ยืมสำเร็จ</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <h3>Username</h3>
-  <ion-list>
-    <ion-item-sliding>
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="../../assets/imgs/logo.png">
-        </ion-avatar>
-        <h2>Item01</h2>
-        <p>2 ea</p>
-      </ion-item>
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="../../assets/imgs/logo.png">
-        </ion-avatar>
-        <h2>Item03</h2>
-        <p>3 ea</p>
-      </ion-item>
-    </ion-item-sliding>
-  </ion-list>
-
+<ion-content padding class="background">
+  <div class="btnPosition">
+    <button ion-button color="light" block outline (click)="goHomePage()">ตกลง</button>
+  </div>
 </ion-content>
 
-<ion-footer padding>
-  <ion-col >
-    <button ion-button block (click)="goHomePage()">Confirm</button>
-  </ion-col>
-
-</ion-footer>

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Loading, LoadingController, Platform, ToastController, ActionSheetController } from 'ionic-angular';
 import { ItemListPage } from '../item-list/item-list';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { Items, GlobalVarible } from '../../app/models';
+import { Items, GlobalVarible, Userlogin } from '../../app/models';
 import { HttpClient } from '@angular/common/http';
 import { File } from '@ionic-native/file';
 import { FilePath } from '@ionic-native/file-path';
 import { Transfer } from '@ionic-native/transfer';
+
 
 /**
  * Generated class for the AdditemPage page.
@@ -37,9 +38,11 @@ export class AdditemPage {
     public actionSheetCtrl: ActionSheetController,
     public toastCtrl: ToastController,
     public platform: Platform,
-    public loadingCtrl: LoadingController) {
+    public loadingCtrl: LoadingController,
+  ) {
 
     this.items = new Items();
+    this.items.Username = Userlogin.loginname;
 
   }
 
@@ -150,5 +153,45 @@ export class AdditemPage {
     } else {
       return cordova.file.dataDirectory + img;
     }
+  }
+
+  getImg() {
+   let options: CameraOptions = {
+      quality: 100,
+      
+      destinationType: this.camera.DestinationType.DATA_URL,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      allowEdit: true,
+      encodingType: this.camera.EncodingType.JPEG,
+      targetWidth: 250,
+      targetHeight: 250,
+      saveToPhotoAlbum: false,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      this.items.img = 'data:image/jpeg;base64,' + imageData;
+      console.log(this.items.img)
+    }, (err) => {
+    });
+  }
+
+  Camera() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      sourceType: this.camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: this.camera.EncodingType.JPEG,
+      targetWidth: 250,
+      targetHeight: 250,
+      saveToPhotoAlbum: false,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      this.items.img = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+    });
   }
 }

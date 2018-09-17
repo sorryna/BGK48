@@ -1,16 +1,14 @@
-<ion-content padding text-center>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <h1>Login</h1>
-  <br><br>
-  
-  <ion-item>
-    
-    <ion-input type="text" [(ngModel)]="userLogin" placeholder="Username"></ion-input>
-  </ion-item><br><br>
-  <button ion-button (click)="goHomePage()">Login</button>
+<ion-header>
 
+</ion-header>
+
+<ion-content class="background" padding>
+
+  <div class="Card_" text-center>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="userLogin" placeholder="Username"></ion-input>
+    </ion-item>
+    
+    <button ion-button (click)="goHomePage()" color="light" block outline>LOGIN</button>
+  </div>
 </ion-content>

@@ -1,4 +1,7 @@
 page-home {
+    .bg-home{
+        background-color: #393e46;
+    }
     .btn-right{
         float: right;
     }
@@ -7,6 +10,47 @@ page-home {
     }
     .pointer_card{
         cursor: pointer;
+    }
+    .ion-footer{
+        background-color: #4ecca3;
+    }
+    .btnQr.button-outline {
+        height: 65px;
+        background-color: #ffffff;
+        border-color: #4ecca3;
+        color: #393e46;
+        padding: 25px 25px;
+    }
+    .btnMenu.button-outline{
+        height: 65px;
+        
+        border-color: #4ecca3;
+        color: #eeeeee;
+    }
+    .slotfont_{
+        color: #ffffff;
+        padding: 0;
+    }
+    .bgCard_1{
+        background-color:#fff78c;
+       
+    }
+    .bgCard_2{
+        background-color:#4ecca3;
+    }
+    .bgCard_3{
+        background-color:#eeeeee;
+    }
+    .bgCard_4{
+        background-color:#232931;
+    }
+    .setPtext{
+        margin: 0;
+    }
+    .setPtext_head{
+        margin: 0;
+        font-weight: 900;
+       
     }
    
 }

@@ -22,23 +22,24 @@ export class ItemListPage {
 
   number_locker: string;
   items: Items[];
-
+  checkitems: Boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
+
     
-    // this.http.get<Items[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.number_locker).subscribe( data=> {this.items = data;});  
-    // console.log(this.items);
-    // console.log(navParams.data.Username);
-  
+
   }
 
-  ionViewDidLoad() {
-    this.number_locker = this.navParams.data.numberlocker;
+  ionViewDidEnter() {
 
+    this.number_locker = this.navParams.data.numberlocker;
     this.http.get<Items[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.number_locker).subscribe(data => {
       this.items = data;
-     
+      this.checkitems = false;
+      if (this.items == undefined || this.items == null || this.items.length == 0) {
+        this.checkitems = true;
+      }
     });
-    console.log(this.items);
+
   }
 
   goDetail_list(data) {
@@ -50,7 +51,7 @@ export class ItemListPage {
   }
 
   // ionViewDidEnter() {
-    
+
   // }
 
 }
