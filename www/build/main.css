@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -25678,6 +25679,58 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+/* thai */
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Kanit Regular"), local("Kanit-Regular"), url(https://fonts.gstatic.com/s/kanit/v3/nKKZ-Go6G5tXcraBGwCYdA.woff2) format("woff2");
+  unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+
+* {
+  font-family: 'Kanit', sans-serif;
+}
+
+page-additem .btnMenu.button-outline {
+  height: 65px;
+  border-color: #4ecca3;
+  color: #eeeeee;
+}
+
+page-additem .btnCamera.button-outline {
+  height: 65px;
+  background-color: #ffffff;
+  border-color: #4ecca3;
+  color: #393e46;
+  padding: 25px 25px;
+}
+
+page-additem .ion-footer {
+  background-color: #4ecca3;
+}
+
+page-additem .border-input {
+  border: 1px solid #4ecca3;
+  margin: 10px auto;
+  border-radius: 10px !important;
+}
+
+page-confirm .background {
+  background: url("../../assets/imgs/return.png") no-repeat center fixed;
+  background-size: cover;
+}
+
+page-confirm .btnPosition {
+  position: relative;
+  left: 5px;
+  top: 275px;
+}
+
+page-home .bg-home {
+  background-color: #393e46;
+}
+
 page-home .btn-right {
   float: right;
 }
@@ -25690,22 +25743,148 @@ page-home .pointer_card {
   cursor: pointer;
 }
 
-page-item-list .qty_item {
-  text-align: center;
+page-home .ion-footer {
+  background-color: #4ecca3;
+}
+
+page-home .btnQr.button-outline {
+  height: 65px;
+  background-color: #ffffff;
+  border-color: #4ecca3;
+  color: #393e46;
+  padding: 25px 25px;
+}
+
+page-home .btnMenu.button-outline {
+  height: 65px;
+  border-color: #4ecca3;
+  color: #eeeeee;
+}
+
+page-home .slotfont_ {
+  color: #ffffff;
+  padding: 0;
+}
+
+page-home .bgCard_1 {
+  background-color: #fff78c;
+}
+
+page-home .bgCard_2 {
+  background-color: #4ecca3;
+}
+
+page-home .bgCard_3 {
+  background-color: #eeeeee;
+}
+
+page-home .bgCard_4 {
+  background-color: #232931;
+}
+
+page-home .setPtext {
+  margin: 0;
+}
+
+page-home .setPtext_head {
+  margin: 0;
+  font-weight: 900;
+}
+
+page-item-detail .item_border {
+  border: 1px solid;
+  border-radius: 6px;
+  color: #eeeeee;
+  background-color: #393e46;
+  padding: 5px 5px 5px 5px;
+}
+
+page-item-detail .ion-footer {
+  background-color: #4ecca3;
+}
+
+page-item-detail .btnMenu.button-outline {
+  height: 65px;
+  border-color: #4ecca3;
+  color: #eeeeee;
+}
+
+page-item-list .background {
+  background-color: #4ecca3;
+}
+
+page-item-list .background-bg {
+  background: url("../../assets/imgs/empty.png") no-repeat center fixed;
+  background-size: cover;
 }
 
 page-item-list .pointer_item {
   cursor: pointer;
 }
 
-page-login .error {
-  color: #df3e3e;
-  font-size: 11px;
+page-item-list .img-item {
+  max-width: 100%;
+  position: relative;
+  right: 5px;
 }
 
-page-login .error1 {
-  color: #4b4b4b;
-  border-bottom: 1px solid #ff0000;
+page-item-list .textTitle {
+  position: relative;
+  top: 0px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  /* เพิ่ม ... จุดจุดจุดท้ายสุด */
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 150px;
+  /* กำหนดความกว้าง */
+}
+
+page-item-list .textAmount {
+  position: relative;
+  top: 10px;
+}
+
+page-item-list .detailText {
+  color: #4ecca3;
+  position: relative;
+  left: 4px;
+}
+
+page-item-list div#desText {
+  display: block;
+  width: 100px;
+  border: 1px solid #09C;
+  background-color: #CFC;
+  word-wrap: break-word;
+}
+
+page-item-list .bord_amount {
+  border-radius: 2px;
+  width: 121px;
+  color: #eeeeee;
+  background-color: #393e46;
+}
+
+page-item-list p {
+  padding: 1px;
+}
+
+page-login .background {
+  background: url("../../assets/imgs/bg-2.png") no-repeat center fixed;
+  background-size: cover;
+}
+
+page-login .Card_ {
+  position: relative;
+  left: 5px;
+  top: 345px;
+}
+
+page-return .background {
+  background: url("../../assets/imgs/noreturn.png") no-repeat center fixed;
+  background-size: cover;
 }
 
 page-returnlist .error {
@@ -25716,4 +25895,15 @@ page-returnlist .error {
 page-returnlist .error1 {
   color: #4b4b4b;
   border-bottom: 1px solid #ff0000;
+}
+
+page-returnsuccess .background {
+  background: url("../../assets/imgs/borrow.png") no-repeat center fixed;
+  background-size: cover;
+}
+
+page-returnsuccess .btnPosition {
+  position: relative;
+  left: 5px;
+  top: 275px;
 }
