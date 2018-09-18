@@ -287,7 +287,7 @@ namespace BGK48api.Controllers
 
           var itemRe = findReitem.Items.FirstOrDefault(ir => ir.Id == item.Id);
           var updateitem = updatedItems.FirstOrDefault(x => x.Id == itemRe.Id);
-          updateitem.ReturnQty = itemRe.ReturnQty;
+          updateitem.ReturnQty += itemRe.ReturnQty;
 
           var builderItem = Builders<Item>.Update;
           var getItemUpdate = Collection.Find(x => x.Id == item.Id).FirstOrDefault();

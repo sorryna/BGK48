@@ -18,7 +18,7 @@ import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { LendQrPage } from '../pages/lend-qr/lend-qr';
 import { BorrowPage } from '../pages/borrow/borrow';
 import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
-import { ReturnPage } from '../pages/returned/return';
+import { ReturnPage } from '../pages/return/return';
 import { ReturnlistPage } from '../pages/returnlist/returnlist';
 import { WaitpersonPage } from '../pages/waitperson/waitperson';
 import { ItemListPage } from '../pages/item-list/item-list';

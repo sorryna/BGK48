@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Returned</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content [ngClass]="{'background': checkitems == true , 'no_bg': checkitems == false}" padding>
+  <!-- <ion-item-group>
+    <ion-grid>
+      <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: 'slot'">
+          {{Redatalist.key}} 
+      </ion-row>
+    </ion-grid>
+    lgkrl
+  </ion-item-group> -->
+  <ion-item-group>
+    <ion-grid *ngFor="let Redata of ReturnItems">
+     
+      <ion-row *ngFor="let Redatalist of Redata.items | groupBy: 'slot'">
+        <ion-item-divider color="light" (click)="goReturnListpage(Redata.id)">{{Redatalist.key}}</ion-item-divider>
+
+        <ion-item *ngFor="let dataValue of Redatalist.value">
+          <p>{{dataValue.name}}</p>
+          <p text-right>{{dataValue.borrowQty - dataValue.returnQty}}</p>
+        </ion-item>
+      </ion-row>
+
+   
+    </ion-grid>
+  </ion-item-group>
+
+</ion-content>

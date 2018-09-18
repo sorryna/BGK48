@@ -3,19 +3,16 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
-import { ReturnPage } from '../returned/return';
+import { ReturnPage } from '../return/return';
 import { ItemListPage } from '../item-list/item-list';
 import { LoginPage } from '../login/login';
 import { KeyListPage } from '../key-list/key-list';
 import { BorrowSelectPage } from '../borrow-select/borrow-select';
 import { ItemDetailPage } from '../item-detail/item-detail';
-<<<<<<< HEAD
 import { Userlogin, BorrowingId, GlobalVarible, BorrowingItem, ReturnItemRequest } from '../../app/models';
-=======
-import { Userlogin, GlobalVarible, BorrowingItem } from '../../app/models';
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 import { HttpClient } from '@angular/common/http';
 import { ReturnsuccessPage } from '../returnsuccess/returnsuccess';
+import { ConfirmPage } from '../confirm/confirm';
 
 @Component({
   selector: 'page-home',
@@ -92,7 +89,6 @@ export class HomePage {
             {
               text: 'ยืนยัน',
               handler: () => {
-<<<<<<< HEAD
                let data = {
                  'id':subStr,
                  'witness':Userlogin.loginname
@@ -101,19 +97,6 @@ export class HomePage {
                 .subscribe(data => {
                   this.navCtrl.push(ConfirmPage)
                 });
-=======
-                let data = {
-                  'id': subStr,
-                  'witness': Userlogin.loginname
-                }
-                this.http.post(GlobalVarible.host + "/api/Item/updateWitness", data)
-                  .subscribe(data => {
-                    this.navCtrl.pop();
-                  });
-
-
-
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
               }
             }
           ]

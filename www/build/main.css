@@ -25879,12 +25879,16 @@ page-login .background {
 page-login .Card_ {
   position: relative;
   left: 5px;
-  top: 345px;
+  top: 360px;
 }
 
 page-return .background {
   background: url("../../assets/imgs/noreturn.png") no-repeat center fixed;
   background-size: cover;
+}
+
+page-return .no_bg {
+  background-color: #eeee;
 }
 
 page-returnlist .error {

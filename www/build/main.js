@@ -1,43 +1,19 @@
 webpackJsonp([14],{
 
-<<<<<<< HEAD
 /***/ 113:
-=======
-/***/ 112:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdditemPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_list_item_list__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(90);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_list_item_list__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(90);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_list_item_list__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(89);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -118,15 +94,10 @@ var AdditemPage = /** @class */ (function () {
     AdditemPage.prototype.takePicture = function (sourceType) {
         var _this = this;
         // Create options for the Camera Dialog
-<<<<<<< HEAD
         var options = {
             quality: 100,
             sourceType: sourceType,
-<<<<<<< HEAD
             saveToPhotoAlbum: true,
-=======
-            saveToPhotoAlbum: false,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
             correctOrientation: true
         };
         // Get the data of an image
@@ -215,78 +186,11 @@ var AdditemPage = /** @class */ (function () {
         this.camera.getPicture(options).then(function (imageData) {
             _this.items.img = 'data:image/jpeg;base64,' + imageData;
         }, function (err) {
-=======
-        var options = {
-            quality: 100,
-            sourceType: sourceType,
-            saveToPhotoAlbum: false,
-            correctOrientation: true
-        };
-        // Get the data of an image
-        this.camera.getPicture(options).then(function (imagePath) {
-            // Special handling for Android library
-            if (_this.platform.is('android') && sourceType === _this.camera.PictureSourceType.PHOTOLIBRARY) {
-                _this.filePath.resolveNativePath(imagePath)
-                    .then(function (filePath) {
-                    var correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
-                    var currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
-                    _this.copyFileToLocalDir(correctPath, currentName, _this.createFileName());
-                });
-            }
-            else {
-                var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
-                var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
-                _this.copyFileToLocalDir(correctPath, currentName, _this.createFileName());
-            }
-        }, function (err) {
-            _this.presentToast('Error while selecting image.');
         });
-    };
-    // Create a new name for the image
-    AdditemPage.prototype.createFileName = function () {
-        var d = new Date(), n = d.getTime(), newFileName = n + ".jpg";
-        return newFileName;
-    };
-    // Copy the image to a local folder
-    AdditemPage.prototype.copyFileToLocalDir = function (namePath, currentName, newFileName) {
-        var _this = this;
-        this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(function (success) {
-            _this.lastImage = newFileName;
-        }, function (error) {
-            _this.presentToast('Error while storing file.');
-        });
-    };
-    AdditemPage.prototype.presentToast = function (text) {
-        var toast = this.toastCtrl.create({
-            message: text,
-            duration: 3000,
-            position: 'top'
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-        });
-        toast.present();
-    };
-    // Always get the accurate path to your apps folder
-    AdditemPage.prototype.pathForImage = function (img) {
-        if (img === null) {
-            return '';
-        }
-        else {
-            return cordova.file.dataDirectory + img;
-        }
     };
     AdditemPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-<<<<<<< HEAD
-            selector: 'page-additem',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\additem\additem.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Add Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <div text-center>\n\n    <div *ngIf="items.img != undefined">\n\n      <img src="{{this.items.img}}">\n\n    </div>\n\n\n\n    <div *ngIf="items.img == undefined">\n\n      <img src="../../assets/icon/picture.png" width="200px" height="200px">\n\n    </div>\n\n  </div>\n\n  <hr>\n\n\n\n\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-12>\n\n        <ion-label stacked style="margin: 0;">ชื่อของ</ion-label>\n\n        <ion-input class="border-input" type="text" placeholder="ชื่อ" [(ngModel)]="items.name" outline></ion-input>\n\n      </ion-col>\n\n      <ion-col col-12 >\n\n        <ion-label stacked style="margin: 0;">จำนวนของ</ion-label>\n\n        <ion-input class="border-input" type="number" placeholder="จำนวน" [(ngModel)]="items.amount"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-12>\n\n        <ion-label stacked style="margin: 0;">รายละเอียดของ</ion-label>\n\n        <ion-input class="border-input" type="text" placeholder="รายละเอียด" [(ngModel)]="items.desc"></ion-input>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer" no-border>\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="Create()">ok</button>\n\n    </ion-col>\n\n  </ion-row> -->\n\n\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="getImg()">\n\n      <ion-icon ios="ios-images" md="md-images">\n\n        <ion-segment-button>\n\n          แกลลอลี่\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnCamera" ion-button round ion-button outline (click)="Camera()">\n\n      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="Create()">\n\n      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">\n\n        <ion-segment-button>\n\n          ยืนยัน\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n\n\n    </button>\n\n\n\n  </div>\n\n\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\additem\additem.html"*/,
-=======
-            selector: 'page-additem',template:/*ion-inline-start:"E:\BGK48\src\pages\additem\additem.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Add Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="../../assets/imgs/image.png" style="float:center" (click)="presentActionSheet()" >\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Amount" [(ngModel)]="items.amount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="Create()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\additem\additem.html"*/,
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__["a" /* Transfer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__["a" /* Transfer */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__["a" /* File */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__["a" /* File */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__["a" /* FilePath */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__["a" /* FilePath */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]) === "function" && _l || Object])
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-            selector: 'page-additem',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\additem\additem.html"*/'\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Add Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="{{pathForImage(lastImage)}}" style="float:center" (click)="presentActionSheet()" [hidden]="lastImage === null">\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Amount" [(ngModel)]="items.amount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="Create()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\additem\additem.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-additem',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\additem\additem.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Add Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <div text-center>\n\n    <div *ngIf="items.img != undefined">\n\n      <img src="{{this.items.img}}">\n\n    </div>\n\n\n\n    <div *ngIf="items.img == undefined">\n\n      <img src="../../assets/icon/picture.png" width="200px" height="200px">\n\n    </div>\n\n  </div>\n\n  <hr>\n\n\n\n\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-12>\n\n        <ion-label stacked style="margin: 0;">ชื่อของ</ion-label>\n\n        <ion-input class="border-input" type="text" placeholder="ชื่อ" [(ngModel)]="items.name" outline></ion-input>\n\n      </ion-col>\n\n      <ion-col col-12 >\n\n        <ion-label stacked style="margin: 0;">จำนวนของ</ion-label>\n\n        <ion-input class="border-input" type="number" placeholder="จำนวน" [(ngModel)]="items.amount"></ion-input>\n\n      </ion-col>\n\n      <ion-col col-12>\n\n        <ion-label stacked style="margin: 0;">รายละเอียดของ</ion-label>\n\n        <ion-input class="border-input" type="text" placeholder="รายละเอียด" [(ngModel)]="items.desc"></ion-input>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer" no-border>\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="Create()">ok</button>\n\n    </ion-col>\n\n  </ion-row> -->\n\n\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="getImg()">\n\n      <ion-icon ios="ios-images" md="md-images">\n\n        <ion-segment-button>\n\n          แกลลอลี่\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnCamera" ion-button round ion-button outline (click)="Camera()">\n\n      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="Create()">\n\n      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">\n\n        <ion-segment-button>\n\n          ยืนยัน\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n\n\n    </button>\n\n\n\n  </div>\n\n\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\additem\additem.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
@@ -299,36 +203,22 @@ var AdditemPage = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
     ], AdditemPage);
     return AdditemPage;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 }());
 
 //# sourceMappingURL=additem.js.map
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 114:
-=======
-/***/ 113:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LendQrPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_select_borrow_select__ = __webpack_require__(58);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_select_borrow_select__ = __webpack_require__(57);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_select_borrow_select__ = __webpack_require__(44);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -360,11 +250,7 @@ var LendQrPage = /** @class */ (function () {
     };
     LendQrPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-lend-qr',template:/*ion-inline-start:"E:\BGK48\src\pages\lend-qr\lend-qr.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>lend-qr</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n      <img src="../../assets/imgs/sample.png" alt="">\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <button ion-button block (click)="BorrowSelectPage()">OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"E:\BGK48\src\pages\lend-qr\lend-qr.html"*/,
-=======
-            selector: 'page-lend-qr',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\lend-qr\lend-qr.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>lend-qr</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n      <img src="../../assets/imgs/sample.png" alt="">\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <button ion-button block (click)="BorrowSelectPage()">OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"E:\Project\BGK48\src\pages\lend-qr\lend-qr.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-lend-qr',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\lend-qr\lend-qr.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>lend-qr</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n      <img src="../../assets/imgs/sample.png" alt="">\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <button ion-button block (click)="BorrowSelectPage()">OK</button>\n\n</ion-footer>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\lend-qr\lend-qr.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], LendQrPage);
@@ -375,29 +261,14 @@ var LendQrPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 115:
-=======
-/***/ 114:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BorrowPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-=======
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(49);
-=======
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -449,11 +320,7 @@ var BorrowPage = /** @class */ (function () {
     ], BorrowPage.prototype, "navBar", void 0);
     BorrowPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-borrow',template:/*ion-inline-start:"E:\BGK48\src\pages\borrow\borrow.html"*/'<!--\n\n  Generated template for the BorrowPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>borrow</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n   <ion-grid>\n\n  <ion-row>\n\n    <ion-col text-center>\n\n      <img src="{{genQrCode}}" alt="QRcode">\n\n  \n\n    </ion-col>\n\n  </ion-row>\n\n      \n\n\n\n   </ion-grid>\n\n\n\n  <ion-grid>\n\n    <ion-list-header>\n\n      <ion-row>\n\n        <ion-col col-2 text-left>\n\n          #\n\n        </ion-col>\n\n        <ion-col col-6 text-center>\n\n          ชื่อของที่ยืม\n\n        </ion-col>\n\n        <ion-col col-4 text-center>\n\n          จำนวนที่ยืม\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list-header>\n\n  </ion-grid>\n\n  <ion-grid>\n\n    <ion-item style="margin-top: -23px;">\n\n      <ion-row *ngFor="let borrowList of databorrowList;index as i">\n\n        <ion-col col-2>{{i+1}}</ion-col>\n\n        <ion-col col-6 text-center>{{borrowList.name}}</ion-col>\n\n        <ion-col col-4 text-center>{{borrowList.borrowqty}}</ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n\n\n  </ion-grid>\n\n  <!-- <ion-item (click)="goDetail_list()">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        3\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item> -->\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <button ion-button block (click)="goHomePage()">OK</button>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\borrow\borrow.html"*/,
-=======
-            selector: 'page-borrow',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\borrow\borrow.html"*/'<!--\n\n  Generated template for the BorrowPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>borrow</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n   <ion-grid>\n\n  <ion-row>\n\n    <ion-col text-center>\n\n      <img src="{{genQrCode}}" alt="QRcode">\n\n  \n\n    </ion-col>\n\n  </ion-row>\n\n      \n\n\n\n   </ion-grid>\n\n\n\n  <ion-grid>\n\n    <ion-list-header>\n\n      <ion-row>\n\n        <ion-col col-2 text-left>\n\n          #\n\n        </ion-col>\n\n        <ion-col col-6 text-center>\n\n          ชื่อของที่ยืม\n\n        </ion-col>\n\n        <ion-col col-4 text-center>\n\n          จำนวนที่ยืม\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list-header>\n\n  </ion-grid>\n\n  <ion-grid>\n\n    <ion-item style="margin-top: -23px;">\n\n      <ion-row *ngFor="let borrowList of databorrowList;index as i">\n\n        <ion-col col-2>{{i+1}}</ion-col>\n\n        <ion-col col-6 text-center>{{borrowList.name}}</ion-col>\n\n        <ion-col col-4 text-center>{{borrowList.borrowqty}}</ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n\n\n  </ion-grid>\n\n  <!-- <ion-item (click)="goDetail_list()">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        3\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item> -->\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <button ion-button block (click)="goHomePage()">OK</button>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\borrow\borrow.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-borrow',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\borrow\borrow.html"*/'<!--\n\n  Generated template for the BorrowPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>borrow</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n   <ion-grid>\n\n  <ion-row>\n\n    <ion-col text-center>\n\n      <img src="{{genQrCode}}" alt="QRcode">\n\n  \n\n    </ion-col>\n\n  </ion-row>\n\n      \n\n\n\n   </ion-grid>\n\n\n\n  <ion-grid>\n\n    <ion-list-header>\n\n      <ion-row>\n\n        <ion-col col-2 text-left>\n\n          #\n\n        </ion-col>\n\n        <ion-col col-6 text-center>\n\n          ชื่อของที่ยืม\n\n        </ion-col>\n\n        <ion-col col-4 text-center>\n\n          จำนวนที่ยืม\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-list-header>\n\n  </ion-grid>\n\n  <ion-grid>\n\n    <ion-item style="margin-top: -23px;">\n\n      <ion-row *ngFor="let borrowList of databorrowList;index as i">\n\n        <ion-col col-2>{{i+1}}</ion-col>\n\n        <ion-col col-6 text-center>{{borrowList.name}}</ion-col>\n\n        <ion-col col-4 text-center>{{borrowList.borrowqty}}</ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n\n\n  </ion-grid>\n\n  <!-- <ion-item (click)="goDetail_list()">\n\n    <ion-row>\n\n      <ion-col col-6>\n\n\n\n      </ion-col>\n\n      <ion-col col-6 class="qty_item">\n\n        3\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item> -->\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <button ion-button block (click)="goHomePage()">OK</button>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\borrow\borrow.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]])
     ], BorrowPage);
@@ -464,143 +331,19 @@ var BorrowPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 116:
-=======
-/***/ 115:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReturnPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist_returnlist__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(51);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist_returnlist__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(87);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist_returnlist__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(86);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_models__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__ = __webpack_require__(87);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-//import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-//import { CameraOptions } from '@ionic-native/camera';
-
-
-
-
-
-var ReturnPage = /** @class */ (function () {
-    function ReturnPage(navCtrl, navParams, barcodeScanner, http, groupByPipe) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.barcodeScanner = barcodeScanner;
-        this.http = http;
-        this.groupByPipe = groupByPipe;
-    }
-    ReturnPage.prototype.ionViewDidEnter = function () {
-        var _this = this;
-        this.http.get(__WEBPACK_IMPORTED_MODULE_5__app_models__["d" /* GlobalVarible */].host + "/api/Item/GetItemreturn/" + __WEBPACK_IMPORTED_MODULE_5__app_models__["g" /* Userlogin */].loginname).subscribe(function (data) {
-            _this.ReturnItems = data;
-            console.log(_this.ReturnItems);
-            _this.checkitems = false;
-            if (_this.ReturnItems == undefined || _this.ReturnItems == null || _this.ReturnItems.length == 0) {
-                _this.checkitems = true;
-            }
-        });
-    };
-    // var borrowItems = data.map(item => {
-    //   var borrowItem = new BorrowItem()
-    //   borrowItem.id = item.id;
-    //   borrowItem.name = item.name;
-    //   borrowItem.amount = item.amount;
-    //   borrowItem.totalamount = item.totalamount;
-    //   borrowItem.slot = this.navParams.data.text;
-    //   borrowItem.ischecked = false
-    //   return borrowItem;
-    // });
-    // this.items = borrowItems;
-    ReturnPage.prototype.goReturnListpage = function (id) {
-        // this.barcodeScanner.scan().then(barcodeData => {
-        //   if(barcodeData.text != undefined){
-        //     this.navCtrl.push(ReturnlistPage,{text:barcodeData.text});
-        //   }
-        //  }).catch(err => {
-        //      console.log('Error', err);
-        //  });
-        console.log(id);
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__returnlist_returnlist__["a" /* ReturnlistPage */], { idReitem: id });
-    };
-    ReturnPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-<<<<<<< HEAD
-            selector: 'page-return',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returned\return.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content [ngClass]="{\'background\': checkitems == true }" padding>\n\n  <!-- <ion-item-group>\n\n    <ion-grid>\n\n      <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: \'slot\'">\n\n          {{Redatalist.key}} \n\n      </ion-row>\n\n    </ion-grid>\n\n    lgkrl\n\n  </ion-item-group> -->\n\n  <ion-item-group>\n\n    <ion-grid *ngFor="let Redata of ReturnItems">\n\n     \n\n      <ion-row *ngFor="let Redatalist of Redata.items | groupBy: \'slot\'">\n\n        <ion-item-divider color="light" (click)="goReturnListpage(Redata.id)">{{Redatalist.key}}</ion-item-divider>\n\n\n\n        <ion-item *ngFor="let dataValue of Redatalist.value">\n\n          <p>{{dataValue.name}}</p>\n\n          <p text-right>{{dataValue.borrowQty}}</p>\n\n        </ion-item>\n\n      </ion-row>\n\n\n\n   \n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returned\return.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]]
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]) === "function" && _e || Object])
-=======
-            selector: 'page-return',template:/*ion-inline-start:"E:\BGK48\src\pages\returned\return.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <!-- <ion-item-group>\n\n    <ion-grid>\n\n      <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: \'slot\'">\n\n          {{Redatalist.key}} \n\n      </ion-row>\n\n    </ion-grid>\n\n    lgkrl\n\n  </ion-item-group> -->\n\n  <ion-item-group>\n\n    <ion-grid *ngFor="let Redata of ReturnItems">\n\n      <ion-row *ngFor="let Redatalist of Redata.items | groupBy: \'slot\'">\n\n        <ion-item-divider color="light">{{Redatalist.key}}</ion-item-divider>\n\n\n\n        <ion-item *ngFor="let dataValue of Redatalist.value">\n\n          <p>{{dataValue.name}}</p>\n\n          <p text-right>{{dataValue.qty}}</p>\n\n        </ion-item>\n\n      </ion-row>\n\n\n\n   \n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n  <button ion-button block style="color:cyan" (click)="QRcode()">QR Scan</button>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\returned\return.html"*/,
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-            selector: 'page-return',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\returned\return.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <!-- <ion-item-group>\n\n    <ion-grid>\n\n      <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: \'slot\'">\n\n          {{Redatalist.key}} \n\n      </ion-row>\n\n    </ion-grid>\n\n    lgkrl\n\n  </ion-item-group> -->\n\n  <ion-item-group>\n\n    <ion-grid *ngFor="let Redata of ReturnItems">\n\n      <ion-row *ngFor="let Redatalist of Redata.items | groupBy: \'slot\'">\n\n        <ion-item-divider color="light">{{Redatalist.key}}</ion-item-divider>\n\n\n\n        <ion-item *ngFor="let dataValue of Redatalist.value">\n\n          <p>{{dataValue.name}}</p>\n\n          <p text-right>{{dataValue.qty}}</p>\n\n        </ion-item>\n\n      </ion-row>\n\n\n\n   \n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n  <button ion-button block style="color:cyan" (click)="QRcode()">QR Scan</button>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\returned\return.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-            providers: [__WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]])
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-    ], ReturnPage);
-    return ReturnPage;
-    var _a, _b, _c, _d, _e;
-}());
-
-//# sourceMappingURL=return.js.map
-
-/***/ }),
-
-<<<<<<< HEAD
-/***/ 117:
-=======
-/***/ 116:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReturnlistPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__waitperson_waitperson__ = __webpack_require__(118);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__waitperson_waitperson__ = __webpack_require__(118);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__waitperson_waitperson__ = __webpack_require__(117);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__group_by_pipe__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__group_by_pipe__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_camera__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_camera__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_barcode_scanner__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -712,36 +455,25 @@ var ReturnlistPage = /** @class */ (function () {
         data.returnqty = Number(newqty);
     };
     ReturnlistPage.prototype.QRScan = function () {
-        this.returnConfirm();
-        // this.barcodeScanner.scan().then(barcodeData => {
-        //   if(barcodeData.text == this.ReturnItemslot[0].items[0].slot){
-        //     this.returnConfirm()
-        //   }else{
-        //     this.errorAlert();
-        //   }
-        // }).catch(err => {
-        //   console.log('Error', err);
-        // });
+        var _this = this;
+        this.barcodeScanner.scan().then(function (barcodeData) {
+            if (barcodeData.text == _this.ReturnItemslot[0].items[0].slot) {
+                _this.returnConfirm();
+            }
+            else {
+                _this.errorAlert();
+            }
+        }).catch(function (err) {
+            console.log('Error', err);
+        });
     };
     ReturnlistPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-<<<<<<< HEAD
-            selector: 'page-returnlist',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  \n\n  <ion-grid *ngFor="let Redata of ReturnItemslot; let i = index">\n\n    <div *ngFor="let Reitems of Redata.items | groupBy:\'slot\'">\n\n\n\n      <ion-item-divider color="light">{{Reitems.key}}</ion-item-divider>\n\n\n\n      <ion-row *ngFor="let dataValue of Reitems.value">\n\n\n\n  \n\n        <ion-col col-6>\n\n          <p>{{dataValue.name}}</p>\n\n        </ion-col>\n\n        <ion-col col-6>\n\n          <form [formGroup]="checkform">\n\n              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty,Redata.id)"  \n\n              [class.error1]="!checkform.controls.Returnqty.valid"></ion-input>\n\n              <ion-item no-lines *ngIf="( checkform.get(\'Returnqty\').hasError(\'minlength\') || checkform.get(\'Returnqty\').hasError(\'maxlength\') ||checkform.get(\'Returnqty\').hasError(\'pattern\') ||checkform.get(\'Returnqty\').hasError(\'required\') ) && checkform.get(\'Returnqty\').touched">\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'required\') && checkform.get(\'Returnqty\').touched">\n\n                    Please input your Returnqty\n\n                  </div>\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'maxlength\') && checkform.get(\'Returnqty\').touched">\n\n                    Maximum 10 \n\n                  </div>\n\n                </ion-item>\n\n          </form>\n\n          \n\n        </ion-col>\n\n\n\n      </ion-row>\n\n\n\n    </div>\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n  <button ion-button block style="color:cyan" (click)="QRScan()">QR Scan</button>\n\n</ion-footer>\n\n<!-- <ion-footer>\n\n  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>\n\n</ion-footer> -->'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/,
+            selector: 'page-returnlist',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  \n\n  <ion-grid *ngFor="let Redata of ReturnItemslot; let i = index">\n\n    <div *ngFor="let Reitems of Redata.items | groupBy:\'slot\'">\n\n\n\n      <ion-item-divider color="light">{{Reitems.key}}</ion-item-divider>\n\n\n\n      <ion-row *ngFor="let dataValue of Reitems.value">\n\n\n\n  \n\n        <ion-col col-6>\n\n          <p>{{dataValue.name}}</p>\n\n        </ion-col>\n\n        <ion-col col-6>\n\n          <form [formGroup]="checkform">\n\n              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty,Redata.id)"  \n\n              [class.error1]="!checkform.controls.Returnqty.valid"></ion-input>\n\n              <ion-item no-lines *ngIf="( checkform.get(\'Returnqty\').hasError(\'minlength\') || checkform.get(\'Returnqty\').hasError(\'maxlength\') ||checkform.get(\'Returnqty\').hasError(\'pattern\') ||checkform.get(\'Returnqty\').hasError(\'required\') ) && checkform.get(\'Returnqty\').touched">\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'required\') && checkform.get(\'Returnqty\').touched">\n\n                    Please input your Returnqty\n\n                  </div>\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'maxlength\') && checkform.get(\'Returnqty\').touched">\n\n                    Maximum 10 \n\n                  </div>\n\n                </ion-item>\n\n          </form>\n\n          \n\n        </ion-col>\n\n\n\n      </ion-row>\n\n\n\n    </div>\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <!-- <button ion-button style="color:cyan">QR Scan</button> -->\n\n  <button ion-button block style="color:cyan" (click)="QRScan()">QR Scan</button>\n\n</ion-footer>\n\n<!-- <ion-footer>\n\n  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>\n\n</ion-footer> -->'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returnlist\returnlist.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__group_by_pipe__["a" /* GroupByPipe */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_5__group_by_pipe__["a" /* GroupByPipe */], __WEBPACK_IMPORTED_MODULE_7__ionic_native_camera__["a" /* Camera */],
             __WEBPACK_IMPORTED_MODULE_8__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
-=======
-            selector: 'page-returnlist',template:/*ion-inline-start:"E:\BGK48\src\pages\returnlist\returnlist.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-grid *ngFor="let Redata of ReturnItemslot; let i = index">\n\n    <div *ngFor="let Reitems of Redata.items | groupBy:\'slot\'">\n\n\n\n      <ion-item-divider color="light">{{Reitems.key}}</ion-item-divider>\n\n\n\n      <ion-row *ngFor="let dataValue of Reitems.value">\n\n\n\n        <ion-col col-4>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(dataValue,$event,Redata.id,i,dataValue.Returnqty)"></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <p>{{dataValue.name}}</p>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <form [formGroup]="checkform">\n\n              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty)"  \n\n              [class.error1]="!checkform.controls.Returnqty.valid"></ion-input>\n\n              <ion-item no-lines *ngIf="( checkform.get(\'Returnqty\').hasError(\'minlength\') || checkform.get(\'Returnqty\').hasError(\'maxlength\') ||checkform.get(\'Returnqty\').hasError(\'pattern\') ||checkform.get(\'Returnqty\').hasError(\'required\') ) && checkform.get(\'Returnqty\').touched">\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'required\') && checkform.get(\'Returnqty\').touched">\n\n                    Please input your Returnqty\n\n                  </div>\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'maxlength\') && checkform.get(\'Returnqty\').touched">\n\n                    Maximum 10 \n\n                  </div>\n\n                </ion-item>\n\n          </form>\n\n          \n\n        </ion-col>\n\n\n\n      </ion-row>\n\n\n\n    </div>\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\returnlist\returnlist.html"*/,
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-            selector: 'page-returnlist',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\returnlist\returnlist.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Returnlist</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-grid *ngFor="let Redata of ReturnItemslot; let i = index">\n\n    <div *ngFor="let Reitems of Redata.items | groupBy:\'slot\'">\n\n\n\n      <ion-item-divider color="light">{{Reitems.key}}</ion-item-divider>\n\n\n\n      <ion-row *ngFor="let dataValue of Reitems.value">\n\n\n\n        <ion-col col-4>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(dataValue,$event,Redata.id,i,dataValue.Returnqty)"></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <p>{{dataValue.name}}</p>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <form [formGroup]="checkform">\n\n              <ion-input type="number" min="0" max="{{dataValue.qty}}" [(ngModel)]="dataValue.Returnqty" formControlName="Returnqty" placeholder="จำนวนที่ต้องการคืน" (ionChange)="checkedqty(dataValue,dataValue.Returnqty)"  \n\n              [class.error1]="!checkform.controls.Returnqty.valid"></ion-input>\n\n              <ion-item no-lines *ngIf="( checkform.get(\'Returnqty\').hasError(\'minlength\') || checkform.get(\'Returnqty\').hasError(\'maxlength\') ||checkform.get(\'Returnqty\').hasError(\'pattern\') ||checkform.get(\'Returnqty\').hasError(\'required\') ) && checkform.get(\'Returnqty\').touched">\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'required\') && checkform.get(\'Returnqty\').touched">\n\n                    Please input your Returnqty\n\n                  </div>\n\n                  <div class="error" *ngIf="checkform.get(\'Returnqty\').hasError(\'maxlength\') && checkform.get(\'Returnqty\').touched">\n\n                    Maximum 10 \n\n                  </div>\n\n                </ion-item>\n\n          </form>\n\n          \n\n        </ion-col>\n\n\n\n      </ion-row>\n\n\n\n    </div>\n\n  </ion-grid>\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <button ion-button block (click)="waitperson()" [disabled]="checkform.invalid">ok</button>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\returnlist\returnlist.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-            providers: [__WEBPACK_IMPORTED_MODULE_5__group_by_pipe__["a" /* GroupByPipe */]]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_5__group_by_pipe__["a" /* GroupByPipe */]])
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
     ], ReturnlistPage);
     return ReturnlistPage;
 }());
@@ -750,29 +482,14 @@ var ReturnlistPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 118:
-=======
 /***/ 117:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WaitpersonPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-=======
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(49);
-=======
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -806,11 +523,7 @@ var WaitpersonPage = /** @class */ (function () {
     };
     WaitpersonPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-waitperson',template:/*ion-inline-start:"E:\BGK48\src\pages\waitperson\waitperson.html"*/'\n\n<ion-header>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <img src="{{genQrCode}}" alt="QRcode">\n\n  <br><br><br><br><br>\n\n  <p style="text-align: center">Status: รอพยานในการคืน</p>\n\n  <ion-footer>\n\n    <button ion-button block (click)="goHomePage()">ok</button>\n\n  </ion-footer>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\BGK48\src\pages\waitperson\waitperson.html"*/,
-=======
-            selector: 'page-waitperson',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\waitperson\waitperson.html"*/'\n\n<ion-header>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <img src="{{genQrCode}}" alt="QRcode">\n\n  <br><br><br><br><br>\n\n  <p style="text-align: center">Status: รอพยานในการคืน</p>\n\n  <ion-footer>\n\n    <button ion-button block (click)="goHomePage()">ok</button>\n\n  </ion-footer>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Project\BGK48\src\pages\waitperson\waitperson.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-waitperson',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\waitperson\waitperson.html"*/'\n\n<ion-header>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <img src="{{genQrCode}}" alt="QRcode">\n\n  <br><br><br><br><br>\n\n  <p style="text-align: center">Status: รอพยานในการคืน</p>\n\n  <ion-footer>\n\n    <button ion-button block (click)="goHomePage()">ok</button>\n\n  </ion-footer>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\waitperson\waitperson.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], WaitpersonPage);
@@ -821,59 +534,7 @@ var WaitpersonPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ 118:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models__ = __webpack_require__(20);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
-    };
-    LoginPage.prototype.dataUsername = function () {
-    };
-    LoginPage.prototype.goHomePage = function () {
-        __WEBPACK_IMPORTED_MODULE_3__app_models__["g" /* Userlogin */].loginname = this.userLogin;
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
-    };
-    LoginPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\login\login.html"*/'<ion-content padding text-center>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <h1>Login</h1>\n\n  <br><br>\n\n  \n\n  <ion-item>\n\n    \n\n    <ion-input type="text" [(ngModel)]="userLogin" placeholder="Username"></ion-input>\n\n  </ion-item><br><br>\n\n  <button ion-button (click)="goHomePage()">Login</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Project\BGK48\src\pages\login\login.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], LoginPage);
-    return LoginPage;
-}());
-
-//# sourceMappingURL=login.js.map
-
-/***/ }),
-
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -907,11 +568,7 @@ var KeyListPage = /** @class */ (function () {
     };
     KeyListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-key-list',template:/*ion-inline-start:"E:\BGK48\src\pages\key-list\key-list.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n\n    <ion-title>รายชื่อคนถือกุญแจ</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"E:\BGK48\src\pages\key-list\key-list.html"*/,
-=======
-            selector: 'page-key-list',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\key-list\key-list.html"*/'<ion-header>\n\n  <ion-navbar text-center color="primary">\n\n    <ion-title>รายชื่อคนถือกุญแจ</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"E:\Project\BGK48\src\pages\key-list\key-list.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-key-list',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\key-list\key-list.html"*/'<ion-header>\n\n  <ion-navbar text-center color="primary">\n\n    <ion-title>รายชื่อคนถือกุญแจ</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n    <ion-item>Terminator II</ion-item>\n\n    <ion-item>The Empire Strikes Back</ion-item>\n\n    <ion-item>Blade Runner</ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\key-list\key-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], KeyListPage);
@@ -922,31 +579,14 @@ var KeyListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 120:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReturnsuccessPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_path__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_transfer__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(91);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_path__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_transfer__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(90);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -959,7 +599,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-<<<<<<< HEAD
 /**
  * Generated class for the ReturnsuccessPage page.
  *
@@ -981,13 +620,65 @@ var ReturnsuccessPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-returnsuccess',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\returnsuccess\returnsuccess.html"*/'<!--\n  Generated template for the ReturnsuccessPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>คืนของสำเร็จ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="background" padding>\n    <div class="btnPosition">\n        <button ion-button color="light" block outline (click)="goHomePage()">ตกลง</button>\n      </div>\n</ion-content>\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\returnsuccess\returnsuccess.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], ReturnsuccessPage);
     return ReturnsuccessPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=returnsuccess.js.map
+
+/***/ }),
+
+/***/ 120:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfirmPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the ConfirmPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ConfirmPage = /** @class */ (function () {
+    function ConfirmPage(navCtrl, navParams, http) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.http = http;
+        console.log(navParams.data.BorrowingIdRe);
+    }
+    ConfirmPage.prototype.ionViewDidLoad = function () {
+    };
+    ConfirmPage.prototype.goHomePage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+    };
+    ConfirmPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-confirm',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\confirm\confirm.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>ยืมสำเร็จ</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="background">\n\n  <div class="btnPosition">\n\n    <button ion-button color="light" block outline (click)="goHomePage()">ตกลง</button>\n\n  </div>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\confirm\confirm.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
+    ], ConfirmPage);
+    return ConfirmPage;
+}());
+
+//# sourceMappingURL=confirm.js.map
 
 /***/ }),
 
@@ -1002,10 +693,8 @@ var ReturnsuccessPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_path__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_transfer__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(91);
-=======
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1018,8 +707,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-=======
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 
 
 
@@ -1169,15 +856,7 @@ var EditPage = /** @class */ (function () {
     };
     EditPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-<<<<<<< HEAD
-            selector: 'page-edit',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\edit\edit.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Edit Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div text-center style="background-color: #eeeeee;padding:30px;">\n\n    <div *ngIf="items.img != undefined">\n\n      <img src="{{this.items.img}}">\n\n    </div>\n\n\n\n    <div *ngIf="items.img == undefined">\n\n      <img src="../../assets/icon/picture.png" width="200px" height="200px">\n\n    </div>\n\n    <p>Edit</p>\n\n  </div>\n\n\n\n  <div style="padding: 30px;">\n\n    <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n    <br>\n\n    <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>\n\n    <br>\n\n    <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-row>\n\n   \n\n    <ion-col col-12>\n\n      <button ion-button block (click)="showConfirm()">ok</button>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\edit\edit.html"*/,
-=======
-            selector: 'page-edit',template:/*ion-inline-start:"E:\BGK48\src\pages\edit\edit.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Edit Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="../../assets/imgs/img1.jpg" style="float:center" (click)="presentActionSheet()">\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="showConfirm()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\edit\edit.html"*/,
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-            selector: 'page-edit',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\edit\edit.html"*/'\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Edit Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <img src="../../assets/imgs/img1.jpg" style="float:center" (click)="presentActionSheet()">\n\n  </div>\n\n  <br>\n\n  <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n  <br>\n\n  <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>\n\n  <br>\n\n  <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n</ion-content>\n\n\n\n  <ion-footer>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="goItemListPage()">Cancel</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button block (click)="showConfirm()">ok</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\edit\edit.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-edit',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\edit\edit.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Edit Item</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <div text-center style="background-color: #eeeeee;padding:30px;">\n\n    <div *ngIf="items.img != undefined">\n\n      <img src="{{this.items.img}}">\n\n    </div>\n\n\n\n    <div *ngIf="items.img == undefined">\n\n      <img src="../../assets/icon/picture.png" width="200px" height="200px">\n\n    </div>\n\n    <p>Edit</p>\n\n  </div>\n\n\n\n  <div style="padding: 30px;">\n\n    <ion-input type="text" placeholder="Item Name" [(ngModel)]="items.name"></ion-input>\n\n    <br>\n\n    <ion-input type="number" placeholder="Totol Amount" [(ngModel)]="items.totalamount"></ion-input>\n\n    <br>\n\n    <ion-input type="text" placeholder="Description" [(ngModel)]="items.desc"></ion-input>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-row>\n\n   \n\n    <ion-col col-12>\n\n      <button ion-button block (click)="showConfirm()">ok</button>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\edit\edit.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
@@ -1199,11 +878,7 @@ var EditPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 133:
-=======
-/***/ 132:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1216,24 +891,15 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-<<<<<<< HEAD
 webpackEmptyAsyncContext.id = 133;
 
 /***/ }),
 
 /***/ 175:
-=======
-webpackEmptyAsyncContext.id = 132;
-
-/***/ }),
-
-/***/ 174:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/additem/additem.module": [
-<<<<<<< HEAD
 		295,
 		13
 	],
@@ -1250,15 +916,15 @@ var map = {
 		10
 	],
 	"../pages/edit/edit.module": [
-		299,
+		301,
 		9
 	],
 	"../pages/item-detail/item-detail.module": [
-		300,
+		299,
 		8
 	],
 	"../pages/item-list/item-list.module": [
-		301,
+		300,
 		7
 	],
 	"../pages/key-list/key-list.module": [
@@ -1273,12 +939,12 @@ var map = {
 		304,
 		4
 	],
-	"../pages/returned/return.module": [
-		305,
+	"../pages/return/return.module": [
+		306,
 		3
 	],
 	"../pages/returnlist/returnlist.module": [
-		306,
+		305,
 		2
 	],
 	"../pages/returnsuccess/returnsuccess.module": [
@@ -1287,104 +953,6 @@ var map = {
 	],
 	"../pages/waitperson/waitperson.module": [
 		308,
-=======
-		294,
-		12
-	],
-	"../pages/borrow-select/borrow-select.module": [
-<<<<<<< HEAD
-		295,
-		11
-	],
-	"../pages/borrow/borrow.module": [
-		296,
-		10
-	],
-	"../pages/confirm/confirm.module": [
-		297,
-		9
-	],
-	"../pages/edit/edit.module": [
-		298,
-		8
-	],
-	"../pages/item-detail/item-detail.module": [
-		299,
-		7
-	],
-	"../pages/item-list/item-list.module": [
-		300,
-		6
-	],
-	"../pages/key-list/key-list.module": [
-		301,
-		5
-	],
-	"../pages/lend-qr/lend-qr.module": [
-		302,
-		4
-	],
-	"../pages/login/login.module": [
-		303,
-		3
-	],
-	"../pages/returned/return.module": [
-		304,
-		2
-	],
-	"../pages/returnlist/returnlist.module": [
-		305,
-		1
-	],
-	"../pages/waitperson/waitperson.module": [
-		306,
-=======
-		303,
-		11
-	],
-	"../pages/borrow/borrow.module": [
-		295,
-		10
-	],
-	"../pages/confirm/confirm.module": [
-		296,
-		9
-	],
-	"../pages/edit/edit.module": [
-		297,
-		8
-	],
-	"../pages/item-detail/item-detail.module": [
-		298,
-		7
-	],
-	"../pages/item-list/item-list.module": [
-		299,
-		6
-	],
-	"../pages/key-list/key-list.module": [
-		300,
-		5
-	],
-	"../pages/lend-qr/lend-qr.module": [
-		301,
-		4
-	],
-	"../pages/login/login.module": [
-		302,
-		3
-	],
-	"../pages/returned/return.module": [
-		306,
-		2
-	],
-	"../pages/returnlist/returnlist.module": [
-		304,
-		1
-	],
-	"../pages/waitperson/waitperson.module": [
-		305,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 		0
 	]
 };
@@ -1399,11 +967,7 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-<<<<<<< HEAD
 webpackAsyncContext.id = 175;
-=======
-webpackAsyncContext.id = 174;
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -1479,18 +1043,18 @@ var BorrowingId = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 218:
-=======
-/***/ 217:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfirmPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReturnPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__returnlist_returnlist__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_models__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__ = __webpack_require__(88);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1502,61 +1066,77 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+//import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+//import { CameraOptions } from '@ionic-native/camera';
 
-/**
- * Generated class for the ConfirmPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ConfirmPage = /** @class */ (function () {
-    function ConfirmPage(navCtrl, navParams, http) {
+
+
+
+
+var ReturnPage = /** @class */ (function () {
+    function ReturnPage(navCtrl, navParams, barcodeScanner, http, groupByPipe) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.barcodeScanner = barcodeScanner;
         this.http = http;
-        console.log(navParams.data.BorrowingIdRe);
+        this.groupByPipe = groupByPipe;
     }
-    ConfirmPage.prototype.ionViewDidLoad = function () {
+    ReturnPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        this.http.get(__WEBPACK_IMPORTED_MODULE_5__app_models__["d" /* GlobalVarible */].host + "/api/Item/GetItemreturn/" + __WEBPACK_IMPORTED_MODULE_5__app_models__["g" /* Userlogin */].loginname).subscribe(function (data) {
+            _this.ReturnItems = data;
+            console.log(_this.ReturnItems);
+            if ((_this.ReturnItems == undefined || _this.ReturnItems == null || _this.ReturnItems.length == 0) || (_this.ReturnItems[0].items == undefined || _this.ReturnItems[0].items == null || _this.ReturnItems[0].items.length == 0)) {
+                _this.checkitems = true;
+            }
+            else {
+                _this.checkitems = false;
+            }
+        });
     };
-    ConfirmPage.prototype.goHomePage = function () {
+    // var borrowItems = data.map(item => {
+    //   var borrowItem = new BorrowItem()
+    //   borrowItem.id = item.id;
+    //   borrowItem.name = item.name;
+    //   borrowItem.amount = item.amount;
+    //   borrowItem.totalamount = item.totalamount;
+    //   borrowItem.slot = this.navParams.data.text;
+    //   borrowItem.ischecked = false
+    //   return borrowItem;
+    // });
+    // this.items = borrowItems;
+    ReturnPage.prototype.goReturnListpage = function (id) {
+        // this.barcodeScanner.scan().then(barcodeData => {
+        //   if(barcodeData.text != undefined){
+        //     this.navCtrl.push(ReturnlistPage,{text:barcodeData.text});
+        //   }
+        //  }).catch(err => {
+        //      console.log('Error', err);
+        //  });
+        console.log(id);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__returnlist_returnlist__["a" /* ReturnlistPage */], { idReitem: id });
     };
-    ConfirmPage = __decorate([
+    ReturnPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-<<<<<<< HEAD
-            selector: 'page-confirm',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\confirm\confirm.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>ยืมสำเร็จ</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="background">\n\n  <div class="btnPosition">\n\n    <button ion-button color="light" block outline (click)="goHomePage()">ตกลง</button>\n\n  </div>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\confirm\confirm.html"*/,
-=======
-            selector: 'page-confirm',template:/*ion-inline-start:"E:\BGK48\src\pages\confirm\confirm.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Confirm</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <h3>Username</h3>\n\n  <ion-list>\n\n    <ion-item-sliding>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="../../assets/imgs/logo.png">\n\n        </ion-avatar>\n\n        <h2>Item01</h2>\n\n        <p>2 ea</p>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="../../assets/imgs/logo.png">\n\n        </ion-avatar>\n\n        <h2>Item03</h2>\n\n        <p>3 ea</p>\n\n      </ion-item>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n\n\n<ion-footer padding>\n\n  <ion-col >\n\n    <button ion-button block (click)="goHomePage()">Confirm</button>\n\n  </ion-col>\n\n\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\confirm\confirm.html"*/,
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-            selector: 'page-confirm',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\confirm\confirm.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Confirm</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <h3>Username</h3>\n\n  <ion-list>\n\n    <ion-item-sliding>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="../../assets/imgs/logo.png">\n\n        </ion-avatar>\n\n        <h2>Item01</h2>\n\n        <p>2 ea</p>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img src="../../assets/imgs/logo.png">\n\n        </ion-avatar>\n\n        <h2>Item03</h2>\n\n        <p>3 ea</p>\n\n      </ion-item>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n\n\n<ion-footer padding>\n\n  <ion-col >\n\n    <button ion-button block (click)="goHomePage()">Confirm</button>\n\n  </ion-col>\n\n\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\confirm\confirm.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-return',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\return\return.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Returned</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content [ngClass]="{\'background\': checkitems == true , \'no_bg\': checkitems == false}" padding>\n\n  <!-- <ion-item-group>\n\n    <ion-grid>\n\n      <ion-row *ngFor="let Redatalist of ReturnItems | groupBy: \'slot\'">\n\n          {{Redatalist.key}} \n\n      </ion-row>\n\n    </ion-grid>\n\n    lgkrl\n\n  </ion-item-group> -->\n\n  <ion-item-group>\n\n    <ion-grid *ngFor="let Redata of ReturnItems">\n\n     \n\n      <ion-row *ngFor="let Redatalist of Redata.items | groupBy: \'slot\'">\n\n        <ion-item-divider color="light" (click)="goReturnListpage(Redata.id)">{{Redatalist.key}}</ion-item-divider>\n\n\n\n        <ion-item *ngFor="let dataValue of Redatalist.value">\n\n          <p>{{dataValue.name}}</p>\n\n          <p text-right>{{dataValue.borrowQty - dataValue.returnQty}}</p>\n\n        </ion-item>\n\n      </ion-row>\n\n\n\n   \n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\return\return.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
-    ], ConfirmPage);
-    return ConfirmPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_6__group_by_pipe__["a" /* GroupByPipe */]])
+    ], ReturnPage);
+    return ReturnPage;
 }());
 
-//# sourceMappingURL=confirm.js.map
+//# sourceMappingURL=return.js.map
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 219:
-=======
-/***/ 218:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(240);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(239);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1564,95 +1144,39 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 240:
-=======
-/***/ 239:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_barcode_scanner__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file_path__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_key_list_key_list__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_key_list_key_list__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_item_detail_item_detail__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_lend_qr_lend_qr__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_borrow_borrow__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_borrow_select_borrow_select__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_returned_return__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_returnlist_returnlist__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_waitperson_waitperson__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_return_return__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_returnlist_returnlist__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_waitperson_waitperson__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_item_list_item_list__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_login_login__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_confirm_confirm__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_confirm_confirm__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_additem_additem__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_edit__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__group_by_pipe__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_returnsuccess_returnsuccess__ = __webpack_require__(120);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(216);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_barcode_scanner__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file_path__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_key_list_key_list__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_item_detail_item_detail__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_lend_qr_lend_qr__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_borrow_borrow__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_borrow_select_borrow_select__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_returned_return__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_returnlist_returnlist__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_waitperson_waitperson__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_item_list_item_list__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_login_login__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_confirm_confirm__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_additem_additem__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_edit__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__group_by_pipe__ = __webpack_require__(88);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_barcode_scanner__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_transfer__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file_path__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_key_list_key_list__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_item_detail_item_detail__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_lend_qr_lend_qr__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_borrow_borrow__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_borrow_select_borrow_select__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_returned_return__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_returnlist_returnlist__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_waitperson_waitperson__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_item_list_item_list__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_login_login__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_confirm_confirm__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_additem_additem__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_edit__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__group_by_pipe__ = __webpack_require__(87);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_returnsuccess_returnsuccess__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1686,10 +1210,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1703,7 +1224,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__pages_lend_qr_lend_qr__["a" /* LendQrPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_borrow_borrow__["a" /* BorrowPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_borrow_select_borrow_select__["a" /* BorrowSelectPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_returned_return__["a" /* ReturnPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_return_return__["a" /* ReturnPage */],
                 __WEBPACK_IMPORTED_MODULE_18__pages_returnlist_returnlist__["a" /* ReturnlistPage */],
                 __WEBPACK_IMPORTED_MODULE_19__pages_waitperson_waitperson__["a" /* WaitpersonPage */],
                 __WEBPACK_IMPORTED_MODULE_20__pages_item_list_item_list__["a" /* ItemListPage */],
@@ -1711,12 +1232,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_22__pages_confirm_confirm__["a" /* ConfirmPage */],
                 __WEBPACK_IMPORTED_MODULE_24__pages_additem_additem__["a" /* AdditemPage */],
                 __WEBPACK_IMPORTED_MODULE_25__pages_edit_edit__["a" /* EditPage */],
-<<<<<<< HEAD
                 __WEBPACK_IMPORTED_MODULE_26__group_by_pipe__["a" /* GroupByPipe */],
                 __WEBPACK_IMPORTED_MODULE_27__pages_returnsuccess_returnsuccess__["a" /* ReturnsuccessPage */]
-=======
-                __WEBPACK_IMPORTED_MODULE_26__group_by_pipe__["a" /* GroupByPipe */]
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1724,23 +1241,19 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/additem/additem.module#AdditemPageModule', name: 'AdditemPage', segment: 'additem', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/borrow-select/borrow-select.module#BorrowSelectPageModule', name: 'BorrowSelectPage', segment: 'borrow-select', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/borrow/borrow.module#BorrowPageModule', name: 'BorrowPage', segment: 'borrow', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/confirm/confirm.module#ConfirmPageModule', name: 'ConfirmPage', segment: 'confirm', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/edit/edit.module#EditPageModule', name: 'EditPage', segment: 'edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-list/item-list.module#ItemListPageModule', name: 'ItemListPage', segment: 'item-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/edit/edit.module#EditPageModule', name: 'EditPage', segment: 'edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/key-list/key-list.module#KeyListPageModule', name: 'KeyListPage', segment: 'key-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/lend-qr/lend-qr.module#LendQrPageModule', name: 'LendQrPage', segment: 'lend-qr', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/borrow-select/borrow-select.module#BorrowSelectPageModule', name: 'BorrowSelectPage', segment: 'borrow-select', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/returnlist/returnlist.module#ReturnlistPageModule', name: 'ReturnlistPage', segment: 'returnlist', priority: 'low', defaultHistory: [] },
-<<<<<<< HEAD
+                        { loadChildren: '../pages/return/return.module#ReturnPageModule', name: 'ReturnPage', segment: 'return', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/returnsuccess/returnsuccess.module#ReturnsuccessPageModule', name: 'ReturnsuccessPage', segment: 'returnsuccess', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/waitperson/waitperson.module#WaitpersonPageModule', name: 'WaitpersonPage', segment: 'waitperson', priority: 'low', defaultHistory: [] }
-=======
-                        { loadChildren: '../pages/waitperson/waitperson.module#WaitpersonPageModule', name: 'WaitpersonPage', segment: 'waitperson', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/returned/return.module#ReturnPageModule', name: 'ReturnPage', segment: 'return', priority: 'low', defaultHistory: [] }
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
                     ]
                 })
             ],
@@ -1753,19 +1266,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__pages_lend_qr_lend_qr__["a" /* LendQrPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_borrow_borrow__["a" /* BorrowPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_borrow_select_borrow_select__["a" /* BorrowSelectPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_returned_return__["a" /* ReturnPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_return_return__["a" /* ReturnPage */],
                 __WEBPACK_IMPORTED_MODULE_18__pages_returnlist_returnlist__["a" /* ReturnlistPage */],
                 __WEBPACK_IMPORTED_MODULE_19__pages_waitperson_waitperson__["a" /* WaitpersonPage */],
                 __WEBPACK_IMPORTED_MODULE_20__pages_item_list_item_list__["a" /* ItemListPage */],
                 __WEBPACK_IMPORTED_MODULE_21__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_22__pages_confirm_confirm__["a" /* ConfirmPage */],
                 __WEBPACK_IMPORTED_MODULE_24__pages_additem_additem__["a" /* AdditemPage */],
-<<<<<<< HEAD
                 __WEBPACK_IMPORTED_MODULE_25__pages_edit_edit__["a" /* EditPage */],
                 __WEBPACK_IMPORTED_MODULE_27__pages_returnsuccess_returnsuccess__["a" /* ReturnsuccessPage */]
-=======
-                __WEBPACK_IMPORTED_MODULE_25__pages_edit_edit__["a" /* EditPage */]
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -1787,30 +1296,16 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 294:
-=======
-/***/ 293:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(217);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(59);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(215);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(58);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(118);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1825,9 +1320,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//import { BorrowSelectPage } from '../pages/borrow-select/borrow-select';
 var MyApp = /** @class */ (function () {
-    //rootPage:any = BorrowSelectPage;
     function MyApp(platform, statusBar, splashScreen) {
         this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
         platform.ready().then(function () {
@@ -1838,158 +1331,36 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-<<<<<<< HEAD
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\BGK48\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"E:\BGK48\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-=======
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\Project\BGK48\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"E:\Project\BGK48\src\app\app.html"*/
-        }),
-<<<<<<< HEAD
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-=======
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
     ], MyApp);
     return MyApp;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/***/ 49:
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-/***/ 44:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BorrowSelectPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_borrow__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the BorrowSelectPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var BorrowSelectPage = /** @class */ (function () {
-    function BorrowSelectPage(navCtrl, navParams, http) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.http = http;
-        this.borrowItem = [];
-        this.boxName = navParams.data.text;
-        console.log(navParams.data.text);
-    }
-    BorrowSelectPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        //    this.http.get<BorrowItem[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.navParams.data.text).subscribe(data => {
-        this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_models__["d" /* GlobalVarible */].host + "/api/Item/GetItemslot/A1").subscribe(function (data) {
-            var borrowItems = data.map(function (item) {
-                var borrowItem = new __WEBPACK_IMPORTED_MODULE_4__app_models__["a" /* BorrowItem */]();
-                borrowItem.id = item.id;
-                borrowItem.name = item.name;
-                borrowItem.amount = item.amount;
-                borrowItem.totalamount = item.totalamount;
-                borrowItem.slot = _this.navParams.data.text;
-                borrowItem.ischecked = false;
-                return borrowItem;
-            });
-            _this.items = borrowItems;
-        });
-    };
-    BorrowSelectPage.prototype.BorrowPage = function () {
-        var _this = this;
-        var seletedItem = this.items.filter(function (item) { return item.ischecked == true; });
-        var borrowingItem = new __WEBPACK_IMPORTED_MODULE_4__app_models__["c" /* BorrowingItem */]();
-        borrowingItem.items = seletedItem;
-        borrowingItem.borrower = __WEBPACK_IMPORTED_MODULE_4__app_models__["g" /* Userlogin */].loginname;
-        console.log(borrowingItem);
-        this.http.post(__WEBPACK_IMPORTED_MODULE_4__app_models__["d" /* GlobalVarible */].host + "/api/Item/addBorrow", borrowingItem, __WEBPACK_IMPORTED_MODULE_4__app_models__["d" /* GlobalVarible */].httpOptions).subscribe(function (data) {
-            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__borrow_borrow__["a" /* BorrowPage */], { BorrowId: data.id, dataBorrowList: borrowingItem.items });
-        });
-    };
-    BorrowSelectPage.prototype.checkeditem = function (data, e) {
-        data.ischecked = e.checked;
-    };
-    BorrowSelectPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-borrow-select',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\borrow-select\borrow-select.html"*/'<ion-header>\n\n  <ion-navbar color="primary" text-center>\n\n    <ion-title>{{boxName}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item-divider color="primary">\n\n    <ion-label col-3>ชื่อ</ion-label>\n\n    <ion-label col-5>จำนวนทั้งหมด</ion-label>\n\n    <ion-label col-4>จำนวนที่ยืม</ion-label>\n\n  </ion-item-divider>\n\n\n\n  <div *ngFor="let itemlist of items">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-1>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(itemlist,$event)" align-self-center></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-3>\n\n          <ion-label>{{itemlist.name}}</ion-label>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <ion-label>{{itemlist.amount}} / {{itemlist.totalamount}}</ion-label>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <ion-input type="number" min="0" max="{{itemlist.amount}}" [(ngModel)]="itemlist.borrowqty" placeholder="จำนวนที่ยืม"></ion-input>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </div>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <button ion-button block (click)="BorrowPage()">ยืม</button>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\borrow-select\borrow-select.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
-    ], BorrowSelectPage);
-    return BorrowSelectPage;
-}());
-
-//# sourceMappingURL=borrow-select.js.map
-
-/***/ }),
-
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-/***/ 50:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+/***/ 36:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__returned_return__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__return_return__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__item_list_item_list__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__key_list_key_list__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__key_list_key_list__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__ = __webpack_require__(58);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__returned_return__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__item_list_item_list__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__key_list_key_list__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__item_detail_item_detail__ = __webpack_require__(56);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__returned_return__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__item_list_item_list__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__key_list_key_list__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__borrow_select_borrow_select__ = __webpack_require__(44);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__item_detail_item_detail__ = __webpack_require__(57);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__returnsuccess_returnsuccess__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__returnsuccess_returnsuccess__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__confirm_confirm__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1999,6 +1370,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2054,7 +1426,7 @@ var HomePage = /** @class */ (function () {
             var stwTextQr = null;
             var subStr = strQr.substring(6);
             if (stwTextQr = strQr.startsWith("Borrow") == true) {
-                var alert_1 = _this.alertCtrl.create({
+                var alert = _this.alertCtrl.create({
                     title: 'พยานยืนยันการยืม',
                     message: 'คุณแน่ใจนะว่าต้องการเป็นพยานการยืมของ',
                     buttons: [
@@ -2073,13 +1445,13 @@ var HomePage = /** @class */ (function () {
                                 };
                                 _this.http.post(__WEBPACK_IMPORTED_MODULE_10__app_models__["d" /* GlobalVarible */].host + "/api/Item/updateWitness", data)
                                     .subscribe(function (data) {
-                                    _this.navCtrl.pop();
+                                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_13__confirm_confirm__["a" /* ConfirmPage */]);
                                 });
                             }
                         }
                     ]
                 });
-                alert_1.present();
+                alert.present();
                 // this.navCtrl.push(ConfirmPage, { BorrowingIdRe: subStr });
             }
             else if (stwTextQr = strQr.startsWith("Return") == true) {
@@ -2122,63 +1494,33 @@ var HomePage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__login_login__["a" /* LoginPage */]);
     };
     HomePage.prototype.Returned = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__returned_return__["a" /* ReturnPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__return_return__["a" /* ReturnPage */]);
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-<<<<<<< HEAD
-            selector: 'page-home',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Store\n\n    </ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button right color="danger" (click)="goLoginPage()">Logout</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="bg-home">\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card">\n\n       \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n\n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row> -->\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6 class="bgCard_1" text-center>\n\n        <ion-card-header style="padding: 0;">\n\n          <p class="setPtext_head">Slot A1</p>\n\n          <p class="setPtext">Hardware</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/devices.png" (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n      <ion-col col-6 class="bgCard_2" text-center>\n\n        <ion-card-header class="slotfont_">\n\n          <p class="setPtext_head">Slot A2</p>\n\n          <p class="setPtext">Stationary</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/pencil.png" (click)="goItemlist(\'A2\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-6 class="bgCard_3" text-center>\n\n\n\n        <ion-card-header style="padding: 0;">\n\n          <p class="setPtext_head">Slot B1</p>\n\n          <p class="setPtext">Books</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/notebook.png" (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        </ion-card-content>\n\n\n\n      </ion-col>\n\n      <ion-col col-6 class="bgCard_4" text-center>\n\n        <ion-card-header class="slotfont_">\n\n          <p class="setPtext_head">Slot B2</p>\n\n          <p class="setPtext">Tools</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/swiss-army-knife.png" (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer" no-border>\n\n  <!-- <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="goKeyListPage()">Key</button>\n\n  </ion-col> -->\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="Returned()">\n\n      <ion-icon ios="ios-repeat" md="md-repeat">\n\n        <ion-segment-button>\n\n          คืนของ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnQr" ion-button round ion-button outline (click)="QRScan()">\n\n      <ion-icon ios="md-qr-scanner" md="md-qr-scanner"></ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="goKeyListPage()">\n\n      <ion-icon ios="ios-key" md="md-key">\n\n        <ion-segment-button>\n\n          กุญแจ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n\n\n    </button>\n\n\n\n  </div>\n\n\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/
-=======
-            selector: 'page-home',template:/*ion-inline-start:"E:\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Store\n\n    </ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button right color="danger" (click)="goLoginPage()">Logout</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card"> \n\n          <!--  -->\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n            \n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="goKeyListPage()">Key</button>\n\n  </ion-col>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\home\home.html"*/
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-            selector: 'page-home',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title text-center>\n\n      Store\n\n    </ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button right color="danger" (click)="goLoginPage()">Logout</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card"> \n\n          <!--  -->\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n            \n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="goKeyListPage()">Key</button>\n\n  </ion-col>\n\n</ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\home\home.html"*/
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-home',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title text-center>\n\n      Store\n\n    </ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button right color="danger" (click)="goLoginPage()">Logout</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="bg-home">\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A1\')" class="pointer_card">\n\n\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>A1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'A2\')" class="pointer_card">\n\n       \n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n\n\n          <h3>A2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/it.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B1</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <ion-card (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        <ion-card-header>\n\n          <img src="../../assets/imgs/ขนม.jpg" alt="">\n\n        </ion-card-header>\n\n        <ion-card-content>\n\n          <h3>B2</h3>\n\n          <p>ประเภท: IT</p>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row> -->\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6 class="bgCard_1" text-center>\n\n        <ion-card-header style="padding: 0;">\n\n          <p class="setPtext_head">Slot A1</p>\n\n          <p class="setPtext">Hardware</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/devices.png" (click)="goItemlist(\'A1\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n      <ion-col col-6 class="bgCard_2" text-center>\n\n        <ion-card-header class="slotfont_">\n\n          <p class="setPtext_head">Slot A2</p>\n\n          <p class="setPtext">Stationary</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/pencil.png" (click)="goItemlist(\'A2\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-6 class="bgCard_3" text-center>\n\n\n\n        <ion-card-header style="padding: 0;">\n\n          <p class="setPtext_head">Slot B1</p>\n\n          <p class="setPtext">Books</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/notebook.png" (click)="goItemlist(\'B1\')" class="pointer_card">\n\n        </ion-card-content>\n\n\n\n      </ion-col>\n\n      <ion-col col-6 class="bgCard_4" text-center>\n\n        <ion-card-header class="slotfont_">\n\n          <p class="setPtext_head">Slot B2</p>\n\n          <p class="setPtext">Tools</p>\n\n        </ion-card-header>\n\n        <hr>\n\n        <ion-card-content>\n\n          <img class="imgSlot" src="../../assets/imgs/swiss-army-knife.png" (click)="goItemlist(\'B2\')" class="pointer_card">\n\n        </ion-card-content>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer" no-border>\n\n  <!-- <ion-col col-4>\n\n    <button ion-button block (click)="Returned()">Returned</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="QRScan()">QR</button>\n\n  </ion-col>\n\n  <ion-col col-4>\n\n    <button ion-button block (click)="goKeyListPage()">Key</button>\n\n  </ion-col> -->\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="Returned()">\n\n      <ion-icon ios="ios-repeat" md="md-repeat">\n\n        <ion-segment-button>\n\n          คืนของ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnQr" ion-button round ion-button outline (click)="QRScan()">\n\n      <ion-icon ios="md-qr-scanner" md="md-qr-scanner"></ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="goKeyListPage()">\n\n      <ion-icon ios="ios-key" md="md-key">\n\n        <ion-segment-button>\n\n          กุญแจ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n\n\n    </button>\n\n\n\n  </div>\n\n\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_11__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__angular_common_http__["a" /* HttpClient */]) === "function" && _f || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=home.js.map
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 55:
-=======
 /***/ 56:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_detail_item_detail__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__additem_additem__ = __webpack_require__(113);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_detail_item_detail__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__additem_additem__ = __webpack_require__(113);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_detail_item_detail__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__additem_additem__ = __webpack_require__(112);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2225,15 +1567,7 @@ var ItemListPage = /** @class */ (function () {
     };
     ItemListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-<<<<<<< HEAD
-            selector: 'page-item-list',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      <label> Slot{{number_locker}}</label>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button style="color: #4ecca3" icon-only (click)="additem(number_locker)">\n\n        <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding [ngClass]="{ \'background-bg\': checkitems == true , \'background\': checkitems == false }">\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row> -->\n\n  <div *ngIf="items">\n\n    <ion-card *ngFor="let itemlist of items">\n\n      <!-- \n\n      <ion-card-header>\n\n         <ion-grid>\n\n           <ion-row>\n\n             <ion-col col-9>\n\n             <ion-col col-3 text-right></ion-col>\n\n           </ion-row>\n\n         </ion-grid>\n\n        </ion-card-header>\n\n    <ion-card-content> -->\n\n\n\n      <ion-item class="pointer_item">\n\n        <ion-row>\n\n          <ion-col col-3 *ngIf="itemlist.img == undefined || itemlist.img == null">\n\n            <img src="../../assets/icon/picture.png" class="img-item">\n\n          </ion-col>\n\n          <ion-col col-3 *ngIf="itemlist.img">\n\n            <img src="{{itemlist.img}}" class="img-item">\n\n          </ion-col>\n\n          <ion-col col-9>\n\n            <p class="textTitle">{{itemlist.name}}</p>\n\n            <p class="bord_amount" text-center>จำนวนของ: {{itemlist.amount}}/{{itemlist.totalamount}}</p>\n\n            <p>\n\n              <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon> : {{itemlist.createDate | date:\'d MMMM yyyy\' : \'Utc\'}}\n\n            </p>\n\n            <p>\n\n              <ion-icon ios="ios-time" md="md-time"></ion-icon> : {{itemlist.createDate | date:\'HH:mm\' : \'+7\'}}\n\n            </p>\n\n            <p *ngIf="itemlist.username == null">\n\n              <ion-icon ios="ios-person" md="md-person"></ion-icon>\n\n              : ไม่รู้จัก\n\n\n\n              <p *ngIf="itemlist.username">\n\n                <ion-icon ios="ios-person" md="md-person"></ion-icon>\n\n\n\n                : {{itemlist.username}}\n\n              </p>\n\n              <!-- <div id="desText">{{itemlist.desc}}</div> -->\n\n          </ion-col>\n\n          <!-- <ion-col col-3 >\n\n              \n\n            </ion-col> -->\n\n        </ion-row>\n\n\n\n      </ion-item>\n\n      <!--       \n\n    </ion-card-content> -->\n\n\n\n      <hr>\n\n      <ion-card-header style="padding: 0px 5px 10px 5px;">\n\n        <div (click)="goDetail_list(itemlist.id)" class="detailText">ดูรายละเอียด</div>\n\n      </ion-card-header>\n\n    </ion-card>\n\n  </div>\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/,
-=======
-            selector: 'page-item-list',template:/*ion-inline-start:"E:\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      <label> List {{number_locker}}</label>\n\n    </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button color="secondary" icon-only (click)="additem(number_locker)">\n\n          <ion-icon name="add-circle"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row>\n\n  <div *ngIf="items">\n\n    <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list(itemlist.id)">\n\n      <ion-row>\n\n        <ion-col col-6>\n\n          {{itemlist.name}}\n\n        </ion-col>\n\n        <ion-col col-6 class="qty_item">\n\n          {{itemlist.amount}}/{{itemlist.totalamount}}\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-item>\n\n  </div>\n\n  \n\n  \n\n</ion-content>'/*ion-inline-end:"E:\BGK48\src\pages\item-list\item-list.html"*/,
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-            selector: 'page-item-list',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title text-center>\n\n      <label> List {{number_locker}}</label>\n\n    </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button color="secondary" icon-only (click)="additem(number_locker)">\n\n          <ion-icon name="add-circle"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row>\n\n  <div *ngIf="items">\n\n    <ion-item class="pointer_item" *ngFor="let itemlist of items" (click)="goDetail_list(itemlist.id)">\n\n      <ion-row>\n\n        <ion-col col-6>\n\n          {{itemlist.name}}\n\n        </ion-col>\n\n        <ion-col col-6 class="qty_item">\n\n          {{itemlist.amount}}/{{itemlist.totalamount}}\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-item>\n\n  </div>\n\n  \n\n  \n\n</ion-content>'/*ion-inline-end:"E:\Project\BGK48\src\pages\item-list\item-list.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-item-list',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title text-center>\n\n      <label> Slot{{number_locker}}</label>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button style="color: #4ecca3" icon-only (click)="additem(number_locker)">\n\n        <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n      Item List      \n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding [ngClass]="{ \'background-bg\': checkitems == true , \'background\': checkitems == false }">\n\n  <!-- <ion-row>\n\n    <ion-col col-6>\n\n      <h4>รายการของ</h4>\n\n    </ion-col>\n\n    <ion-col col-6 class="qty_item">\n\n      <h4>จำนวน</h4>\n\n    </ion-col>\n\n  </ion-row> -->\n\n  <div *ngIf="items">\n\n    <ion-card *ngFor="let itemlist of items">\n\n      <!-- \n\n      <ion-card-header>\n\n         <ion-grid>\n\n           <ion-row>\n\n             <ion-col col-9>\n\n             <ion-col col-3 text-right></ion-col>\n\n           </ion-row>\n\n         </ion-grid>\n\n        </ion-card-header>\n\n    <ion-card-content> -->\n\n\n\n      <ion-item class="pointer_item">\n\n        <ion-row>\n\n          <ion-col col-3 *ngIf="itemlist.img == undefined || itemlist.img == null">\n\n            <img src="../../assets/icon/picture.png" class="img-item">\n\n          </ion-col>\n\n          <ion-col col-3 *ngIf="itemlist.img">\n\n            <img src="{{itemlist.img}}" class="img-item">\n\n          </ion-col>\n\n          <ion-col col-9>\n\n            <p class="textTitle">{{itemlist.name}}</p>\n\n            <p class="bord_amount" text-center>จำนวนของ: {{itemlist.amount}}/{{itemlist.totalamount}}</p>\n\n            <p>\n\n              <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon> : {{itemlist.createDate | date:\'d MMMM yyyy\' : \'Utc\'}}\n\n            </p>\n\n            <p>\n\n              <ion-icon ios="ios-time" md="md-time"></ion-icon> : {{itemlist.createDate | date:\'HH:mm\' : \'+7\'}}\n\n            </p>\n\n            <p *ngIf="itemlist.username == null">\n\n              <ion-icon ios="ios-person" md="md-person"></ion-icon>\n\n              : ไม่รู้จัก\n\n\n\n              <p *ngIf="itemlist.username">\n\n                <ion-icon ios="ios-person" md="md-person"></ion-icon>\n\n\n\n                : {{itemlist.username}}\n\n              </p>\n\n              <!-- <div id="desText">{{itemlist.desc}}</div> -->\n\n          </ion-col>\n\n          <!-- <ion-col col-3 >\n\n              \n\n            </ion-col> -->\n\n        </ion-row>\n\n\n\n      </ion-item>\n\n      <!--       \n\n    </ion-card-content> -->\n\n\n\n      <hr>\n\n      <ion-card-header style="padding: 0px 5px 10px 5px;">\n\n        <div (click)="goDetail_list(itemlist.id)" class="detailText">ดูรายละเอียด</div>\n\n      </ion-card-header>\n\n    </ion-card>\n\n  </div>\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\item-list\item-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
     ], ItemListPage);
@@ -2244,33 +1578,17 @@ var ItemListPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 56:
-=======
 /***/ 57:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemDetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lend_qr_lend_qr__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_edit__ = __webpack_require__(121);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lend_qr_lend_qr__ = __webpack_require__(114);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lend_qr_lend_qr__ = __webpack_require__(113);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_edit__ = __webpack_require__(120);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2347,15 +1665,7 @@ var ItemDetailPage = /** @class */ (function () {
     };
     ItemDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-<<<<<<< HEAD
-            selector: 'page-item-detail',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\item-detail\item-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar text-center>\n\n    <ion-title>Item Detail</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content style="background-color: #eeeeee">\n\n  <ion-row>\n\n    <ion-col col-12 text-center>\n\n    \n\n          <p style="font-size: 25px;margin: 0;">{{items.name}}</p>\n\n          <div *ngIf="items.img != undefined">\n\n            <img src="{{items.img}}">\n\n          </div>\n\n\n\n          <div *ngIf="items.img == null">\n\n            <img src="../../assets/icon/picture.png" max-width="250px" height="250px">\n\n          </div>\n\n       \n\n\n\n       \n\n          <p style="font-size: 20px;">รายละเอียด</p>\n\n          <p>{{items.desc}}</p>\n\n          <ion-col col-12 text-center>\n\n\n\n            <ion-row text-center>\n\n              <ion-col col-6 text-right>\n\n                <div class="item_border" text-center> จำนวนทั้งหมด : {{items.totalamount}} </div>\n\n\n\n              </ion-col>\n\n\n\n              <ion-col col-6 text-left>\n\n                <div class="item_border" text-center> จำนวนที่เหลือ : {{items.amount}}</div>\n\n              </ion-col>\n\n\n\n            </ion-row>\n\n          </ion-col>\n\n\n\n      \n\n\n\n     \n\n\n\n\n\n\n\n    </ion-col>\n\n\n\n\n\n  </ion-row>\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer">\n\n  <!-- <ion-col col-6>\n\n    <button ion-button block >EDIT</button>\n\n  </ion-col>\n\n  <ion-col col-6>\n\n    <button ion-button block >DELETE</button>\n\n  </ion-col> -->\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="edit(items.id)">\n\n        <ion-icon ios="ios-color-wand" md="md-color-wand">\n\n        <ion-segment-button>\n\n          แก้ไข\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="showConfirm(items.id)">\n\n        <ion-icon ios="ios-trash" md="md-trash">\n\n        <ion-segment-button>\n\n          กุญแจ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n  </div>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\item-detail\item-detail.html"*/,
-=======
-            selector: 'page-item-detail',template:/*ion-inline-start:"E:\BGK48\src\pages\item-detail\item-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar text-center>\n\n    <ion-title>Item Detail</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n        <img src="../../assets/imgs/img1.jpg" alt="">\n\n    </ion-col>\n\n    <ion-col col-12>\n\n      <p>ชื่อของ: {{items.name}}</p>\n\n      <p>จำนวนทั้วหมด: {{items.totalamount}}</p>\n\n      <p>จำนวนที่เหลือ: {{items.amount}}</p>\n\n\n\n      <p>รายละเอียยด: {{items.desc}}</p>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n   \n\n \n\n\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="edit(items.id)">EDIT</button>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="showConfirm(items.id)">DELETE</button>\n\n    </ion-col>\n\n  </ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\item-detail\item-detail.html"*/,
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
-=======
-            selector: 'page-item-detail',template:/*ion-inline-start:"E:\Project\BGK48\src\pages\item-detail\item-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar text-center color="primary">\n\n    <ion-title>Item Detail</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n        <img src="../../assets/imgs/img1.jpg" alt="">\n\n    </ion-col>\n\n    <ion-col col-12>\n\n      <p>ชื่อของ: {{items.name}}</p>\n\n      <p>จำนวนทั้งหมด: {{items.totalamount}}</p>\n\n      <p>จำนวนที่เหลือ: {{items.amount}}</p>\n\n\n\n      <p>รายละเอียด: {{items.desc}}</p>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n   \n\n \n\n\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="edit(items.id)">EDIT</button>\n\n    </ion-col>\n\n    <ion-col col-6>\n\n      <button ion-button block (click)="showConfirm(items.id)">DELETE</button>\n\n    </ion-col>\n\n  </ion-footer>'/*ion-inline-end:"E:\Project\BGK48\src\pages\item-detail\item-detail.html"*/,
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
+            selector: 'page-item-detail',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\item-detail\item-detail.html"*/'<ion-header>\n\n\n\n  <ion-navbar text-center color="primary">\n\n    <ion-title>Item Detail</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content style="background-color: #eeeeee">\n\n  <ion-row>\n\n    <ion-col col-12 text-center>\n\n    \n\n          <p style="font-size: 25px;margin: 0;">{{items.name}}</p>\n\n          <div *ngIf="items.img != undefined">\n\n            <img src="{{items.img}}">\n\n          </div>\n\n\n\n          <div *ngIf="items.img == null">\n\n            <img src="../../assets/icon/picture.png" max-width="250px" height="250px">\n\n          </div>\n\n       \n\n\n\n       \n\n          <p style="font-size: 20px;">รายละเอียด</p>\n\n          <p>{{items.desc}}</p>\n\n          <ion-col col-12 text-center>\n\n\n\n            <ion-row text-center>\n\n              <ion-col col-6 text-right>\n\n                <div class="item_border" text-center> จำนวนทั้งหมด : {{items.totalamount}} </div>\n\n\n\n              </ion-col>\n\n\n\n              <ion-col col-6 text-left>\n\n                <div class="item_border" text-center> จำนวนที่เหลือ : {{items.amount}}</div>\n\n              </ion-col>\n\n\n\n            </ion-row>\n\n          </ion-col>\n\n\n\n      \n\n\n\n     \n\n\n\n\n\n\n\n    </ion-col>\n\n\n\n\n\n  </ion-row>\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n<ion-footer class="ion-footer">\n\n  <!-- <ion-col col-6>\n\n    <button ion-button block >EDIT</button>\n\n  </ion-col>\n\n  <ion-col col-6>\n\n    <button ion-button block >DELETE</button>\n\n  </ion-col> -->\n\n  <div text-center>\n\n    <button class="btnMenu" ion-button outline (click)="edit(items.id)">\n\n        <ion-icon ios="ios-color-wand" md="md-color-wand">\n\n        <ion-segment-button>\n\n          แก้ไข\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n    <button class="btnMenu" ion-button outline (click)="showConfirm(items.id)">\n\n        <ion-icon ios="ios-trash" md="md-trash">\n\n        <ion-segment-button>\n\n          ลบ\n\n        </ion-segment-button>\n\n      </ion-icon>\n\n    </button>\n\n  </div>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\item-detail\item-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
     ], ItemDetailPage);
@@ -2366,22 +1676,13 @@ var ItemDetailPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /***/ 58:
-=======
-/***/ 57:
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BorrowSelectPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__borrow_borrow__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models__ = __webpack_require__(20);
@@ -2416,7 +1717,8 @@ var BorrowSelectPage = /** @class */ (function () {
     }
     BorrowSelectPage.prototype.ionViewDidLoad = function () {
         var _this = this;
-        this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_models__["d" /* GlobalVarible */].host + "/api/Item/GetItemslot/" + this.navParams.data.text).subscribe(function (data) {
+        //    this.http.get<BorrowItem[]>(GlobalVarible.host + "/api/Item/GetItemslot/" + this.navParams.data.text).subscribe(data => {
+        this.http.get(__WEBPACK_IMPORTED_MODULE_4__app_models__["d" /* GlobalVarible */].host + "/api/Item/GetItemslot/A1").subscribe(function (data) {
             var borrowItems = data.map(function (item) {
                 var borrowItem = new __WEBPACK_IMPORTED_MODULE_4__app_models__["a" /* BorrowItem */]();
                 borrowItem.id = item.id;
@@ -2446,11 +1748,7 @@ var BorrowSelectPage = /** @class */ (function () {
     };
     BorrowSelectPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-borrow-select',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n\n    <ion-title>{{boxName}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngFor="let itemlist of items">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-1>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(itemlist,$event)"></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-3>\n\n          <p> {{itemlist.name}}</p><br>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <p>{{itemlist.totalamount}}</p>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <p>{{itemlist.amount}}</p>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <ion-input type="number" min="0" max="{{itemlist.amount}}" [(ngModel)]="itemlist.borrowqty" placeholder="จำนวนที่ยืม"></ion-input>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n\n\n\n\n      <!-- <ion-label>Employee</ion-label>\n\n        <ion-select [(ngModel)]="employee" [compareWith]="compareFn">\n\n          <ion-option *ngFor="let itemlist.totalamount of num" [value]="num"></ion-option>\n\n        </ion-select> -->\n\n    </ion-grid>\n\n\n\n\n\n  </div>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <button ion-button block (click)="BorrowPage()">ยืม</button>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/,
-=======
-            selector: 'page-borrow-select',template:/*ion-inline-start:"E:\BGK48\src\pages\borrow-select\borrow-select.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n\n    <ion-title>{{boxName}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngFor="let itemlist of items">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-1>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(itemlist,$event)"></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-3>\n\n          <p> {{itemlist.name}}</p><br>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <p>{{itemlist.totalamount}}</p>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <p>{{itemlist.amount}}</p>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <ion-input type="number" min="0" max="{{itemlist.amount}}" [(ngModel)]="itemlist.borrowqty" placeholder="จำนวนที่ยืม"></ion-input>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n\n\n\n\n      <!-- <ion-label>Employee</ion-label>\n\n        <ion-select [(ngModel)]="employee" [compareWith]="compareFn">\n\n          <ion-option *ngFor="let itemlist.totalamount of num" [value]="num"></ion-option>\n\n        </ion-select> -->\n\n    </ion-grid>\n\n\n\n\n\n  </div>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <button ion-button block (click)="BorrowPage()">ยืม</button>\n\n</ion-footer>'/*ion-inline-end:"E:\BGK48\src\pages\borrow-select\borrow-select.html"*/,
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
+            selector: 'page-borrow-select',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/'<ion-header>\n\n  <ion-navbar color="primary" text-center>\n\n    <ion-title>{{boxName}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item-divider color="primary">\n\n    <ion-label col-3>ชื่อ</ion-label>\n\n    <ion-label col-5>จำนวนทั้งหมด</ion-label>\n\n    <ion-label col-4>จำนวนที่ยืม</ion-label>\n\n  </ion-item-divider>\n\n\n\n  <div *ngFor="let itemlist of items">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-1>\n\n          <ion-checkbox color="blue" (ionChange)="checkeditem(itemlist,$event)" align-self-center></ion-checkbox>\n\n        </ion-col>\n\n        <ion-col col-3>\n\n          <ion-label>{{itemlist.name}}</ion-label>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <ion-label>{{itemlist.amount}} / {{itemlist.totalamount}}</ion-label>\n\n        </ion-col>\n\n        <ion-col col-4>\n\n          <ion-input type="number" min="0" max="{{itemlist.amount}}" [(ngModel)]="itemlist.borrowqty" placeholder="จำนวนที่ยืม"></ion-input>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </div>\n\n</ion-content>\n\n\n\n<ion-footer ion-row>\n\n  <button ion-button block (click)="BorrowPage()">ยืม</button>\n\n</ion-footer>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\borrow-select\borrow-select.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
     ], BorrowSelectPage);
@@ -2461,23 +1759,14 @@ var BorrowSelectPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 59:
-=======
-/***/ 58:
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(49);
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2508,11 +1797,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-login',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\login\login.html"*/'<ion-header>\n\n\n\n</ion-header>\n\n\n\n<ion-content class="background" padding>\n\n\n\n  <div class="Card_" text-center>\n\n    <ion-item>\n\n      <ion-input type="text" [(ngModel)]="userLogin" placeholder="Username"></ion-input>\n\n    </ion-item>\n\n    \n\n    <button ion-button (click)="goHomePage()" color="light" block outline>LOGIN</button>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\login\login.html"*/,
-=======
-            selector: 'page-login',template:/*ion-inline-start:"E:\BGK48\src\pages\login\login.html"*/'<ion-content padding text-center>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <br>\n\n  <h1>Login</h1>\n\n  <br><br>\n\n  \n\n  <ion-item>\n\n    \n\n    <ion-input type="text" [(ngModel)]="userLogin" placeholder="Username"></ion-input>\n\n  </ion-item><br><br>\n\n  <button ion-button (click)="goHomePage()">Login</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\BGK48\src\pages\login\login.html"*/,
->>>>>>> b0f5d95d8e7b8f3e7c6e3d9de842fe4e8ccdeb93
+            selector: 'page-login',template:/*ion-inline-start:"D:\Work\GitToday\BGK48\src\pages\login\login.html"*/'<ion-header>\n\n\n\n</ion-header>\n\n\n\n<ion-content class="background" padding>\n\n\n\n  <div class="Card_" text-center>\n\n    <ion-item>\n\n      <ion-input type="text" [(ngModel)]="userLogin" placeholder="Username"></ion-input>\n\n    </ion-item>\n\n\n\n    <button ion-button (click)="goHomePage()" color="light" block outline>LOGIN</button>\n\n  </div>\n\n\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"D:\Work\GitToday\BGK48\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], LoginPage);
@@ -2524,9 +1809,6 @@ var LoginPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 88:
-=======
-/***/ 87:
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2569,9 +1851,5 @@ var GroupByPipe = /** @class */ (function () {
 
 /***/ })
 
-<<<<<<< HEAD
 },[219]);
-=======
-},[218]);
->>>>>>> aa223fc97da420c25a43436c172af8de3e682b34
 //# sourceMappingURL=main.js.map
